@@ -1,10 +1,10 @@
 /* ==========================================================================
-   TOHFA LUXURY SHOP BY BUDGET — REFINED ROYAL PURPLE & GOLD SIGNPOST
+   TOHFA BUDGET-FRIENDLY GIFTS — HORIZONTAL RAIL SIGNBOARD SECTION
    ========================================================================== */
 
 .budget-section {
   background: linear-gradient(135deg, #fffaff 0%, #f8effc 50%, #f0e1f7 100%);
-  padding: 105px max(25px, 8vw);
+  padding: 85px max(25px, 8vw);
   position: relative;
   overflow: hidden;
 }
@@ -12,587 +12,386 @@
 .budget-section::before {
   content: '';
   position: absolute;
-  top: -120px;
-  right: -80px;
-  width: 480px;
-  height: 480px;
+  top: -100px;
+  right: -60px;
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(223, 184, 91, 0.16) 0%, rgba(108, 35, 134, 0.06) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(223, 184, 91, 0.16) 0%, rgba(108, 35, 134, 0.05) 50%, transparent 70%);
   pointer-events: none;
 }
 
 .budget-section::after {
   content: '';
   position: absolute;
-  bottom: -120px;
-  left: -80px;
-  width: 480px;
-  height: 480px;
+  bottom: -100px;
+  left: -60px;
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(69, 18, 93, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(69, 18, 93, 0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
-.budget-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 1.25fr;
-  align-items: center;
-  gap: clamp(40px, 6vw, 85px);
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-/* --- Left: 3D Signpost Stage --- */
-.signpost-stage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  perspective: 1200px;
-  padding: 25px 10px;
-}
-
-/* Sleek Luxury Gold-accented Pole Behind Planks */
-.signpost-pole {
-  position: absolute;
-  top: 0;
-  bottom: -15px;
-  width: 12px;
-  background: linear-gradient(90deg, #caa050 0%, #fdf2d2 35%, #b68732 75%, #7a5818 100%);
-  border-radius: 6px;
-  box-shadow: 0 10px 25px rgba(36, 8, 48, 0.28), 0 0 12px rgba(223, 184, 91, 0.3);
-  z-index: 1;
-}
-
-.signpost-pole::before {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 22px;
-  height: 14px;
-  background: linear-gradient(180deg, #faecc1, #a3742f);
-  border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.signpost-pole::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70px;
-  height: 16px;
-  background: radial-gradient(ellipse, rgba(41, 11, 56, 0.35) 0%, transparent 70%);
-  border-radius: 50%;
-}
-
-.signpost-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-  max-width: 450px;
+/* --- Section Heading --- */
+.budget-header {
+  max-width: 1250px;
+  margin: 0 auto 35px;
   position: relative;
   z-index: 2;
 }
 
-/* Individual Sign Plank */
-.sign-plank {
+.budget-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 3.4vw, 44px);
+  font-weight: 600;
+  color: #24152d;
+  margin: 0 0 6px;
+  letter-spacing: -0.02em;
+}
+
+.budget-header p {
+  font-size: 15px;
+  color: #72627c;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* --- Railing Container --- */
+.budget-rail-container {
   position: relative;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 30px 18px;
+  z-index: 2;
+}
+
+/* Metallic Rail Bar Behind Cards (Desktop) */
+.rail-bar {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 10px;
+  transform: translateY(-50%);
+  background: linear-gradient(180deg, #faecc1 0%, #caa050 45%, #7a5818 100%);
+  border-radius: 5px;
+  box-shadow: 0 6px 16px rgba(41, 11, 56, 0.22), inset 0 1px 1px #fff;
+  z-index: 1;
+}
+
+.rail-post {
+  position: absolute;
+  top: -42px;
+  bottom: -42px;
+  width: 12px;
+  background: linear-gradient(90deg, #b68732, #fdf2d2, #7a5818);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.rail-post-left {
+  left: -4px;
+}
+
+.rail-post-right {
+  right: -4px;
+}
+
+.rail-post::before,
+.rail-post::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #faecc1, #85612c);
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.rail-post::before { top: -6px; }
+.rail-post::after { bottom: -6px; }
+
+/* --- 4 Signboard Cards Track --- */
+.budget-cards-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(14px, 1.8vw, 24px);
+  position: relative;
+  z-index: 2;
+}
+
+/* Individual Signboard Card */
+.budget-sign-card {
+  position: relative;
+  min-height: 120px;
+  border-radius: 18px;
+  padding: 20px 22px;
   display: flex;
   align-items: center;
-  padding: 16px 28px;
-  border-radius: 14px;
-  cursor: pointer;
+  justify-content: center;
   text-decoration: none;
   font-family: 'DM Sans', sans-serif;
-  font-weight: 700;
-  transition: all 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
-  transform-style: preserve-3d;
-  box-shadow: 0 10px 26px rgba(36, 17, 48, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
-  user-select: none;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 12px 28px rgba(36, 17, 48, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  transform: translateY(0);
+}
+
+/* Connectors on the sides of cards */
+.rail-joint {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 20px;
+  background: linear-gradient(90deg, #85612c, #faecc1, #573e1c);
+  border-radius: 3px;
+  z-index: -1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.rail-joint-left { left: -8px; }
+.rail-joint-right { right: -8px; }
+
+/* Card Content Typography */
+.sign-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  z-index: 3;
+  width: 100%;
+}
+
+.sign-label {
+  font-size: clamp(15px, 1.4vw, 18px);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.sign-amount {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.sign-premium-text {
+  font-size: clamp(14px, 1.3vw, 17px);
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.sign-premium-text b {
+  font-size: clamp(16px, 1.5vw, 20px);
+  display: block;
+}
+
+.sign-arrow {
+  font-size: clamp(18px, 1.8vw, 24px);
+  font-weight: 900;
+  transition: transform 0.28s ease;
+  margin-left: 4px;
 }
 
 /* ---------------------------------------------------------
-   Tohfa Theme Plank Variants
+   Tohfa Theme Card Color Schemes
    --------------------------------------------------------- */
 
-/* 1. Pearl Ivory & Gold Border (Under 999) */
-.plank-pearl {
+/* Card 1: Pearl Cream & Gold Accent (Under 999) */
+.card-pearl {
   background: linear-gradient(135deg, #ffffff 0%, #fdf8ff 45%, #f6e9fc 100%);
   color: #24152d;
-  border: 1.5px solid rgba(223, 184, 91, 0.65);
-  box-shadow: 0 10px 24px rgba(67, 17, 95, 0.1), inset 0 1px 0 #fff;
+  border: 2px solid rgba(223, 184, 91, 0.7);
 }
 
-.plank-pearl .plank-title em {
-  color: #7c3a9c;
+.card-pearl .sign-amount {
+  color: #24152d;
 }
 
-.plank-pearl .plank-arrow {
-  color: #b88628;
+.card-pearl .sign-arrow {
+  color: #c93b54;
 }
 
-.plank-pearl .plank-sub {
-  color: #72627c;
-}
-
-/* 2. Royal Purple Velvet (Under 1499) */
-.plank-purple {
-  background: linear-gradient(135deg, #71248d 0%, #46115e 58%, #260535 100%);
+/* Card 2: Royal Purple Velvet (Under 1499) */
+.card-purple {
+  background: linear-gradient(135deg, #782696 0%, #4a1364 58%, #280737 100%);
   color: #ffffff;
-  border: 1.5px solid rgba(223, 184, 91, 0.4);
-  box-shadow: 0 12px 30px rgba(67, 17, 95, 0.28), 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(223, 184, 91, 0.45);
+  box-shadow: 0 14px 32px rgba(67, 17, 95, 0.28);
 }
 
-.plank-purple .plank-title em {
+.card-purple .sign-amount {
+  color: #ffffff;
+}
+
+.card-purple .sign-arrow {
   color: #faecc1;
-  text-shadow: 0 0 10px rgba(250, 236, 193, 0.4);
 }
 
-.plank-purple .plank-arrow {
-  color: #dfb85b;
-}
-
-.plank-purple .plank-sub {
-  color: #e5c9f5;
-}
-
-/* 3. Champagne Gold Pearl (Under 2499) */
-.plank-gold-pearl {
+/* Card 3: Champagne Gold Pearl (Under 2499) */
+.card-gold {
   background: linear-gradient(135deg, #fffdf8 0%, #fdf4e4 50%, #f7e6c7 100%);
   color: #24152d;
-  border: 1.5px solid #d8b24e;
-  box-shadow: 0 10px 25px rgba(184, 134, 40, 0.15), inset 0 1px 0 #fff;
+  border: 2px solid #d8b24e;
 }
 
-.plank-gold-pearl .plank-title em {
-  color: #52166e;
+.card-gold .sign-amount {
+  color: #24152d;
 }
 
-.plank-gold-pearl .plank-arrow {
-  color: #8a3aad;
+.card-gold .sign-arrow {
+  color: #c93b54;
 }
 
-.plank-gold-pearl .plank-sub {
-  color: #7e6952;
-}
-
-/* 4. Midnight Obsidian & Radiant Gold (Premium Gifts) */
-.plank-midnight {
-  background: linear-gradient(135deg, #2c083d 0%, #1a0425 55%, #0d0113 100%);
+/* Card 4: Midnight Obsidian & Radiant Gold (Premium Gifts) */
+.card-midnight {
+  background: linear-gradient(135deg, #2e0840 0%, #1a0425 55%, #0e0114 100%);
   color: #faecc1;
-  border: 2px solid #dfb85b;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35), 0 0 18px rgba(223, 184, 91, 0.22);
+  border: 2.5px solid #dfb85b;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35), 0 0 16px rgba(223, 184, 91, 0.22);
 }
 
-.plank-midnight .plank-title {
-  color: #fff;
-}
-
-.plank-midnight .plank-title em {
-  color: #dfb85b;
-  text-shadow: 0 0 12px rgba(223, 184, 91, 0.5);
-}
-
-.plank-midnight .plank-arrow {
+.card-midnight .sign-arrow {
   color: #dfb85b;
   text-shadow: 0 0 8px rgba(223, 184, 91, 0.6);
 }
 
-.plank-midnight .plank-sub {
-  color: #dfb85b;
-}
-
-/* Directional Arrow Slopes */
-.plank-right {
-  transform: rotate(-1.2deg) translateZ(0);
-  margin-left: 14px;
-  clip-path: polygon(0% 0%, 91% 0%, 100% 50%, 91% 100%, 0% 100%);
-  padding-right: 48px;
-}
-
-.plank-left {
-  transform: rotate(1.2deg) translateZ(0);
-  margin-right: 14px;
-  clip-path: polygon(9% 0%, 100% 0%, 100% 100%, 9% 100%, 0% 50%);
-  padding-left: 48px;
-}
-
-/* Plank Text Content */
-.plank-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  z-index: 3;
-}
-
-.plank-main-title {
-  display: flex;
-  flex-direction: column;
-}
-
-.plank-title {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(20px, 2.3vw, 25px);
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  line-height: 1.1;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.plank-title em {
-  font-family: 'Playfair Display', serif;
-  font-style: normal;
-  font-size: 1.1em;
-  font-weight: 700;
-}
-
-.plank-sub {
-  font-size: 10.5px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-top: 3px;
-  font-weight: 600;
-}
-
-.plank-arrow {
-  font-size: 22px;
-  font-weight: 900;
-  transition: transform 0.3s ease;
-}
-
-/* 3D Floating Badges & Decorations */
-.plank-badge {
+/* ---------------------------------------------------------
+   3D Floating Badges & Animations
+   --------------------------------------------------------- */
+.card-badge {
   position: absolute;
   pointer-events: none;
-  z-index: 6;
+  z-index: 5;
   filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.25));
-  animation: floatSway 3.4s ease-in-out infinite alternate;
+  animation: floatBob 3.2s ease-in-out infinite alternate;
 }
 
 .badge-gift {
-  top: -22px;
-  right: -10px;
+  top: -18px;
+  left: -12px;
   font-size: 32px;
   animation-delay: 0s;
 }
 
 .badge-heart {
-  top: 50%;
-  left: -16px;
-  transform: translateY(-50%);
+  top: -20px;
+  left: 25px;
   font-size: 28px;
   animation-delay: 0.6s;
 }
 
 .badge-ribbon {
-  top: -16px;
-  left: -12px;
+  top: -18px;
+  right: -10px;
   font-size: 28px;
-  animation-delay: 1.2s;
+  animation-delay: 1.1s;
 }
 
 .badge-bag {
-  bottom: -16px;
+  top: -18px;
   right: -12px;
-  font-size: 30px;
-  animation-delay: 0.9s;
+  font-size: 32px;
+  animation-delay: 0.8s;
 }
 
-.badge-sparkle {
-  position: absolute;
-  color: #dfb85b;
-  font-size: 13px;
-  animation: sparkleTwinkle 1.8s ease-in-out infinite alternate;
-}
-
-.sparkle-1 { top: -6px; left: 32%; }
-.sparkle-2 { bottom: -6px; right: 28%; animation-delay: 0.9s; }
-
-@keyframes floatSway {
+@keyframes floatBob {
   0% { transform: translateY(0) rotate(0deg) scale(1); }
-  100% { transform: translateY(-6px) rotate(5deg) scale(1.05); }
+  100% { transform: translateY(-7px) rotate(6deg) scale(1.06); }
 }
 
-@keyframes sparkleTwinkle {
-  0% { opacity: 0.3; transform: scale(0.8) rotate(0deg); }
-  100% { opacity: 1; transform: scale(1.2) rotate(45deg); filter: drop-shadow(0 0 6px #dfb85b); }
-}
-
-/* Plank Hover & Active Animations */
-.sign-plank:hover {
-  transform: scale(1.04) translateZ(20px);
+/* Hover & Focus State */
+.budget-sign-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 18px 38px rgba(67, 17, 95, 0.25), 0 0 20px rgba(223, 184, 91, 0.3);
   z-index: 10;
 }
 
-.plank-right:hover {
-  transform: rotate(-0.3deg) scale(1.045) translateZ(22px);
+.budget-sign-card:hover .sign-arrow {
+  transform: translateX(6px) scale(1.15);
 }
 
-.plank-left:hover {
-  transform: rotate(0.3deg) scale(1.045) translateZ(22px);
+/* ---------------------------------------------------------
+   Dark Mode Styles
+   --------------------------------------------------------- */
+[data-theme="dark"] .budget-section {
+  background: linear-gradient(135deg, #100316 0%, #190723 50%, #12031a 100%);
+  border-top: 1px solid rgba(224, 192, 107, 0.14);
+  border-bottom: 1px solid rgba(224, 192, 107, 0.14);
 }
 
-.plank-right:hover .plank-arrow {
-  transform: translateX(5px) scale(1.15);
+[data-theme="dark"] .budget-header h2 {
+  color: #ffffff;
 }
 
-.plank-left:hover .plank-arrow {
-  transform: translateX(-5px) scale(1.15);
+[data-theme="dark"] .budget-header p {
+  color: #cbbdd4;
 }
 
-/* Active Selected Plank */
-.sign-plank.active {
-  border-color: #dfb85b;
-  box-shadow: 0 0 0 3px #dfb85b, 0 16px 36px rgba(67, 17, 95, 0.25);
-  z-index: 10;
-}
-
-.plank-right.active {
-  transform: rotate(0deg) scale(1.04) translateZ(25px);
-}
-
-.plank-left.active {
-  transform: rotate(0deg) scale(1.04) translateZ(25px);
-}
-
-/* --- Right Column: Interactive Budget Showcase --- */
-.budget-showcase {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 38px 40px;
-  border: 1px solid rgba(124, 58, 156, 0.12);
-  box-shadow: 0 20px 48px rgba(67, 17, 95, 0.08), 0 4px 12px rgba(0, 0, 0, 0.03);
-  position: relative;
-  overflow: hidden;
-}
-
-.budget-showcase::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #7c3a9c 0%, #dfb85b 50%, #43115f 100%);
-}
-
-.showcase-header {
-  margin-bottom: 24px;
-}
-
-.showcase-header .eyebrow {
-  margin-bottom: 8px;
-}
-
-.showcase-header h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(26px, 2.6vw, 34px);
-  margin: 0 0 10px;
-  color: #24152d;
-}
-
-.showcase-header p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #655b6c;
-  margin: 0;
-}
-
-/* Tab Panels */
-.budget-card-panel {
-  display: none;
-  animation: panelSlideFade 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-}
-
-.budget-card-panel.active {
-  display: block;
-}
-
-@keyframes panelSlideFade {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.budget-hampers-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin: 22px 0;
-}
-
-.budget-hamper-item {
-  background: #fcf8fd;
-  border: 1px solid #ebdfee;
-  border-radius: 14px;
-  padding: 16px 18px;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.budget-hamper-item:hover {
-  transform: translateY(-3px);
-  border-color: #dfb85b;
-  box-shadow: 0 8px 20px rgba(67, 17, 95, 0.08);
-}
-
-.hamper-tag {
-  display: inline-block;
-  font-size: 9.5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #7c3a9c;
-  margin-bottom: 6px;
-}
-
-.budget-hamper-item h4 {
-  font-family: 'Playfair Display', serif;
-  font-size: 17px;
-  margin: 0 0 6px;
-  color: #24152d;
-}
-
-.budget-hamper-item p {
-  font-size: 12px;
-  line-height: 1.45;
-  color: #73677a;
-  margin: 0 0 10px;
-}
-
-.hamper-price-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid #efe4f2;
-  padding-top: 10px;
-  margin-top: 6px;
-}
-
-.hamper-price {
-  font-size: 14px;
-  font-weight: 700;
-  color: #7c3a9c;
-}
-
-.hamper-includes {
-  font-size: 10px;
-  color: #8c7e94;
-}
-
-/* Showcase Action Bar */
-.showcase-actions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: 26px;
-  padding-top: 20px;
-  border-top: 1px solid #ede1f0;
-  flex-wrap: wrap;
-}
-
-.button-budget-wa {
-  background: linear-gradient(135deg, #25d366, #128c7e);
-  color: #fff;
-  border: 0;
-  padding: 13px 22px;
-  border-radius: 99px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: all 0.25s ease;
-  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.24);
-}
-
-.button-budget-wa:hover {
-  background: linear-gradient(135deg, #1fba59, #0f7a6e);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.35);
-}
-
-.button-budget-wa svg {
-  width: 17px;
-  height: 17px;
-  fill: #fff;
-}
-
-.button-budget-custom {
-  color: #24152d;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 600;
-  border-bottom: 1.5px solid #7c3a9c;
-  padding-bottom: 3px;
-  transition: all 0.2s ease;
-}
-
-.button-budget-custom:hover {
-  color: #7c3a9c;
+[data-theme="dark"] .card-pearl {
+  background: linear-gradient(135deg, #fdf8ee 0%, #f7ebd6 50%, #ebd6ba 100%);
+  color: #27140c;
   border-color: #dfb85b;
 }
 
-/* --- Responsive Adjustments --- */
-@media (max-width: 992px) {
-  .budget-grid {
-    grid-template-columns: 1fr;
-    gap: 50px;
+[data-theme="dark"] .card-pearl .sign-amount {
+  color: #27140c;
+}
+
+/* ---------------------------------------------------------
+   Responsive Design for Tablet & Mobile
+   --------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .budget-cards-track {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
   }
 
-  .signpost-stack {
-    max-width: 420px;
+  .rail-bar {
+    display: none;
+  }
+
+  .rail-joint {
+    display: none;
+  }
+
+  .budget-sign-card {
+    min-height: 110px;
   }
 }
 
 @media (max-width: 580px) {
   .budget-section {
-    padding: 70px 6vw;
+    padding: 60px 6vw;
   }
 
-  .plank-right {
-    margin-left: 4px;
-    padding-right: 36px;
-  }
-
-  .plank-left {
-    margin-right: 4px;
-    padding-left: 36px;
-  }
-
-  .plank-title {
-    font-size: 18px;
-  }
-
-  .budget-hampers-grid {
+  .budget-cards-track {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 16px;
   }
 
-  .budget-showcase {
-    padding: 26px 20px;
+  .budget-sign-card {
+    min-height: 95px;
+    padding: 16px 20px;
+  }
+
+  .sign-label {
+    font-size: 16px;
+  }
+
+  .sign-amount {
+    font-size: 24px;
   }
 
   .badge-gift,
   .badge-bag {
-    font-size: 26px;
+    font-size: 28px;
   }
 }
