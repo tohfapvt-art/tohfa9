@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4e166c"/>
+      <stop offset="100%" stop-color="#1f0529"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faecc1"/>
+      <stop offset="45%" stop-color="#dfb85b"/>
+      <stop offset="100%" stop-color="#9a6e1a"/>
+    </linearGradient>
+    <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff0cc"/>
+      <stop offset="50%" stop-color="#e2bc61"/>
+      <stop offset="100%" stop-color="#b88628"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.5" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background container -->
+  <rect width="64" height="64" rx="16" fill="url(#purpleGrad)"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14.5" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-opacity="0.65"/>
+
+  <!-- Gift Box & Sparkles -->
+  <g filter="url(#shadow)">
+    <!-- Box Body -->
+    <rect x="16" y="27" width="32" height="23" rx="2" fill="#360d4b" stroke="url(#goldGrad)" stroke-width="1.8"/>
+    
+    <!-- Lid -->
+    <rect x="13" y="21" width="38" height="7.5" rx="2" fill="#461361" stroke="url(#goldGrad)" stroke-width="1.8"/>
+    
+    <!-- Vertical Ribbon -->
+    <rect x="29.5" y="21" width="5" height="29" fill="url(#ribbonGrad)"/>
+    
+    <!-- Horizontal Ribbon on body -->
+    <rect x="16" y="34.5" width="32" height="4.5" fill="url(#ribbonGrad)"/>
+    
+    <!-- Ribbon Bows -->
+    <path d="M32 21 C25 13 16 15 22 21 C26 21 29.5 21 32 21 Z" fill="url(#ribbonGrad)"/>
+    <path d="M32 21 C39 13 48 15 42 21 C38 21 34.5 21 32 21 Z" fill="url(#ribbonGrad)"/>
+    <circle cx="32" cy="21" r="2.5" fill="#fff7dd"/>
+    
+    <!-- Accent Sparkles -->
+    <path d="M49 13.5 L50.2 16.8 L53.5 18 L50.2 19.2 L49 22.5 L47.8 19.2 L44.5 18 L47.8 16.8 Z" fill="url(#goldGrad)"/>
+    <path d="M15 15.5 L15.7 17.5 L17.7 18.2 L15.7 18.9 L15 20.9 L14.3 18.9 L12.3 18.2 L14.3 17.5 Z" fill="#faecc1" opacity="0.9"/>
+  </g>
+</svg>

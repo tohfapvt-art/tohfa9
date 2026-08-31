@@ -1,0 +1,12 @@
+{
+  "name": "tohfa-website",
+  "version": "1.0.0",
+  "description": "Tohfa — Gifting, beautifully considered",
+  "main": "index.html",
+  "scripts": {
+    "start": "node dev-server.js"
+  },
+  "keywords": ["gifting", "hampers", "tohfa"],
+  "author": "Tohfa",
+  "license": "ISC"
+}
