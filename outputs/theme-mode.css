@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TOHFA LUXURY DAY & NIGHT MODE (LIGHT / DARK THEME)
+   TOHFA LUXURY DAY & NIGHT MODE (LIGHT / DARK THEME) — HIGH CONTRAST
    ========================================================================== */
 
 /* ---------------------------------------------------------
@@ -15,14 +15,14 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(124, 58, 156, 0.08);
-  border: 1px solid rgba(124, 58, 156, 0.22);
-  color: var(--ink, #24152d);
-  padding: 8px 14px;
+  background: rgba(158, 124, 184, 0.12);
+  border: 1.5px solid rgba(158, 124, 184, 0.35);
+  color: var(--ink, #331a44);
+  padding: 8px 15px;
   border-radius: 99px;
   font-family: 'DM Sans', sans-serif;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
@@ -30,7 +30,7 @@
 }
 
 .theme-toggle-btn:hover {
-  background: rgba(124, 58, 156, 0.16);
+  background: rgba(158, 124, 184, 0.24);
   border-color: #dfb85b;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(67, 17, 95, 0.15);
@@ -82,7 +82,7 @@
 
 .theme-toggle-text {
   font-size: 11px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -94,6 +94,7 @@ body,
 .announcement,
 .hero,
 .trust-strip,
+.flower-cake-section,
 .celebrations,
 .occasion,
 .process,
@@ -112,49 +113,49 @@ body,
    --------------------------------------------------------- */
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
-  --bg-main: #fcf9fd;
-  --bg-alt: #f7effa;
+  --bg-main: #faf6f1;
+  --bg-alt: #f8effc;
   --bg-card: #ffffff;
-  --text-primary: #24152d;
-  --text-secondary: #655b6c;
-  --text-muted: #8b8092;
+  --text-primary: #331a44;
+  --text-secondary: #6a5378;
+  --text-muted: #8b759a;
   --accent-gold: #b88628;
   --accent-gold-light: #dfb85b;
-  --accent-plum: #43115f;
-  --accent-purple: #7c3a9c;
-  --border-subtle: #e8dbeb;
-  --border-card: #e5d8ea;
+  --accent-plum: #4a2563;
+  --accent-purple: #9e7cb8;
+  --border-subtle: #ebdff2;
+  --border-card: #ebdff2;
 }
 
 /* ---------------------------------------------------------
    4. Night (Dark) Mode Tokens & Complete Overrides
    --------------------------------------------------------- */
 [data-theme="dark"] {
-  --bg-main: #0e0314;
-  --bg-alt: #16071e;
-  --bg-card: #190924;
-  --text-primary: #fbf6ff;
-  --text-secondary: #cbbdd4;
-  --text-muted: #9686a1;
+  --bg-main: #0c0211;
+  --bg-alt: #16061f;
+  --bg-card: #1b0726;
+  --text-primary: #ffffff;
+  --text-secondary: #dcd0e5;
+  --text-muted: #af9ec0;
   --accent-gold: #dfb85b;
   --accent-gold-light: #faecc1;
-  --accent-plum: #9b3ecd;
-  --accent-purple: #b363db;
-  --border-subtle: rgba(224, 192, 107, 0.18);
-  --border-card: rgba(224, 192, 107, 0.22);
-  --line: rgba(224, 192, 107, 0.18);
+  --accent-plum: #b485d4;
+  --accent-purple: #c59fe2;
+  --border-subtle: rgba(224, 192, 107, 0.22);
+  --border-card: rgba(224, 192, 107, 0.25);
+  --line: rgba(224, 192, 107, 0.2);
 }
 
 [data-theme="dark"] body {
-  background: #0e0314;
-  color: #fbf6ff;
+  background: #0c0211;
+  color: #ffffff;
 }
 
 /* Header & Announcement in Night Mode */
 [data-theme="dark"] .announcement {
-  background: linear-gradient(100deg, #07010a 0%, #1f062b 50%, #3d0e4e 100%);
+  background: #190525;
   color: #faecc1;
-  border-bottom: 1px solid rgba(224, 192, 107, 0.2);
+  border-bottom: 1px solid rgba(224, 192, 107, 0.25);
 }
 
 [data-theme="dark"] .announcement span {
@@ -162,15 +163,15 @@ body,
 }
 
 [data-theme="dark"] .site-header {
-  background: rgba(14, 3, 20, 0.92);
-  border-bottom: 1px solid rgba(224, 192, 107, 0.16);
+  background: rgba(12, 2, 17, 0.94);
+  border-bottom: 1px solid rgba(224, 192, 107, 0.2);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
 [data-theme="dark"] .site-header nav a,
 [data-theme="dark"] .header-link {
-  color: #ede2f5;
+  color: #f7edff;
 }
 
 [data-theme="dark"] .site-header nav a:hover,
@@ -183,28 +184,37 @@ body,
 }
 
 [data-theme="dark"] .theme-toggle-btn {
-  background: rgba(224, 192, 107, 0.12);
-  border-color: rgba(224, 192, 107, 0.3);
+  background: rgba(224, 192, 107, 0.15);
+  border-color: rgba(224, 192, 107, 0.4);
   color: #faecc1;
 }
 
 [data-theme="dark"] .theme-toggle-btn:hover {
-  background: rgba(224, 192, 107, 0.22);
-  border-color: #dfb85b;
-  box-shadow: 0 4px 14px rgba(224, 192, 107, 0.2);
+  background: rgba(224, 192, 107, 0.25);
+  border-color: #faecc1;
+  box-shadow: 0 4px 14px rgba(224, 192, 107, 0.25);
 }
 
 /* Hero Section in Night Mode */
 [data-theme="dark"] .hero {
-  background: linear-gradient(120deg, #0e0314 0%, #190723 53%, #14051d 100%);
+  background: linear-gradient(130deg, #0c0211 0%, #180523 50%, #110219 100%);
+  border-bottom: 1px solid rgba(224, 192, 107, 0.15);
+}
+
+[data-theme="dark"] .hero h1 {
+  color: #ffffff;
 }
 
 [data-theme="dark"] .hero-intro {
-  color: #cbbdd4;
+  color: #dcd0e5;
+}
+
+[data-theme="dark"] .hero-script {
+  color: #faecc1;
 }
 
 [data-theme="dark"] .hero-proof p {
-  color: #a99bb3;
+  color: #bfaecf;
 }
 
 [data-theme="dark"] .hero-proof strong {
@@ -222,65 +232,146 @@ body,
 
 [data-theme="dark"] h1 em,
 [data-theme="dark"] h2 em {
-  color: #dfb85b;
-  text-shadow: 0 0 16px rgba(223, 184, 91, 0.3);
+  color: #faecc1;
+  text-shadow: 0 0 16px rgba(223, 184, 91, 0.35);
+}
+
+[data-theme="dark"] .button-outline,
+[data-theme="dark"] .button-outline-lavender {
+  background: rgba(167, 133, 196, 0.15);
+  color: #faecc1;
+  border-color: #dfb85b;
+}
+
+[data-theme="dark"] .button-outline:hover,
+[data-theme="dark"] .button-outline-lavender:hover {
+  background: rgba(223, 184, 91, 0.22);
+  color: #ffffff;
+  border-color: #faecc1;
 }
 
 /* Trust Strip in Night Mode */
 [data-theme="dark"] .trust-strip {
-  background: linear-gradient(90deg, #14051d, #1f092b, #14051d);
-  border-top: 1px solid rgba(224, 192, 107, 0.12);
-  border-bottom: 1px solid rgba(224, 192, 107, 0.12);
-  color: #e5d8ea;
+  background: #14041d;
+  border-top: 1px solid rgba(224, 192, 107, 0.18);
+  border-bottom: 1px solid rgba(224, 192, 107, 0.18);
+  color: #faecc1;
+}
+
+[data-theme="dark"] .trust-strip p {
+  color: #faecc1;
+}
+
+[data-theme="dark"] .trust-strip strong {
+  color: #ffffff;
 }
 
 [data-theme="dark"] .trust-strip span {
   color: #dfb85b;
 }
 
-/* Celebrations / Collections in Night Mode */
+/* Collections in Night Mode */
+[data-theme="dark"] .collections {
+  background: #0c0211;
+}
+
+[data-theme="dark"] .section-heading h2 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .collection-card {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+  border: 1.5px solid rgba(224, 192, 107, 0.25);
+}
+
+/* Flowers & Cakes Section in Night Mode */
+[data-theme="dark"] .flower-cake-section {
+  background: linear-gradient(135deg, #0e0214 0%, #180524 50%, #100216 100%);
+  border-top: 1px solid rgba(224, 192, 107, 0.18);
+}
+
+[data-theme="dark"] .flower-cake-header h2 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .flower-cake-header p {
+  color: #dcd0e5;
+}
+
+[data-theme="dark"] .flower-cake-header .category-tag {
+  color: #faecc1;
+}
+
+[data-theme="dark"] .squircle-thumb-box {
+  background: #1f072c;
+  border: 1.5px solid rgba(223, 184, 91, 0.35);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme="dark"] .squircle-title {
+  color: #faecc1;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .squircle-item-card:hover .squircle-title {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(223, 184, 91, 0.4);
+}
+
+[data-theme="dark"] .squircle-badge {
+  background: rgba(27, 7, 38, 0.92);
+  color: #faecc1;
+  border: 1px solid rgba(223, 184, 91, 0.4);
+}
+
+/* Celebrations / Occasions in Night Mode */
 [data-theme="dark"] .celebrations {
-  background: #110418;
+  background: #110319;
 }
 
 [data-theme="dark"] .section-aside {
-  color: #b9a8c4;
+  color: #dcd0e5;
 }
 
-[data-theme="dark"] .collection-card,
 [data-theme="dark"] .celebration-card {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(224, 192, 107, 0.15);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.65);
+  border: 1.5px solid rgba(223, 184, 91, 0.35);
+}
+
+[data-theme="dark"] .celebration-card h3 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .celebration-card p {
+  color: #faecc1;
 }
 
 /* Occasion Section in Night Mode */
 [data-theme="dark"] .occasion {
-  background: linear-gradient(125deg, #16061e, #1e0929);
-  border-top: 1px solid rgba(224, 192, 107, 0.12);
-  border-bottom: 1px solid rgba(224, 192, 107, 0.12);
+  background: linear-gradient(125deg, #15051e, #1f082b);
+  border-top: 1px solid rgba(224, 192, 107, 0.18);
+  border-bottom: 1px solid rgba(224, 192, 107, 0.18);
+}
+
+[data-theme="dark"] .occasion-copy h2 {
+  color: #ffffff;
 }
 
 [data-theme="dark"] .occasion-copy > p:not(.eyebrow) {
-  color: #cbbdd4;
-}
-
-[data-theme="dark"] .button-outline {
-  color: #faecc1;
-  border-color: #dfb85b;
-}
-
-[data-theme="dark"] .button-outline:hover {
-  background: rgba(224, 192, 107, 0.15);
-  color: #fff;
+  color: #dcd0e5;
 }
 
 /* Process Steps in Night Mode */
 [data-theme="dark"] .process {
-  background: #0e0314;
+  background: #0c0211;
+}
+
+[data-theme="dark"] .process h2 {
+  color: #ffffff;
 }
 
 [data-theme="dark"] .steps article {
-  border-color: rgba(224, 192, 107, 0.15);
+  border-color: rgba(224, 192, 107, 0.22);
 }
 
 [data-theme="dark"] .steps span {
@@ -288,35 +379,47 @@ body,
 }
 
 [data-theme="dark"] .steps h3 {
-  color: #fff;
+  color: #ffffff;
 }
 
 [data-theme="dark"] .steps p {
-  color: #b9a8c4;
+  color: #dcd0e5;
 }
 
 /* Concierge Section in Night Mode */
 [data-theme="dark"] .concierge {
   background: linear-gradient(120deg, #09010e 0%, #290838 52%, #4d155f 100%);
-  border-top: 1px solid rgba(224, 192, 107, 0.2);
-  border-bottom: 1px solid rgba(224, 192, 107, 0.2);
+  border-top: 1px solid rgba(224, 192, 107, 0.25);
+  border-bottom: 1px solid rgba(224, 192, 107, 0.25);
+}
+
+[data-theme="dark"] .concierge h2 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .concierge-copy {
+  color: #f1ddff;
 }
 
 /* Enquiry Form Section in Night Mode */
 [data-theme="dark"] .enquiry {
-  background: linear-gradient(110deg, #0c0211 0%, #17061f 42%, #110317 100%);
+  background: linear-gradient(110deg, #0c0211 0%, #180622 42%, #100216 100%);
+}
+
+[data-theme="dark"] .enquiry-copy h2 {
+  color: #ffffff;
 }
 
 [data-theme="dark"] .enquiry-copy > p:not(.eyebrow) {
-  color: #cbbdd4;
+  color: #dcd0e5;
 }
 
 [data-theme="dark"] .concierge-points {
-  border-color: rgba(224, 192, 107, 0.18);
+  border-color: rgba(224, 192, 107, 0.25);
 }
 
 [data-theme="dark"] .concierge-points p {
-  color: #d1c3d9;
+  color: #ede2f5;
 }
 
 [data-theme="dark"] .concierge-points span {
@@ -324,13 +427,13 @@ body,
 }
 
 [data-theme="dark"] .enquiry form {
-  background: linear-gradient(145deg, #180721, #13041c);
-  border: 1px solid rgba(224, 192, 107, 0.24);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65), 0 0 25px rgba(124, 58, 156, 0.12);
+  background: linear-gradient(145deg, #1c0727, #13031c);
+  border: 1.5px solid rgba(224, 192, 107, 0.35);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75), 0 0 25px rgba(158, 124, 184, 0.15);
 }
 
 [data-theme="dark"] .form-intro {
-  border-bottom-color: rgba(224, 192, 107, 0.2);
+  border-bottom-color: rgba(224, 192, 107, 0.25);
 }
 
 [data-theme="dark"] .form-intro span {
@@ -338,15 +441,16 @@ body,
 }
 
 [data-theme="dark"] .form-intro p {
-  color: #faecc1;
+  color: #ffffff;
 }
 
 [data-theme="dark"] .enquiry form label {
-  color: #d9cae2;
+  color: #faecc1;
+  font-weight: 700;
 }
 
 [data-theme="dark"] .enquiry form label small {
-  color: #9f8ea8;
+  color: #bfaecf;
 }
 
 [data-theme="dark"] .enquiry form label b {
@@ -356,8 +460,8 @@ body,
 [data-theme="dark"] .enquiry form input,
 [data-theme="dark"] .enquiry form select,
 [data-theme="dark"] .enquiry form textarea {
-  color: #fff;
-  border-bottom-color: rgba(224, 192, 107, 0.3);
+  color: #ffffff;
+  border-bottom-color: rgba(224, 192, 107, 0.4);
 }
 
 [data-theme="dark"] .enquiry form input:focus,
@@ -368,21 +472,21 @@ body,
 }
 
 [data-theme="dark"] .enquiry form select option {
-  background: #190724;
-  color: #fff;
+  background: #1c0727;
+  color: #ffffff;
 }
 
 [data-theme="dark"] .form-note {
-  color: #a493ae;
+  color: #bfaecf;
 }
 
 [data-theme="dark"] .or-divider {
-  color: #9f8ea8;
+  color: #bfaecf;
 }
 
 [data-theme="dark"] .or-divider:before,
 [data-theme="dark"] .or-divider:after {
-  background: rgba(224, 192, 107, 0.2);
+  background: rgba(224, 192, 107, 0.25);
 }
 
 /* WhatsApp pill in dark mode */
@@ -390,36 +494,57 @@ body,
   color: #57d87b;
 }
 
-/* 3D Box & Installation enhancements for Dark Mode */
-[data-theme="dark"] .hero-art {
-  background: radial-gradient(circle at 30% 22%, #681f84 0%, #2f093f 41%, #09020d 100%);
+/* Footer in Night Mode */
+[data-theme="dark"] .site-footer {
+  background: linear-gradient(135deg, #100216 0%, #1b0625 50%, #0d0113 100%);
+  border-top: 1px solid rgba(224, 192, 107, 0.35);
+  color: #ede2f5;
 }
 
-[data-theme="dark"] .hero-art:after {
-  background: linear-gradient(135deg, rgba(223, 184, 91, 0.16), transparent 42%, rgba(14, 3, 20, 0.65));
+[data-theme="dark"] .footer-brand .brand-title {
+  color: #ffffff;
 }
 
-[data-theme="dark"] .stage-glow {
-  background: radial-gradient(circle, rgba(223, 184, 91, 0.25) 0%, rgba(124, 58, 156, 0.35) 45%, transparent 70%);
+[data-theme="dark"] .footer-tagline {
+  color: #dcd0e5;
 }
 
-/* Subtle scrollbar in dark mode */
-[data-theme="dark"]::-webkit-scrollbar {
-  width: 10px;
+[data-theme="dark"] .footer-col h4 {
+  color: #faecc1;
 }
 
-[data-theme="dark"]::-webkit-scrollbar-track {
-  background: #0e0314;
+[data-theme="dark"] .footer-nav a {
+  color: #dcd0e5;
 }
 
-[data-theme="dark"]::-webkit-scrollbar-thumb {
-  background: #2b0c39;
-  border-radius: 5px;
-  border: 2px solid #0e0314;
+[data-theme="dark"] .footer-nav a:hover {
+  color: #faecc1;
 }
 
-[data-theme="dark"]::-webkit-scrollbar-thumb:hover {
-  background: #46145e;
+[data-theme="dark"] .contact-meta .label {
+  color: #dfb85b;
+}
+
+[data-theme="dark"] .contact-meta a,
+[data-theme="dark"] .contact-meta span {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .footer-newsletter-form {
+  background: #1d0628;
+  border: 1px solid rgba(224, 192, 107, 0.35);
+}
+
+[data-theme="dark"] .footer-newsletter-form input {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .footer-story-tagline {
+  color: #faecc1;
+}
+
+[data-theme="dark"] .footer-bottom p {
+  color: #bfaecf;
 }
 
 /* Responsive adjustment for theme button on mobile */
@@ -434,73 +559,3 @@ body,
     display: none;
   }
 }
-
-/* ---------------------------------------------------------
-   Budget Signpost Section in Dark Mode
-   --------------------------------------------------------- */
-[data-theme="dark"] .budget-section {
-  background: linear-gradient(135deg, #100316 0%, #190723 50%, #12031a 100%);
-  border-top: 1px solid rgba(224, 192, 107, 0.14);
-  border-bottom: 1px solid rgba(224, 192, 107, 0.14);
-}
-
-[data-theme="dark"] .plank-cream {
-  background: linear-gradient(135deg, #fdf8ee 0%, #f7ebd6 50%, #ebd6ba 100%);
-  color: #27140c;
-  border-color: #dfb85b;
-}
-
-[data-theme="dark"] .budget-showcase {
-  background: linear-gradient(145deg, #1a0824, #12031a);
-  border-color: rgba(224, 192, 107, 0.22);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65), 0 0 24px rgba(124, 58, 156, 0.12);
-}
-
-[data-theme="dark"] .showcase-header h3 {
-  color: #ffffff;
-}
-
-[data-theme="dark"] .showcase-header p {
-  color: #cbbdd4;
-}
-
-[data-theme="dark"] .budget-hamper-item {
-  background: #1e0a29;
-  border-color: rgba(224, 192, 107, 0.16);
-}
-
-[data-theme="dark"] .budget-hamper-item:hover {
-  border-color: #dfb85b;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5), 0 0 14px rgba(224, 192, 107, 0.15);
-}
-
-[data-theme="dark"] .budget-hamper-item h4 {
-  color: #faecc1;
-}
-
-[data-theme="dark"] .budget-hamper-item p {
-  color: #b9a8c4;
-}
-
-[data-theme="dark"] .hamper-price-row {
-  border-top-color: rgba(224, 192, 107, 0.16);
-}
-
-[data-theme="dark"] .hamper-price {
-  color: #dfb85b;
-}
-
-[data-theme="dark"] .hamper-includes {
-  color: #a491af;
-}
-
-[data-theme="dark"] .showcase-actions {
-  border-top-color: rgba(224, 192, 107, 0.18);
-}
-
-[data-theme="dark"] .button-budget-custom {
-  color: #faecc1;
-  border-color: #dfb85b;
-}
-
-
