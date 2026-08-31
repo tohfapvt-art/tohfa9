@@ -238,35 +238,6 @@
     cursor: pointer;
   }
 
-  /* Center Bracket Clamp on Pole */
-  .card-bracket {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 28px;
-    height: 26px;
-    background: linear-gradient(180deg, #f5eccb 0%, #caa050 50%, #85612c 100%);
-    border-radius: 4px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35), inset 0 1px 1px #fff;
-    z-index: 4;
-    border: 1px solid #7a5818;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0 3px;
-  }
-
-  .card-bracket::before,
-  .card-bracket::after {
-    content: '';
-    width: 4px;
-    height: 4px;
-    background: #3b2811;
-    border-radius: 50%;
-    box-shadow: inset 0 1px 1px #000, 0 1px 0 rgba(255, 255, 255, 0.5);
-  }
-
   /* Alternating Left & Right Directional Planks */
 
   /* 1. Pointing Right ➔ (Card 1 & Card 3) */
