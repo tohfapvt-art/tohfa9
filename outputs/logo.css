@@ -211,26 +211,6 @@ h1 em {
   background: linear-gradient(135deg, #faf5fc 0%, #f4eaf8 100%);
 }
 
-.celebration-card {
-  background: #ffffff;
-  border: 1px solid #ebdff2;
-  border-radius: 16px;
-  box-shadow: 0 10px 24px rgba(78, 38, 102, 0.05);
-}
-
-.celebration-card:hover {
-  border-color: #a785c4;
-  box-shadow: 0 14px 30px rgba(158, 124, 184, 0.18);
-}
-
-.celebration-card p {
-  color: #9e7cb8;
-}
-
-.celebration-card h3 {
-  color: #331a44;
-}
-
 .occasion {
   background: linear-gradient(135deg, #f8effc 0%, #f1e4f6 100%);
 }

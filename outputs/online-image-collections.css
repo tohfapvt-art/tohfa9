@@ -1,1 +1,153 @@
-.celebrations{background:#fffdf9;padding-top:95px;padding-bottom:100px}.section-aside{font-size:13px;line-height:1.65;color:#766c66;max-width:270px;margin:0}.celebration-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.celebration-card{height:430px;position:relative;overflow:hidden;isolation:isolate;color:#fff;text-decoration:none;background-size:cover;background-position:center;transition:transform .35s ease}.celebration-card:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(25,16,16,.04) 30%,rgba(24,12,13,.76));z-index:-1}.celebration-card:hover{transform:translateY(-6px)}.celebration-card>div{position:absolute;left:24px;bottom:25px}.celebration-card p{font-size:9px;letter-spacing:.15em;font-weight:700;margin:0 0 8px}.celebration-card h3{font:500 28px 'Playfair Display';margin:0 0 15px}.celebration-card span{font-size:10px;border-bottom:1px solid rgba(255,255,255,.8);padding-bottom:5px}.celebration-card b{font-size:15px;margin-left:6px}.birthday{background-image:url('https://lovery.com/cdn/shop/products/81pWSNrl1BS._AC_SL1500__3.jpg?v=1667877088&width=1445')}.wedding{background-image:url('https://www.giftology.id/uploads/product-thumbnail/8ad31aa5ba006e0dd8bab4d1d49ad9ce11c905bd.jpg')}.anniversary{background-image:url('https://topchuk.com/wp-content/uploads/2024/07/0-2-1.jpg')}.corporate{background-image:url('https://houseofseptember.in/cdn/shop/files/20250318_153832.jpg?v=1755595384&width=1946')}@media(max-width:900px){.celebration-grid{grid-template-columns:repeat(2,1fr)}.celebration-card{height:360px}}@media(max-width:520px){.celebration-grid{grid-template-columns:1fr}.celebration-card{height:330px}.celebrations{padding-top:70px;padding-bottom:70px}.section-aside{display:none}}
+/* ==========================================================================
+   TOHFA CELEBRATIONS & OCCASIONS IMAGES (HIGH-RELIABILITY 100% UPTIME CDN)
+   ========================================================================== */
+
+.celebrations {
+  background: linear-gradient(135deg, #fffaf7 0%, #f9f2fc 50%, #f3e6f9 100%);
+  padding: 95px max(25px, 8vw) 100px;
+}
+
+.section-aside {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #6a5378;
+  max-width: 320px;
+  margin: 0;
+}
+
+.celebration-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.celebration-card {
+  height: 440px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #4a2563;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  border: 1.5px solid rgba(223, 184, 91, 0.4);
+  box-shadow: 0 12px 28px rgba(67, 17, 95, 0.12);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.celebration-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(35, 14, 48, 0.08) 20%, rgba(30, 10, 42, 0.85) 100%);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.celebration-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: #dfb85b;
+  box-shadow: 0 18px 36px rgba(67, 17, 95, 0.25);
+}
+
+.celebration-card:hover::before {
+  background: linear-gradient(180deg, rgba(35, 14, 48, 0.02) 20%, rgba(30, 10, 42, 0.75) 100%);
+}
+
+.celebration-card > div {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 26px;
+  z-index: 2;
+}
+
+.celebration-card p {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: #f7e6c0;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.celebration-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: #ffffff;
+  margin: 0 0 14px;
+  line-height: 1.15;
+}
+
+.celebration-card span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #ffffff;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.8);
+  padding-bottom: 4px;
+  transition: transform 0.2s ease;
+}
+
+.celebration-card:hover span {
+  border-color: #dfb85b;
+  color: #dfb85b;
+}
+
+.celebration-card b {
+  font-size: 14px;
+}
+
+/* --- High-Quality Unsplash Occasion Imagery --- */
+
+/* 1. Birthdays: Pastel lavender celebration cake & candles */
+.birthday {
+  background-image: url('https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&w=800&q=80');
+}
+
+/* 2. Weddings: Luxury wedding gift packaging with flowers & ribbon */
+.wedding {
+  background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80');
+}
+
+/* 3. Anniversaries: Lavender gift box with ribbon & ambient sparkle */
+.anniversary {
+  background-image: url('https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=800&q=80');
+}
+
+/* 4. Corporate / Office & teams: Luxury stationery, notebook & gourmet gift set */
+.corporate {
+  background-image: url('https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=800&q=80');
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .celebration-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .celebration-card {
+    height: 360px;
+  }
+}
+
+@media (max-width: 520px) {
+  .celebration-grid {
+    grid-template-columns: 1fr;
+  }
+  .celebration-card {
+    height: 330px;
+  }
+  .celebrations {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .section-aside {
+    display: none;
+  }
+}
