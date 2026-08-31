@@ -1,0 +1,437 @@
+/* ==========================================================================
+   TOHFA LUXURY DAY & NIGHT MODE (LIGHT / DARK THEME)
+   ========================================================================== */
+
+/* ---------------------------------------------------------
+   1. Theme Switcher Button Styling
+   --------------------------------------------------------- */
+.header-right-group {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(124, 58, 156, 0.08);
+  border: 1px solid rgba(124, 58, 156, 0.22);
+  color: var(--ink, #24152d);
+  padding: 8px 14px;
+  border-radius: 99px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  user-select: none;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(124, 58, 156, 0.16);
+  border-color: #dfb85b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(67, 17, 95, 0.15);
+}
+
+.theme-icon-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.theme-icon-container svg {
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+}
+
+/* Light mode icon state */
+[data-theme="light"] .theme-icon-sun,
+:root:not([data-theme="dark"]) .theme-icon-sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+  color: #c98816;
+}
+
+[data-theme="light"] .theme-icon-moon,
+:root:not([data-theme="dark"]) .theme-icon-moon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.4);
+  pointer-events: none;
+}
+
+/* Dark mode icon state */
+[data-theme="dark"] .theme-icon-sun {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.4);
+  pointer-events: none;
+}
+
+[data-theme="dark"] .theme-icon-moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+  color: #dfb85b;
+}
+
+.theme-toggle-text {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------
+   2. Smooth Transitions for Theme Switching
+   --------------------------------------------------------- */
+body,
+.site-header,
+.announcement,
+.hero,
+.trust-strip,
+.celebrations,
+.occasion,
+.process,
+.concierge,
+.enquiry,
+.enquiry form,
+.site-footer,
+.button,
+.collection-card,
+.steps article {
+  transition: background-color 0.35s ease, background 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* ---------------------------------------------------------
+   3. Day (Light) Mode Tokens
+   --------------------------------------------------------- */
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+  --bg-main: #fcf9fd;
+  --bg-alt: #f7effa;
+  --bg-card: #ffffff;
+  --text-primary: #24152d;
+  --text-secondary: #655b6c;
+  --text-muted: #8b8092;
+  --accent-gold: #b88628;
+  --accent-gold-light: #dfb85b;
+  --accent-plum: #43115f;
+  --accent-purple: #7c3a9c;
+  --border-subtle: #e8dbeb;
+  --border-card: #e5d8ea;
+}
+
+/* ---------------------------------------------------------
+   4. Night (Dark) Mode Tokens & Complete Overrides
+   --------------------------------------------------------- */
+[data-theme="dark"] {
+  --bg-main: #0e0314;
+  --bg-alt: #16071e;
+  --bg-card: #190924;
+  --text-primary: #fbf6ff;
+  --text-secondary: #cbbdd4;
+  --text-muted: #9686a1;
+  --accent-gold: #dfb85b;
+  --accent-gold-light: #faecc1;
+  --accent-plum: #9b3ecd;
+  --accent-purple: #b363db;
+  --border-subtle: rgba(224, 192, 107, 0.18);
+  --border-card: rgba(224, 192, 107, 0.22);
+  --line: rgba(224, 192, 107, 0.18);
+}
+
+[data-theme="dark"] body {
+  background: #0e0314;
+  color: #fbf6ff;
+}
+
+/* Header & Announcement in Night Mode */
+[data-theme="dark"] .announcement {
+  background: linear-gradient(100deg, #07010a 0%, #1f062b 50%, #3d0e4e 100%);
+  color: #faecc1;
+  border-bottom: 1px solid rgba(224, 192, 107, 0.2);
+}
+
+[data-theme="dark"] .announcement span {
+  color: #dfb85b;
+}
+
+[data-theme="dark"] .site-header {
+  background: rgba(14, 3, 20, 0.92);
+  border-bottom: 1px solid rgba(224, 192, 107, 0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+[data-theme="dark"] .site-header nav a,
+[data-theme="dark"] .header-link {
+  color: #ede2f5;
+}
+
+[data-theme="dark"] .site-header nav a:hover,
+[data-theme="dark"] .header-link:hover {
+  color: #faecc1;
+}
+
+[data-theme="dark"] .header-link {
+  border-bottom-color: #dfb85b;
+}
+
+[data-theme="dark"] .theme-toggle-btn {
+  background: rgba(224, 192, 107, 0.12);
+  border-color: rgba(224, 192, 107, 0.3);
+  color: #faecc1;
+}
+
+[data-theme="dark"] .theme-toggle-btn:hover {
+  background: rgba(224, 192, 107, 0.22);
+  border-color: #dfb85b;
+  box-shadow: 0 4px 14px rgba(224, 192, 107, 0.2);
+}
+
+/* Hero Section in Night Mode */
+[data-theme="dark"] .hero {
+  background: linear-gradient(120deg, #0e0314 0%, #190723 53%, #14051d 100%);
+}
+
+[data-theme="dark"] .hero-intro {
+  color: #cbbdd4;
+}
+
+[data-theme="dark"] .hero-proof p {
+  color: #a99bb3;
+}
+
+[data-theme="dark"] .hero-proof strong {
+  color: #faecc1;
+}
+
+[data-theme="dark"] .text-link {
+  color: #faecc1;
+  border-color: #dfb85b;
+}
+
+[data-theme="dark"] .eyebrow {
+  color: #dfb85b;
+}
+
+[data-theme="dark"] h1 em,
+[data-theme="dark"] h2 em {
+  color: #dfb85b;
+  text-shadow: 0 0 16px rgba(223, 184, 91, 0.3);
+}
+
+/* Trust Strip in Night Mode */
+[data-theme="dark"] .trust-strip {
+  background: linear-gradient(90deg, #14051d, #1f092b, #14051d);
+  border-top: 1px solid rgba(224, 192, 107, 0.12);
+  border-bottom: 1px solid rgba(224, 192, 107, 0.12);
+  color: #e5d8ea;
+}
+
+[data-theme="dark"] .trust-strip span {
+  color: #dfb85b;
+}
+
+/* Celebrations / Collections in Night Mode */
+[data-theme="dark"] .celebrations {
+  background: #110418;
+}
+
+[data-theme="dark"] .section-aside {
+  color: #b9a8c4;
+}
+
+[data-theme="dark"] .collection-card,
+[data-theme="dark"] .celebration-card {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(224, 192, 107, 0.15);
+}
+
+/* Occasion Section in Night Mode */
+[data-theme="dark"] .occasion {
+  background: linear-gradient(125deg, #16061e, #1e0929);
+  border-top: 1px solid rgba(224, 192, 107, 0.12);
+  border-bottom: 1px solid rgba(224, 192, 107, 0.12);
+}
+
+[data-theme="dark"] .occasion-copy > p:not(.eyebrow) {
+  color: #cbbdd4;
+}
+
+[data-theme="dark"] .button-outline {
+  color: #faecc1;
+  border-color: #dfb85b;
+}
+
+[data-theme="dark"] .button-outline:hover {
+  background: rgba(224, 192, 107, 0.15);
+  color: #fff;
+}
+
+/* Process Steps in Night Mode */
+[data-theme="dark"] .process {
+  background: #0e0314;
+}
+
+[data-theme="dark"] .steps article {
+  border-color: rgba(224, 192, 107, 0.15);
+}
+
+[data-theme="dark"] .steps span {
+  color: #dfb85b;
+}
+
+[data-theme="dark"] .steps h3 {
+  color: #fff;
+}
+
+[data-theme="dark"] .steps p {
+  color: #b9a8c4;
+}
+
+/* Concierge Section in Night Mode */
+[data-theme="dark"] .concierge {
+  background: linear-gradient(120deg, #09010e 0%, #290838 52%, #4d155f 100%);
+  border-top: 1px solid rgba(224, 192, 107, 0.2);
+  border-bottom: 1px solid rgba(224, 192, 107, 0.2);
+}
+
+/* Enquiry Form Section in Night Mode */
+[data-theme="dark"] .enquiry {
+  background: linear-gradient(110deg, #0c0211 0%, #17061f 42%, #110317 100%);
+}
+
+[data-theme="dark"] .enquiry-copy > p:not(.eyebrow) {
+  color: #cbbdd4;
+}
+
+[data-theme="dark"] .concierge-points {
+  border-color: rgba(224, 192, 107, 0.18);
+}
+
+[data-theme="dark"] .concierge-points p {
+  color: #d1c3d9;
+}
+
+[data-theme="dark"] .concierge-points span {
+  color: #dfb85b;
+}
+
+[data-theme="dark"] .enquiry form {
+  background: linear-gradient(145deg, #180721, #13041c);
+  border: 1px solid rgba(224, 192, 107, 0.24);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65), 0 0 25px rgba(124, 58, 156, 0.12);
+}
+
+[data-theme="dark"] .form-intro {
+  border-bottom-color: rgba(224, 192, 107, 0.2);
+}
+
+[data-theme="dark"] .form-intro span {
+  color: #dfb85b;
+}
+
+[data-theme="dark"] .form-intro p {
+  color: #faecc1;
+}
+
+[data-theme="dark"] .enquiry form label {
+  color: #d9cae2;
+}
+
+[data-theme="dark"] .enquiry form label small {
+  color: #9f8ea8;
+}
+
+[data-theme="dark"] .enquiry form label b {
+  color: #dfb85b;
+}
+
+[data-theme="dark"] .enquiry form input,
+[data-theme="dark"] .enquiry form select,
+[data-theme="dark"] .enquiry form textarea {
+  color: #fff;
+  border-bottom-color: rgba(224, 192, 107, 0.3);
+}
+
+[data-theme="dark"] .enquiry form input:focus,
+[data-theme="dark"] .enquiry form select:focus,
+[data-theme="dark"] .enquiry form textarea:focus {
+  border-bottom-color: #dfb85b;
+  box-shadow: 0 2px 0 #dfb85b;
+}
+
+[data-theme="dark"] .enquiry form select option {
+  background: #190724;
+  color: #fff;
+}
+
+[data-theme="dark"] .form-note {
+  color: #a493ae;
+}
+
+[data-theme="dark"] .or-divider {
+  color: #9f8ea8;
+}
+
+[data-theme="dark"] .or-divider:before,
+[data-theme="dark"] .or-divider:after {
+  background: rgba(224, 192, 107, 0.2);
+}
+
+/* WhatsApp pill in dark mode */
+[data-theme="dark"] .whatsapp-pill {
+  color: #57d87b;
+}
+
+/* 3D Box & Installation enhancements for Dark Mode */
+[data-theme="dark"] .hero-art {
+  background: radial-gradient(circle at 30% 22%, #681f84 0%, #2f093f 41%, #09020d 100%);
+}
+
+[data-theme="dark"] .hero-art:after {
+  background: linear-gradient(135deg, rgba(223, 184, 91, 0.16), transparent 42%, rgba(14, 3, 20, 0.65));
+}
+
+[data-theme="dark"] .stage-glow {
+  background: radial-gradient(circle, rgba(223, 184, 91, 0.25) 0%, rgba(124, 58, 156, 0.35) 45%, transparent 70%);
+}
+
+/* Subtle scrollbar in dark mode */
+[data-theme="dark"]::-webkit-scrollbar {
+  width: 10px;
+}
+
+[data-theme="dark"]::-webkit-scrollbar-track {
+  background: #0e0314;
+}
+
+[data-theme="dark"]::-webkit-scrollbar-thumb {
+  background: #2b0c39;
+  border-radius: 5px;
+  border: 2px solid #0e0314;
+}
+
+[data-theme="dark"]::-webkit-scrollbar-thumb:hover {
+  background: #46145e;
+}
+
+/* Responsive adjustment for theme button on mobile */
+@media (max-width: 640px) {
+  .header-right-group {
+    gap: 10px;
+  }
+  .theme-toggle-btn {
+    padding: 6px 10px;
+  }
+  .theme-toggle-text {
+    display: none;
+  }
+}
+

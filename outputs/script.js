@@ -68,3 +68,39 @@ whatsappButton.addEventListener('click', (event) => {
   whatsappButton.classList.add('is-opening');
   setTimeout(() => window.open(whatsappButton.href, '_blank', 'noopener'), 360);
 });
+
+// --- Day & Night (Light / Dark) Theme Management ---
+const themeToggleBtn = document.querySelector('#theme-toggle');
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('tohfa-theme', theme);
+  if (themeToggleBtn) {
+    const isDark = theme === 'dark';
+    themeToggleBtn.setAttribute('aria-label', isDark ? 'Switch to Day mode' : 'Switch to Night mode');
+    themeToggleBtn.setAttribute('title', isDark ? 'Switch to Day mode' : 'Switch to Night mode');
+    const labelSpan = themeToggleBtn.querySelector('.theme-toggle-text');
+    if (labelSpan) {
+      labelSpan.textContent = isDark ? 'Day' : 'Night';
+    }
+  }
+}
+
+if (themeToggleBtn) {
+  // Sync initial state with current active data-theme
+  const initialTheme = document.documentElement.getAttribute('data-theme') || 'light';
+  applyTheme(initialTheme);
+
+  themeToggleBtn.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(newTheme);
+  });
+}
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+  if (!localStorage.getItem('tohfa-theme')) {
+    applyTheme(e.matches ? 'dark' : 'light');
+  }
+});
+
