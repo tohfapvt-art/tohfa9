@@ -1,0 +1,23 @@
+.brand{display:inline-flex;align-items:center;letter-spacing:0}.brand img{display:block;width:132px;height:auto;transition:transform .25s ease;filter:drop-shadow(0 2px 1px rgba(79,31,43,.04))}.brand:hover img{transform:translateY(-2px)}footer .brand img{width:114px}@media(max-width:520px){.brand img{width:116px}footer .brand img{width:102px}}
+.site-header{height:112px}.brand img.gold-logo{width:116px;height:98px}@media(max-width:800px){.site-header{height:108px}.brand img.gold-logo{width:106px;height:92px}}@media(max-width:520px){.site-header{height:104px}.brand img.gold-logo{width:100px;height:88px}}
+.brand img.gold-logo{width:118px;height:80px;object-fit:contain;filter:drop-shadow(0 1px 1px rgba(98,62,22,.1))}.brand:hover img.gold-logo{transform:translateY(-2px) scale(1.02)}footer .brand img.gold-logo{width:102px;height:69px}@media(max-width:520px){.brand img.gold-logo{width:105px;height:72px}footer .brand img.gold-logo{width:91px;height:63px}}
+.site-header{height:112px}.brand img.gold-logo{width:116px;height:98px;object-fit:contain}@media(max-width:800px){.site-header{height:108px}.brand img.gold-logo{width:106px;height:92px}}@media(max-width:520px){.site-header{height:104px}.brand img.gold-logo{width:100px;height:88px}}
+
+/* Purple-and-gold theme drawn from the Tohfa mark. */
+:root{--ink:#24152d;--plum:#43115f;--cream:#fcf8ff;--line:#e3d6eb;--rose:#7c3a9c}
+body{background:linear-gradient(135deg,#fffaff 0%,#f8f0fc 48%,#f2e6f7 100%)}
+.announcement{background:linear-gradient(100deg,#180521 0%,#39104f 50%,#691c82 100%);color:#fff8e5}.announcement span{color:#e4c369}
+.site-header{background:rgba(255,251,255,.93);border-bottom:1px solid rgba(93,37,122,.1)}
+.hero{background:linear-gradient(120deg,#fffaff 0%,#f8effc 53%,#f0e1f7 100%)}
+.hero-art{background:radial-gradient(circle at 30% 22%,#8b3aad 0%,#481365 41%,#1c0828 100%)}
+.hero-art:after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(238,204,111,.13),transparent 42%,rgba(63,14,83,.48));pointer-events:none}
+.eyebrow,.header-link span,.text-link span{color:#7a298f}
+h1 em,h2 em{color:#6d247f}
+.button-dark{background:linear-gradient(135deg,#7d2b98 0%,#45125d 58%,#23062e 100%);box-shadow:0 10px 24px rgba(72,18,96,.18)}
+.text-link{border-color:#b381c3}
+.trust-strip{background:linear-gradient(90deg,#f4e8f8,#efe0f5,#f6e9f8)}.trust-strip span{color:#b48a2d}
+.occasion{background:linear-gradient(125deg,#f8eefb,#eee0f4)}
+.concierge{background:linear-gradient(120deg,#1b0626 0%,#45105f 52%,#722285 100%)}
+.concierge .eyebrow{color:#ebd38a}.concierge h2 em{color:#f1d67e}.button-light{background:linear-gradient(135deg,#fff5ca,#d8b24e);color:#31103f}
+.announcement{display:block}.enquiry form{background:linear-gradient(145deg,#fff,#fbf3ff);border-color:#ddcce6}.button-whatsapp{background:#25d366;box-shadow:0 8px 18px rgba(37,211,102,.22)}.button-whatsapp:hover{background:#1fba59}
+.brand img.gold-logo{width:80px;height:80px;border-radius:50%;object-fit:cover;filter:drop-shadow(0 5px 10px rgba(47,8,66,.22))}.brand:hover img.gold-logo{transform:translateY(-2px) scale(1.04)}@media(max-width:520px){.brand img.gold-logo{width:66px;height:66px}}

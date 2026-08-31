@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 122" role="img" aria-label="Tohfa gifts forever">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#956628"/><stop offset=".5" stop-color="#e1be6c"/><stop offset="1" stop-color="#936226"/></linearGradient></defs>
+  <g transform="translate(76 4)" fill="none" stroke="url(#g)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 29h48v31H5z" fill="#f6e6c3" fill-opacity=".2" stroke-width="2.25"/>
+    <path d="M1 22h56v9H1z" fill="#e5c274" fill-opacity=".28" stroke-width="2.4"/>
+    <path d="M29 22v38M5 39h48" stroke-width="1.8"/>
+    <path d="M29 22c-10.5 0-15.8-4.8-13.4-10 1.9-4.1 7.2-3.4 10.3.6L29 22M29 22c10.5 0 15.8-4.8 13.4-10-1.9-4.1-7.2-3.4-10.3.6L29 22" stroke-width="2.55"/>
+    <path d="m20 17 9 5 9-5M46 44l4 2.3-4 2.3-2.3 4-2.3-4-4-2.3 4-2.3 2.3-4Z" fill="url(#g)" stroke="none"/>
+  </g>
+  <text x="105" y="92" text-anchor="middle" fill="url(#g)" font-family="'Brush Script MT','Segoe Script',cursive" font-size="55" font-style="italic" letter-spacing="-4">tohfa</text>
+  <g stroke="#bf934b" stroke-width=".9"><path d="M31 105h50"/><path d="M129 105h50"/></g>
+  <circle cx="87" cy="105" r="1.6" fill="#bf934b"/><circle cx="123" cy="105" r="1.6" fill="#bf934b"/>
+  <text x="105" y="110" text-anchor="middle" fill="#806033" font-family="Arial, sans-serif" font-size="7" font-weight="700" letter-spacing="2.5">GIFTS FOREVER</text>
+</svg>
