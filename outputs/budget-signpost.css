@@ -1,10 +1,10 @@
 /* ==========================================================================
-   TOHFA BUDGET-FRIENDLY GIFTS — HORIZONTAL RAIL SIGNBOARD SECTION
+   TOHFA BUDGET-FRIENDLY GIFTS — HYBRID HORIZONTAL (DESKTOP) & 3D SIGNPOST (MOBILE)
    ========================================================================== */
 
 .budget-section {
   background: linear-gradient(135deg, #fffaff 0%, #f8effc 50%, #f0e1f7 100%);
-  padding: 85px max(25px, 8vw);
+  padding: 85px max(20px, 6vw);
   position: relative;
   overflow: hidden;
 }
@@ -57,7 +57,7 @@
   font-weight: 500;
 }
 
-/* --- Railing Container --- */
+/* --- Container --- */
 .budget-rail-container {
   position: relative;
   max-width: 1250px;
@@ -66,97 +66,239 @@
   z-index: 2;
 }
 
-/* Metallic Rail Bar Behind Cards (Desktop) */
-.rail-bar {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 10px;
-  transform: translateY(-50%);
-  background: linear-gradient(180deg, #faecc1 0%, #caa050 45%, #7a5818 100%);
-  border-radius: 5px;
-  box-shadow: 0 6px 16px rgba(41, 11, 56, 0.22), inset 0 1px 1px #fff;
-  z-index: 1;
+/* ==========================================================================
+   DESKTOP VIEW (Horizontal Rail Banner: 900px and above)
+   ========================================================================== */
+@media (min-width: 900px) {
+  /* Metallic Rail Bar Behind Cards */
+  .rail-bar {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 10px;
+    transform: translateY(-50%);
+    background: linear-gradient(180deg, #faecc1 0%, #caa050 45%, #7a5818 100%);
+    border-radius: 5px;
+    box-shadow: 0 6px 16px rgba(41, 11, 56, 0.22), inset 0 1px 1px #fff;
+    z-index: 1;
+  }
+
+  .rail-post {
+    position: absolute;
+    top: -42px;
+    bottom: -42px;
+    width: 12px;
+    background: linear-gradient(90deg, #b68732, #fdf2d2, #7a5818);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+
+  .rail-post-left { left: -4px; }
+  .rail-post-right { right: -4px; }
+
+  .rail-post::before,
+  .rail-post::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, #faecc1, #85612c);
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .rail-post::before { top: -6px; }
+  .rail-post::after { bottom: -6px; }
+
+  /* 4 Signboard Cards Track */
+  .budget-cards-track {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(14px, 1.8vw, 24px);
+    position: relative;
+    z-index: 2;
+  }
+
+  .budget-sign-card {
+    position: relative;
+    min-height: 120px;
+    border-radius: 18px;
+    padding: 20px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 12px 28px rgba(36, 17, 48, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+  }
+
+  /* Connectors on the sides */
+  .rail-joint {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 20px;
+    background: linear-gradient(90deg, #85612c, #faecc1, #573e1c);
+    border-radius: 3px;
+    z-index: -1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  }
+
+  .rail-joint-left { left: -8px; }
+  .rail-joint-right { right: -8px; }
+
+  .sign-arrow-left { display: none; }
+  .sign-arrow-right { display: inline-block; }
+
+  .card-bracket { display: none; }
 }
 
-.rail-post {
-  position: absolute;
-  top: -42px;
-  bottom: -42px;
-  width: 12px;
-  background: linear-gradient(90deg, #b68732, #fdf2d2, #7a5818);
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+/* ==========================================================================
+   MOBILE VIEW (3D Vertical Multi-Directional Signpost: under 900px)
+   ========================================================================== */
+@media (max-width: 899px) {
+  .budget-section {
+    padding: 60px 16px;
+  }
+
+  .budget-header {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .budget-rail-container {
+    padding: 25px 0 35px;
+    display: flex;
+    justify-content: center;
+    perspective: 1100px;
+  }
+
+  /* Hide Desktop Horizontal Rail */
+  .rail-bar { display: none; }
+  .rail-joint { display: none; }
+
+  /* Realistic Center Vertical Pole */
+  .budget-rail-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    background: linear-gradient(90deg, #b68732 0%, #fdf2d2 40%, #caa050 75%, #7a5818 100%);
+    border-radius: 6px;
+    box-shadow: 0 10px 24px rgba(36, 8, 48, 0.32), inset 0 1px 2px #fff;
+    z-index: 1;
+  }
+
+  /* Pole Finial Top & Base Shadow */
+  .budget-rail-container::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 16px;
+    background: radial-gradient(ellipse, rgba(41, 11, 56, 0.4) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  /* Vertical Signpost Stack */
+  .budget-cards-track {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 360px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .budget-sign-card {
+    position: relative;
+    width: 100%;
+    min-height: 85px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 12px 26px rgba(36, 17, 48, 0.16), 0 2px 5px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+  }
+
+  /* Center Bracket Clamp on Pole */
+  .card-bracket {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 26px;
+    background: linear-gradient(180deg, #f5eccb 0%, #caa050 50%, #85612c 100%);
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35), inset 0 1px 1px #fff;
+    z-index: 4;
+    border: 1px solid #7a5818;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 3px;
+  }
+
+  .card-bracket::before,
+  .card-bracket::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: #3b2811;
+    border-radius: 50%;
+    box-shadow: inset 0 1px 1px #000, 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  /* Alternating Left & Right Directional Planks */
+
+  /* 1. Pointing Right ➔ (Card 1 & Card 3) */
+  .card-dir-right {
+    clip-path: polygon(0% 0%, 88% 0%, 100% 50%, 88% 100%, 0% 100%);
+    border-radius: 12px 0 0 12px;
+    padding-right: 44px;
+    padding-left: 20px;
+    transform: rotate(-1.8deg) translateZ(0);
+    margin-left: 14px;
+  }
+
+  .card-dir-right .sign-arrow-left { display: none; }
+  .card-dir-right .sign-arrow-right { display: inline-block; }
+
+  /* 2. Pointing Left ⬅ (Card 2 & Card 4) */
+  .card-dir-left {
+    clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 12% 100%, 0% 50%);
+    border-radius: 0 12px 12px 0;
+    padding-left: 44px;
+    padding-right: 20px;
+    transform: rotate(2deg) translateZ(0);
+    margin-right: 14px;
+  }
+
+  .card-dir-left .sign-arrow-left { display: inline-block; }
+  .card-dir-left .sign-arrow-right { display: none; }
 }
 
-.rail-post-left {
-  left: -4px;
-}
-
-.rail-post-right {
-  right: -4px;
-}
-
-.rail-post::before,
-.rail-post::after {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(180deg, #faecc1, #85612c);
-  border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-.rail-post::before { top: -6px; }
-.rail-post::after { bottom: -6px; }
-
-/* --- 4 Signboard Cards Track --- */
-.budget-cards-track {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: clamp(14px, 1.8vw, 24px);
-  position: relative;
-  z-index: 2;
-}
-
-/* Individual Signboard Card */
-.budget-sign-card {
-  position: relative;
-  min-height: 120px;
-  border-radius: 18px;
-  padding: 20px 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  font-family: 'DM Sans', sans-serif;
-  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 12px 28px rgba(36, 17, 48, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
-  cursor: pointer;
-  transform: translateY(0);
-}
-
-/* Connectors on the sides of cards */
-.rail-joint {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 10px;
-  height: 20px;
-  background: linear-gradient(90deg, #85612c, #faecc1, #573e1c);
-  border-radius: 3px;
-  z-index: -1;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-}
-
-.rail-joint-left { left: -8px; }
-.rail-joint-right { right: -8px; }
-
-/* Card Content Typography */
+/* ==========================================================================
+   Shared Typography & Color Schemes
+   ========================================================================== */
 .sign-text {
   display: flex;
   align-items: center;
@@ -193,16 +335,17 @@
   display: block;
 }
 
-.sign-arrow {
+.sign-arrow-right,
+.sign-arrow-left {
   font-size: clamp(18px, 1.8vw, 24px);
   font-weight: 900;
   transition: transform 0.28s ease;
-  margin-left: 4px;
 }
 
-/* ---------------------------------------------------------
-   Tohfa Theme Card Color Schemes
-   --------------------------------------------------------- */
+.sign-arrow-right { margin-left: 4px; }
+.sign-arrow-left { margin-right: 4px; }
+
+/* --- Theme Variants --- */
 
 /* Card 1: Pearl Cream & Gold Accent (Under 999) */
 .card-pearl {
@@ -211,13 +354,9 @@
   border: 2px solid rgba(223, 184, 91, 0.7);
 }
 
-.card-pearl .sign-amount {
-  color: #24152d;
-}
-
-.card-pearl .sign-arrow {
-  color: #c93b54;
-}
+.card-pearl .sign-amount { color: #24152d; }
+.card-pearl .sign-arrow-right,
+.card-pearl .sign-arrow-left { color: #c93b54; }
 
 /* Card 2: Royal Purple Velvet (Under 1499) */
 .card-purple {
@@ -227,13 +366,9 @@
   box-shadow: 0 14px 32px rgba(67, 17, 95, 0.28);
 }
 
-.card-purple .sign-amount {
-  color: #ffffff;
-}
-
-.card-purple .sign-arrow {
-  color: #faecc1;
-}
+.card-purple .sign-amount { color: #ffffff; }
+.card-purple .sign-arrow-right,
+.card-purple .sign-arrow-left { color: #faecc1; }
 
 /* Card 3: Champagne Gold Pearl (Under 2499) */
 .card-gold {
@@ -242,13 +377,9 @@
   border: 2px solid #d8b24e;
 }
 
-.card-gold .sign-amount {
-  color: #24152d;
-}
-
-.card-gold .sign-arrow {
-  color: #c93b54;
-}
+.card-gold .sign-amount { color: #24152d; }
+.card-gold .sign-arrow-right,
+.card-gold .sign-arrow-left { color: #c93b54; }
 
 /* Card 4: Midnight Obsidian & Radiant Gold (Premium Gifts) */
 .card-midnight {
@@ -258,14 +389,13 @@
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35), 0 0 16px rgba(223, 184, 91, 0.22);
 }
 
-.card-midnight .sign-arrow {
+.card-midnight .sign-arrow-right,
+.card-midnight .sign-arrow-left {
   color: #dfb85b;
   text-shadow: 0 0 8px rgba(223, 184, 91, 0.6);
 }
 
-/* ---------------------------------------------------------
-   3D Floating Badges & Animations
-   --------------------------------------------------------- */
+/* --- 3D Floating Badges & Animations --- */
 .card-badge {
   position: absolute;
   pointer-events: none;
@@ -276,28 +406,28 @@
 
 .badge-gift {
   top: -18px;
-  left: -12px;
+  right: -8px;
   font-size: 32px;
   animation-delay: 0s;
 }
 
 .badge-heart {
-  top: -20px;
-  left: 25px;
+  top: -16px;
+  left: -10px;
   font-size: 28px;
   animation-delay: 0.6s;
 }
 
 .badge-ribbon {
   top: -18px;
-  right: -10px;
+  right: -8px;
   font-size: 28px;
   animation-delay: 1.1s;
 }
 
 .badge-bag {
-  top: -18px;
-  right: -12px;
+  top: -16px;
+  right: -8px;
   font-size: 32px;
   animation-delay: 0.8s;
 }
@@ -314,26 +444,23 @@
   z-index: 10;
 }
 
-.budget-sign-card:hover .sign-arrow {
+.budget-sign-card:hover .sign-arrow-right {
   transform: translateX(6px) scale(1.15);
 }
 
-/* ---------------------------------------------------------
-   Dark Mode Styles
-   --------------------------------------------------------- */
+.budget-sign-card:hover .sign-arrow-left {
+  transform: translateX(-6px) scale(1.15);
+}
+
+/* Dark Mode Overrides */
 [data-theme="dark"] .budget-section {
   background: linear-gradient(135deg, #100316 0%, #190723 50%, #12031a 100%);
   border-top: 1px solid rgba(224, 192, 107, 0.14);
   border-bottom: 1px solid rgba(224, 192, 107, 0.14);
 }
 
-[data-theme="dark"] .budget-header h2 {
-  color: #ffffff;
-}
-
-[data-theme="dark"] .budget-header p {
-  color: #cbbdd4;
-}
+[data-theme="dark"] .budget-header h2 { color: #ffffff; }
+[data-theme="dark"] .budget-header p { color: #cbbdd4; }
 
 [data-theme="dark"] .card-pearl {
   background: linear-gradient(135deg, #fdf8ee 0%, #f7ebd6 50%, #ebd6ba 100%);
@@ -341,57 +468,4 @@
   border-color: #dfb85b;
 }
 
-[data-theme="dark"] .card-pearl .sign-amount {
-  color: #27140c;
-}
-
-/* ---------------------------------------------------------
-   Responsive Design for Tablet & Mobile
-   --------------------------------------------------------- */
-@media (max-width: 1024px) {
-  .budget-cards-track {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
-  }
-
-  .rail-bar {
-    display: none;
-  }
-
-  .rail-joint {
-    display: none;
-  }
-
-  .budget-sign-card {
-    min-height: 110px;
-  }
-}
-
-@media (max-width: 580px) {
-  .budget-section {
-    padding: 60px 6vw;
-  }
-
-  .budget-cards-track {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .budget-sign-card {
-    min-height: 95px;
-    padding: 16px 20px;
-  }
-
-  .sign-label {
-    font-size: 16px;
-  }
-
-  .sign-amount {
-    font-size: 24px;
-  }
-
-  .badge-gift,
-  .badge-bag {
-    font-size: 28px;
-  }
-}
+[data-theme="dark"] .card-pearl .sign-amount { color: #27140c; }
