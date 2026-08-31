@@ -104,3 +104,36 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
   }
 });
 
+// --- Budget Signpost Interactive Switching ---
+const signPlanks = document.querySelectorAll('.sign-plank');
+const budgetPanels = document.querySelectorAll('.budget-card-panel');
+
+if (signPlanks.length > 0) {
+  signPlanks.forEach((plank) => {
+    plank.addEventListener('click', () => {
+      const budgetKey = plank.getAttribute('data-budget');
+
+      // Update active plank
+      signPlanks.forEach((p) => p.classList.remove('active'));
+      plank.classList.add('active');
+
+      // Update active panel with animation
+      budgetPanels.forEach((panel) => {
+        panel.classList.remove('active');
+        if (panel.id === `panel-${budgetKey}`) {
+          panel.classList.add('active');
+        }
+      });
+    });
+
+    // Keyboard accessibility
+    plank.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        plank.click();
+      }
+    });
+  });
+}
+
+

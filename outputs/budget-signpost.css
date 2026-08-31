@@ -1,0 +1,579 @@
+/* ==========================================================================
+   TOHFA LUXURY SHOP BY BUDGET — 3D SIGNPOST SECTION
+   ========================================================================== */
+
+.budget-section {
+  background: linear-gradient(135deg, #fcf8fd 0%, #f7effa 50%, #f4e8f7 100%);
+  padding: 105px max(25px, 8vw);
+  position: relative;
+  overflow: hidden;
+}
+
+.budget-section::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  right: -100px;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(224, 192, 107, 0.12) 0%, rgba(124, 58, 156, 0.05) 50%, transparent 70%);
+  pointer-events: none;
+}
+
+.budget-section::after {
+  content: '';
+  position: absolute;
+  bottom: -150px;
+  left: -100px;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 58, 156, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.budget-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1.25fr;
+  align-items: center;
+  gap: clamp(40px, 6vw, 90px);
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Left: 3D Signpost Stage --- */
+.signpost-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  perspective: 1200px;
+  padding: 30px 10px;
+}
+
+.signpost-pole {
+  position: absolute;
+  top: 10px;
+  bottom: 0;
+  width: 14px;
+  background: linear-gradient(90deg, #d3c7b8 0%, #ffffff 40%, #a89886 85%, #6e5f4e 100%);
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(41, 16, 54, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+  z-index: 1;
+}
+
+.signpost-pole::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 16px;
+  background: linear-gradient(180deg, #f5e4bd, #b88628);
+  border-radius: 4px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.signpost-pole::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 14px;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.signpost-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Individual Sign Plank */
+.sign-plank {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-style: preserve-3d;
+  box-shadow: 0 12px 28px rgba(36, 17, 48, 0.14), 0 2px 6px rgba(0, 0, 0, 0.06);
+  user-select: none;
+}
+
+/* Alternate Sign Colors & Styles */
+
+/* 1. Cream Planks (Under 999 & Under 2499) */
+.plank-cream {
+  background: linear-gradient(135deg, #fffef9 0%, #fdf5ea 50%, #f5e8d5 100%);
+  color: #2e1d16;
+  border: 2px solid #ecd8bf;
+}
+
+.plank-cream .plank-arrow {
+  color: #c93b54;
+}
+
+.plank-cream .plank-sub {
+  color: #7d6e64;
+}
+
+/* 2. Crimson / Velvet Coral Planks (Under 1499 & Premium) */
+.plank-crimson {
+  background: linear-gradient(135deg, #e14b64 0%, #c4324c 50%, #9e1d35 100%);
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 12px 28px rgba(162, 34, 59, 0.28), 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.plank-crimson .plank-arrow {
+  color: #ffe1ea;
+}
+
+.plank-crimson .plank-sub {
+  color: #ffd2dc;
+}
+
+/* Directional Arrow Tips & Tilts */
+.plank-right {
+  transform: rotate(-1.5deg) translateZ(0);
+  margin-left: 20px;
+  clip-path: polygon(0% 0%, 92% 0%, 100% 50%, 92% 100%, 0% 100%);
+  padding-right: 44px;
+}
+
+.plank-left {
+  transform: rotate(1.8deg) translateZ(0);
+  margin-right: 20px;
+  clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 8% 100%, 0% 50%);
+  padding-left: 44px;
+}
+
+/* Plank Metal Clamp / Bracket */
+.plank-clamp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 28px;
+  background: linear-gradient(180deg, #f0f0f0 0%, #b8b8b8 48%, #787878 100%);
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35), inset 0 1px 1px #fff;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 3px;
+  border: 1px solid #707070;
+}
+
+.plank-clamp::before,
+.plank-clamp::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: #333;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 1px #000, 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Plank Text Content */
+.plank-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 3;
+}
+
+.plank-left .plank-content {
+  flex-direction: row;
+}
+
+.plank-right .plank-content {
+  flex-direction: row;
+}
+
+.plank-main-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.plank-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(19px, 2.2vw, 24px);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.plank-title em {
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+  font-size: 1.1em;
+}
+
+.plank-sub {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 3px;
+  font-weight: 600;
+}
+
+.plank-arrow {
+  font-size: 24px;
+  font-weight: 900;
+  transition: transform 0.3s ease;
+}
+
+/* 3D Floating Badges & Decorations */
+.plank-badge {
+  position: absolute;
+  pointer-events: none;
+  z-index: 6;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.22));
+  animation: floatSway 3.2s ease-in-out infinite alternate;
+}
+
+.badge-gift {
+  top: -24px;
+  right: -12px;
+  font-size: 34px;
+  animation-delay: 0s;
+}
+
+.badge-heart {
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+  font-size: 30px;
+  animation-delay: 0.6s;
+}
+
+.badge-ribbon {
+  top: -18px;
+  left: -14px;
+  font-size: 30px;
+  animation-delay: 1.2s;
+}
+
+.badge-bag {
+  bottom: -18px;
+  right: -14px;
+  font-size: 32px;
+  animation-delay: 0.9s;
+}
+
+.badge-sparkle {
+  position: absolute;
+  color: #dfb85b;
+  font-size: 14px;
+  animation: sparkleTwinkle 1.8s ease-in-out infinite alternate;
+}
+
+.sparkle-1 { top: -8px; left: 30%; }
+.sparkle-2 { bottom: -6px; right: 25%; animation-delay: 0.9s; }
+
+@keyframes floatSway {
+  0% { transform: translateY(0) rotate(0deg) scale(1); }
+  100% { transform: translateY(-7px) rotate(6deg) scale(1.06); }
+}
+
+@keyframes sparkleTwinkle {
+  0% { opacity: 0.3; transform: scale(0.8) rotate(0deg); }
+  100% { opacity: 1; transform: scale(1.25) rotate(45deg); filter: drop-shadow(0 0 6px #dfb85b); }
+}
+
+/* Plank Hover & Active Animations */
+.sign-plank:hover {
+  transform: scale(1.04) translateZ(20px);
+  z-index: 10;
+}
+
+.plank-right:hover {
+  transform: rotate(-0.5deg) scale(1.05) translateZ(25px);
+}
+
+.plank-left:hover {
+  transform: rotate(0.5deg) scale(1.05) translateZ(25px);
+}
+
+.sign-plank:hover .plank-arrow {
+  transform: scale(1.2);
+}
+
+.plank-right:hover .plank-arrow {
+  transform: translateX(4px) scale(1.2);
+}
+
+.plank-left:hover .plank-arrow {
+  transform: translateX(-4px) scale(1.2);
+}
+
+/* Active Selected Plank */
+.sign-plank.active {
+  border-color: #dfb85b;
+  box-shadow: 0 0 0 3px #dfb85b, 0 16px 36px rgba(47, 14, 62, 0.28);
+  z-index: 10;
+}
+
+.plank-right.active {
+  transform: rotate(0deg) scale(1.05) translateZ(30px);
+}
+
+.plank-left.active {
+  transform: rotate(0deg) scale(1.05) translateZ(30px);
+}
+
+/* --- Right Column: Interactive Budget Showcase --- */
+.budget-showcase {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 38px 40px;
+  border: 1px solid rgba(124, 58, 156, 0.12);
+  box-shadow: 0 20px 48px rgba(67, 17, 95, 0.08), 0 4px 12px rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+.budget-showcase::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #7c3a9c, #dfb85b, #e14b64);
+}
+
+.showcase-header {
+  margin-bottom: 24px;
+}
+
+.showcase-header .eyebrow {
+  margin-bottom: 8px;
+}
+
+.showcase-header h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 2.6vw, 34px);
+  margin: 0 0 10px;
+  color: #24152d;
+}
+
+.showcase-header p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #655b6c;
+  margin: 0;
+}
+
+/* Tab Panels */
+.budget-card-panel {
+  display: none;
+  animation: panelSlideFade 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.budget-card-panel.active {
+  display: block;
+}
+
+@keyframes panelSlideFade {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.budget-hampers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 22px 0;
+}
+
+.budget-hamper-item {
+  background: #fcf9fd;
+  border: 1px solid #ebdfee;
+  border-radius: 14px;
+  padding: 16px 18px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.budget-hamper-item:hover {
+  transform: translateY(-3px);
+  border-color: #dfb85b;
+  box-shadow: 0 8px 20px rgba(67, 17, 95, 0.08);
+}
+
+.hamper-tag {
+  display: inline-block;
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #e14b64;
+  margin-bottom: 6px;
+}
+
+.budget-hamper-item h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  margin: 0 0 6px;
+  color: #24152d;
+}
+
+.budget-hamper-item p {
+  font-size: 12px;
+  line-height: 1.45;
+  color: #73677a;
+  margin: 0 0 10px;
+}
+
+.hamper-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #efe4f2;
+  padding-top: 10px;
+  margin-top: 6px;
+}
+
+.hamper-price {
+  font-size: 14px;
+  font-weight: 700;
+  color: #7c3a9c;
+}
+
+.hamper-includes {
+  font-size: 10px;
+  color: #8c7e94;
+}
+
+/* Showcase Action Bar */
+.showcase-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid #ede1f0;
+  flex-wrap: wrap;
+}
+
+.button-budget-wa {
+  background: linear-gradient(135deg, #287b51, #1e6943);
+  color: #fff;
+  border: 0;
+  padding: 13px 22px;
+  border-radius: 99px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.24);
+}
+
+.button-budget-wa:hover {
+  background: linear-gradient(135deg, #1fba59, #178a46);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.35);
+}
+
+.button-budget-wa svg {
+  width: 17px;
+  height: 17px;
+  fill: #fff;
+}
+
+.button-budget-custom {
+  color: #24152d;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  border-bottom: 1.5px solid #7c3a9c;
+  padding-bottom: 3px;
+  transition: all 0.2s ease;
+}
+
+.button-budget-custom:hover {
+  color: #7c3a9c;
+  border-color: #dfb85b;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .budget-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .signpost-stack {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 580px) {
+  .budget-section {
+    padding: 70px 6vw;
+  }
+
+  .plank-right {
+    margin-left: 6px;
+    padding-right: 32px;
+  }
+
+  .plank-left {
+    margin-right: 6px;
+    padding-left: 32px;
+  }
+
+  .plank-title {
+    font-size: 17px;
+  }
+
+  .budget-hampers-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .budget-showcase {
+    padding: 26px 20px;
+  }
+
+  .badge-gift,
+  .badge-bag {
+    font-size: 26px;
+  }
+}

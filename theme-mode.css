@@ -435,3 +435,72 @@ body,
   }
 }
 
+/* ---------------------------------------------------------
+   Budget Signpost Section in Dark Mode
+   --------------------------------------------------------- */
+[data-theme="dark"] .budget-section {
+  background: linear-gradient(135deg, #100316 0%, #190723 50%, #12031a 100%);
+  border-top: 1px solid rgba(224, 192, 107, 0.14);
+  border-bottom: 1px solid rgba(224, 192, 107, 0.14);
+}
+
+[data-theme="dark"] .plank-cream {
+  background: linear-gradient(135deg, #fdf8ee 0%, #f7ebd6 50%, #ebd6ba 100%);
+  color: #27140c;
+  border-color: #dfb85b;
+}
+
+[data-theme="dark"] .budget-showcase {
+  background: linear-gradient(145deg, #1a0824, #12031a);
+  border-color: rgba(224, 192, 107, 0.22);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65), 0 0 24px rgba(124, 58, 156, 0.12);
+}
+
+[data-theme="dark"] .showcase-header h3 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .showcase-header p {
+  color: #cbbdd4;
+}
+
+[data-theme="dark"] .budget-hamper-item {
+  background: #1e0a29;
+  border-color: rgba(224, 192, 107, 0.16);
+}
+
+[data-theme="dark"] .budget-hamper-item:hover {
+  border-color: #dfb85b;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5), 0 0 14px rgba(224, 192, 107, 0.15);
+}
+
+[data-theme="dark"] .budget-hamper-item h4 {
+  color: #faecc1;
+}
+
+[data-theme="dark"] .budget-hamper-item p {
+  color: #b9a8c4;
+}
+
+[data-theme="dark"] .hamper-price-row {
+  border-top-color: rgba(224, 192, 107, 0.16);
+}
+
+[data-theme="dark"] .hamper-price {
+  color: #dfb85b;
+}
+
+[data-theme="dark"] .hamper-includes {
+  color: #a491af;
+}
+
+[data-theme="dark"] .showcase-actions {
+  border-top-color: rgba(224, 192, 107, 0.18);
+}
+
+[data-theme="dark"] .button-budget-custom {
+  color: #faecc1;
+  border-color: #dfb85b;
+}
+
+
