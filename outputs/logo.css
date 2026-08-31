@@ -315,3 +315,24 @@ input:focus, select:focus, textarea:focus {
   border-color: rgba(158, 124, 184, 0.35);
   color: #f1ddff;
 }
+
+/* Hide 3D Hero Art Installation on Mobile */
+@media (max-width: 899px) {
+  .hero-art {
+    display: none !important;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .hero-copy {
+    padding: 55px 7vw 45px;
+  }
+  .hero-actions {
+    margin-top: 25px;
+    gap: 14px;
+  }
+  .hero-proof {
+    margin-top: 35px;
+  }
+}
