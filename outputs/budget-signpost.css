@@ -111,14 +111,14 @@
 .card-pearl .sign-arrow-right,
 .card-pearl .sign-arrow-left { color: #c93b54; }
 
-/* Card 2: Royal Purple Velvet (Under 1499) */
+/* Card 2: Signature Pastel Lavender (Under 1499) */
 .card-purple {
   color: #ffffff;
 }
 .card-purple::before {
-  background: linear-gradient(135deg, #782696 0%, #4a1364 58%, #280737 100%);
-  border: 1.5px solid rgba(223, 184, 91, 0.55);
-  box-shadow: 0 12px 28px rgba(67, 17, 95, 0.28);
+  background: linear-gradient(135deg, #a785c4 0%, #8e65ad 100%);
+  border: 1.5px solid rgba(223, 184, 91, 0.6);
+  box-shadow: 0 12px 28px rgba(158, 124, 184, 0.32);
 }
 .card-purple .sign-amount { color: #ffffff; }
 .card-purple .sign-arrow-right,
@@ -137,14 +137,14 @@
 .card-gold .sign-arrow-right,
 .card-gold .sign-arrow-left { color: #c93b54; }
 
-/* Card 4: Midnight Obsidian & Radiant Gold (Premium Gifts) */
+/* Card 4: Midnight Velvet Plum & Radiant Gold (Premium Gifts) */
 .card-midnight {
   color: #faecc1;
 }
 .card-midnight::before {
-  background: linear-gradient(135deg, #2e0840 0%, #1a0425 55%, #0e0114 100%);
+  background: linear-gradient(135deg, #3d1b52 0%, #250b36 100%);
   border: 2px solid #dfb85b;
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 14px 32px rgba(45, 17, 66, 0.35);
 }
 .card-midnight .sign-arrow-right,
 .card-midnight .sign-arrow-left {

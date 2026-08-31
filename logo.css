@@ -1,23 +1,337 @@
-.brand{display:inline-flex;align-items:center;letter-spacing:0}.brand img{display:block;width:132px;height:auto;transition:transform .25s ease;filter:drop-shadow(0 2px 1px rgba(79,31,43,.04))}.brand:hover img{transform:translateY(-2px)}footer .brand img{width:114px}@media(max-width:520px){.brand img{width:116px}footer .brand img{width:102px}}
-.site-header{height:112px}.brand img.gold-logo{width:116px;height:98px}@media(max-width:800px){.site-header{height:108px}.brand img.gold-logo{width:106px;height:92px}}@media(max-width:520px){.site-header{height:104px}.brand img.gold-logo{width:100px;height:88px}}
-.brand img.gold-logo{width:118px;height:80px;object-fit:contain;filter:drop-shadow(0 1px 1px rgba(98,62,22,.1))}.brand:hover img.gold-logo{transform:translateY(-2px) scale(1.02)}footer .brand img.gold-logo{width:102px;height:69px}@media(max-width:520px){.brand img.gold-logo{width:105px;height:72px}footer .brand img.gold-logo{width:91px;height:63px}}
-.site-header{height:112px}.brand img.gold-logo{width:116px;height:98px;object-fit:contain}@media(max-width:800px){.site-header{height:108px}.brand img.gold-logo{width:106px;height:92px}}@media(max-width:520px){.site-header{height:104px}.brand img.gold-logo{width:100px;height:88px}}
+/* ==========================================================================
+   TOHFA SIGNATURE PASTEL LAVENDER & WARM PEARL COLOR THEME
+   (Drawn directly from Tohfa's luxury brand visual identity)
+   ========================================================================== */
 
-/* Purple-and-gold theme drawn from the Tohfa mark. */
-:root{--ink:#24152d;--plum:#43115f;--cream:#fcf8ff;--line:#e3d6eb;--rose:#7c3a9c}
-body{background:linear-gradient(135deg,#fffaff 0%,#f8f0fc 48%,#f2e6f7 100%)}
-.announcement{background:linear-gradient(100deg,#180521 0%,#39104f 50%,#691c82 100%);color:#fff8e5}.announcement span{color:#e4c369}
-.site-header{background:rgba(255,251,255,.93);border-bottom:1px solid rgba(93,37,122,.1)}
-.hero{background:linear-gradient(120deg,#fffaff 0%,#f8effc 53%,#f0e1f7 100%)}
-.hero-art{background:radial-gradient(circle at 30% 22%,#8b3aad 0%,#481365 41%,#1c0828 100%)}
-.hero-art:after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(238,204,111,.13),transparent 42%,rgba(63,14,83,.48));pointer-events:none}
-.eyebrow,.header-link span,.text-link span{color:#7a298f}
-h1 em,h2 em{color:#6d247f}
-.button-dark{background:linear-gradient(135deg,#7d2b98 0%,#45125d 58%,#23062e 100%);box-shadow:0 10px 24px rgba(72,18,96,.18)}
-.text-link{border-color:#b381c3}
-.trust-strip{background:linear-gradient(90deg,#f4e8f8,#efe0f5,#f6e9f8)}.trust-strip span{color:#b48a2d}
-.occasion{background:linear-gradient(125deg,#f8eefb,#eee0f4)}
-.concierge{background:linear-gradient(120deg,#1b0626 0%,#45105f 52%,#722285 100%)}
-.concierge .eyebrow{color:#ebd38a}.concierge h2 em{color:#f1d67e}.button-light{background:linear-gradient(135deg,#fff5ca,#d8b24e);color:#31103f}
-.announcement{display:block}.enquiry form{background:linear-gradient(145deg,#fff,#fbf3ff);border-color:#ddcce6}.button-whatsapp{background:#25d366;box-shadow:0 8px 18px rgba(37,211,102,.22)}.button-whatsapp:hover{background:#1fba59}
-.brand img.gold-logo{width:80px;height:80px;border-radius:50%;object-fit:cover;filter:drop-shadow(0 5px 10px rgba(47,8,66,.22))}.brand:hover img.gold-logo{transform:translateY(-2px) scale(1.04)}@media(max-width:520px){.brand img.gold-logo{width:66px;height:66px}}
+:root {
+  --ink: #331a44;
+  --plum: #4a2563;
+  --cream: #faf6f1;
+  --line: #ebdff2;
+  --rose: #9e7cb8;
+  --lavender: #9e7cb8;
+  --lavender-light: #b493cf;
+  --lavender-soft: #f4ecf9;
+  --lavender-bg: #f9f4fc;
+  --gold-accent: #dfb85b;
+}
+
+body {
+  background: #faf6f1;
+  color: var(--ink);
+}
+
+/* --- Top Announcement Bar --- */
+.announcement {
+  background: #eedef5;
+  color: #522d6a;
+  border-bottom: 1px solid #e2cee9;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 9px 15px;
+}
+
+.announcement span {
+  color: #a482be;
+  margin: 0 10px;
+}
+
+/* --- Header --- */
+.site-header {
+  background: rgba(255, 253, 251, 0.96);
+  border-bottom: 1px solid #ebdff2;
+  backdrop-filter: blur(10px);
+}
+
+.site-header nav a,
+.header-link,
+footer a {
+  color: #432857;
+  font-weight: 500;
+}
+
+.site-header nav a:hover,
+.header-link:hover {
+  color: #9e7cb8;
+}
+
+.brand img.gold-logo {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: drop-shadow(0 4px 10px rgba(82, 45, 106, 0.15));
+  transition: transform 0.25s ease;
+}
+
+.brand:hover img.gold-logo {
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* --- Hero Section --- */
+.hero {
+  background: linear-gradient(135deg, #fffaf7 0%, #faf3fc 50%, #f4e8f9 100%);
+  border-bottom: 1px solid #ebdff2;
+}
+
+.eyebrow {
+  color: #9e7cb8;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+}
+
+.hero-script {
+  font-family: 'Caveat', 'Playfair Display', cursive;
+  font-size: 26px;
+  color: #9e7cb8;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+h1 {
+  color: #331a44;
+  letter-spacing: -0.03em;
+}
+
+h1 em {
+  font-family: 'Caveat', 'Playfair Display', cursive;
+  color: #9e7cb8;
+  font-weight: 600;
+  font-style: italic;
+  display: inline-block;
+  font-size: 1.15em;
+  letter-spacing: 0;
+}
+
+.hero-heart {
+  font-size: 0.7em;
+  vertical-align: middle;
+}
+
+.hero-intro {
+  color: #6a5378;
+}
+
+/* --- Buttons in Signature Pastel Lavender --- */
+.button-dark,
+.button-lavender {
+  background: linear-gradient(135deg, #a785c4 0%, #8e65ad 100%);
+  color: #ffffff;
+  border-radius: 99px;
+  box-shadow: 0 8px 20px rgba(158, 124, 184, 0.32);
+  border: 1.5px solid transparent;
+  padding: 14px 28px;
+  font-weight: 600;
+}
+
+.button-dark:hover,
+.button-lavender:hover {
+  background: linear-gradient(135deg, #9974b9 0%, #7e539f 100%);
+  box-shadow: 0 10px 26px rgba(158, 124, 184, 0.42);
+  transform: translateY(-2px);
+}
+
+.button-outline,
+.button-outline-lavender {
+  background: #ffffff;
+  color: #7b519e;
+  border: 1.5px solid #a785c4;
+  border-radius: 99px;
+  padding: 14px 28px;
+  font-weight: 600;
+}
+
+.button-outline:hover,
+.button-outline-lavender:hover {
+  background: #f8effc;
+  border-color: #8e65ad;
+  color: #633887;
+  transform: translateY(-2px);
+}
+
+.text-link {
+  color: #7b519e;
+  border-bottom: 1.5px solid #bba0d1;
+}
+
+.text-link:hover {
+  color: #552876;
+  border-color: #7b519e;
+}
+
+/* --- 3D Hero Art Stage --- */
+.hero-art {
+  background: radial-gradient(circle at 35% 30%, #a480c2 0%, #683a82 45%, #2a113a 100%);
+}
+
+.hero-art:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(238, 204, 111, 0.12), transparent 45%, rgba(42, 17, 58, 0.45));
+  pointer-events: none;
+}
+
+/* --- Trust Strip (Clean Pill Bar) --- */
+.trust-strip {
+  background: #ffffff;
+  border-bottom: 1px solid #ebdff2;
+  box-shadow: 0 4px 16px rgba(67, 17, 95, 0.04);
+}
+
+.trust-strip p {
+  color: #4b325c;
+  font-weight: 600;
+}
+
+.trust-strip span {
+  color: #9e7cb8;
+}
+
+/* --- Collections & Occasions --- */
+.section-heading h2 {
+  color: #331a44;
+}
+
+.section-heading h2 em {
+  color: #9e7cb8;
+  font-style: italic;
+}
+
+.collection-card:before {
+  background: linear-gradient(180deg, transparent 35%, rgba(35, 14, 48, 0.78));
+}
+
+.celebrations {
+  background: linear-gradient(135deg, #faf5fc 0%, #f4eaf8 100%);
+}
+
+.celebration-card {
+  background: #ffffff;
+  border: 1px solid #ebdff2;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(78, 38, 102, 0.05);
+}
+
+.celebration-card:hover {
+  border-color: #a785c4;
+  box-shadow: 0 14px 30px rgba(158, 124, 184, 0.18);
+}
+
+.celebration-card p {
+  color: #9e7cb8;
+}
+
+.celebration-card h3 {
+  color: #331a44;
+}
+
+.occasion {
+  background: linear-gradient(135deg, #f8effc 0%, #f1e4f6 100%);
+}
+
+.occasion h2 em {
+  color: #9e7cb8;
+}
+
+/* --- Process Section --- */
+.process {
+  background: #ffffff;
+}
+
+.process h2 em {
+  color: #9e7cb8;
+}
+
+.steps article {
+  border-left-color: #ebdff2;
+}
+
+.steps span {
+  color: #9e7cb8;
+}
+
+/* --- Corporate Concierge --- */
+.concierge {
+  background: linear-gradient(125deg, #301344 0%, #4b2368 55%, #6a3a89 100%);
+  color: #fcf8ff;
+}
+
+.concierge .eyebrow {
+  color: #dfc3f7;
+}
+
+.concierge h2 em {
+  color: #f7e6c0;
+}
+
+.button-light {
+  background: linear-gradient(135deg, #fff5d2 0%, #dfb85b 100%);
+  color: #311445;
+  font-weight: 700;
+  border-radius: 99px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+/* --- Enquiry Form --- */
+.enquiry {
+  background: linear-gradient(135deg, #faf5fc 0%, #f6ecf9 100%);
+}
+
+.enquiry form {
+  background: #ffffff;
+  border: 1px solid #ebdff2;
+  border-radius: 18px;
+  box-shadow: 0 16px 36px rgba(78, 38, 102, 0.08);
+}
+
+.form-intro span {
+  color: #9e7cb8;
+}
+
+input, select, textarea {
+  border-bottom-color: #dccce4;
+  color: #331a44;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-bottom-color: #9e7cb8;
+}
+
+.button-whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  border-radius: 99px;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+}
+
+.whatsapp-float {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+}
+
+/* --- Footer in Matching Pastel Lavender & Deep Royal Plum --- */
+.site-footer {
+  background: linear-gradient(135deg, #2a1139 0%, #3d1b52 50%, #1f0b2b 100%);
+  border-top: 1px solid #7a4e94;
+}
+
+.footer-top {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-badge {
+  background: rgba(158, 124, 184, 0.18);
+  border-color: rgba(158, 124, 184, 0.35);
+  color: #f1ddff;
+}
+
+.contact-icon-pill {
+  background: rgba(158, 124, 184, 0.2);
+  border-color: rgba(158, 124, 184, 0.35);
+  color: #f1ddff;
+}
