@@ -1,9 +1,9 @@
 /* ==========================================================================
-   TOHFA LUXURY SHOP BY BUDGET — 3D SIGNPOST SECTION
+   TOHFA LUXURY SHOP BY BUDGET — REFINED ROYAL PURPLE & GOLD SIGNPOST
    ========================================================================== */
 
 .budget-section {
-  background: linear-gradient(135deg, #fcf8fd 0%, #f7effa 50%, #f4e8f7 100%);
+  background: linear-gradient(135deg, #fffaff 0%, #f8effc 50%, #f0e1f7 100%);
   padding: 105px max(25px, 8vw);
   position: relative;
   overflow: hidden;
@@ -12,24 +12,24 @@
 .budget-section::before {
   content: '';
   position: absolute;
-  top: -150px;
-  right: -100px;
-  width: 450px;
-  height: 450px;
+  top: -120px;
+  right: -80px;
+  width: 480px;
+  height: 480px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(224, 192, 107, 0.12) 0%, rgba(124, 58, 156, 0.05) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(223, 184, 91, 0.16) 0%, rgba(108, 35, 134, 0.06) 50%, transparent 70%);
   pointer-events: none;
 }
 
 .budget-section::after {
   content: '';
   position: absolute;
-  bottom: -150px;
-  left: -100px;
-  width: 450px;
-  height: 450px;
+  bottom: -120px;
+  left: -80px;
+  width: 480px;
+  height: 480px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(124, 58, 156, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(69, 18, 93, 0.1) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -37,7 +37,7 @@
   display: grid;
   grid-template-columns: 1.15fr 1.25fr;
   align-items: center;
-  gap: clamp(40px, 6vw, 90px);
+  gap: clamp(40px, 6vw, 85px);
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
@@ -51,51 +51,52 @@
   align-items: center;
   position: relative;
   perspective: 1200px;
-  padding: 30px 10px;
+  padding: 25px 10px;
 }
 
+/* Sleek Luxury Gold-accented Pole Behind Planks */
 .signpost-pole {
   position: absolute;
-  top: 10px;
-  bottom: 0;
-  width: 14px;
-  background: linear-gradient(90deg, #d3c7b8 0%, #ffffff 40%, #a89886 85%, #6e5f4e 100%);
+  top: 0;
+  bottom: -15px;
+  width: 12px;
+  background: linear-gradient(90deg, #caa050 0%, #fdf2d2 35%, #b68732 75%, #7a5818 100%);
   border-radius: 6px;
-  box-shadow: 0 10px 25px rgba(41, 16, 54, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 25px rgba(36, 8, 48, 0.28), 0 0 12px rgba(223, 184, 91, 0.3);
   z-index: 1;
 }
 
 .signpost-pole::before {
   content: '';
   position: absolute;
-  top: -12px;
+  top: -10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 24px;
-  height: 16px;
-  background: linear-gradient(180deg, #f5e4bd, #b88628);
+  width: 22px;
+  height: 14px;
+  background: linear-gradient(180deg, #faecc1, #a3742f);
   border-radius: 4px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .signpost-pole::after {
   content: '';
   position: absolute;
-  bottom: -6px;
+  bottom: -8px;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
-  height: 14px;
-  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.3) 0%, transparent 70%);
+  width: 70px;
+  height: 16px;
+  background: radial-gradient(ellipse, rgba(41, 11, 56, 0.35) 0%, transparent 70%);
   border-radius: 50%;
 }
 
 .signpost-stack {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 20px;
   width: 100%;
-  max-width: 440px;
+  max-width: 450px;
   position: relative;
   z-index: 2;
 }
@@ -105,93 +106,122 @@
   position: relative;
   display: flex;
   align-items: center;
-  padding: 16px 24px;
-  border-radius: 12px;
+  padding: 16px 28px;
+  border-radius: 14px;
   cursor: pointer;
   text-decoration: none;
   font-family: 'DM Sans', sans-serif;
   font-weight: 700;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
   transform-style: preserve-3d;
-  box-shadow: 0 12px 28px rgba(36, 17, 48, 0.14), 0 2px 6px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 26px rgba(36, 17, 48, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
   user-select: none;
 }
 
-/* Alternate Sign Colors & Styles */
+/* ---------------------------------------------------------
+   Tohfa Theme Plank Variants
+   --------------------------------------------------------- */
 
-/* 1. Cream Planks (Under 999 & Under 2499) */
-.plank-cream {
-  background: linear-gradient(135deg, #fffef9 0%, #fdf5ea 50%, #f5e8d5 100%);
-  color: #2e1d16;
-  border: 2px solid #ecd8bf;
+/* 1. Pearl Ivory & Gold Border (Under 999) */
+.plank-pearl {
+  background: linear-gradient(135deg, #ffffff 0%, #fdf8ff 45%, #f6e9fc 100%);
+  color: #24152d;
+  border: 1.5px solid rgba(223, 184, 91, 0.65);
+  box-shadow: 0 10px 24px rgba(67, 17, 95, 0.1), inset 0 1px 0 #fff;
 }
 
-.plank-cream .plank-arrow {
-  color: #c93b54;
+.plank-pearl .plank-title em {
+  color: #7c3a9c;
 }
 
-.plank-cream .plank-sub {
-  color: #7d6e64;
+.plank-pearl .plank-arrow {
+  color: #b88628;
 }
 
-/* 2. Crimson / Velvet Coral Planks (Under 1499 & Premium) */
-.plank-crimson {
-  background: linear-gradient(135deg, #e14b64 0%, #c4324c 50%, #9e1d35 100%);
+.plank-pearl .plank-sub {
+  color: #72627c;
+}
+
+/* 2. Royal Purple Velvet (Under 1499) */
+.plank-purple {
+  background: linear-gradient(135deg, #71248d 0%, #46115e 58%, #260535 100%);
   color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.28);
-  box-shadow: 0 12px 28px rgba(162, 34, 59, 0.28), 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: 1.5px solid rgba(223, 184, 91, 0.4);
+  box-shadow: 0 12px 30px rgba(67, 17, 95, 0.28), 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.plank-crimson .plank-arrow {
-  color: #ffe1ea;
+.plank-purple .plank-title em {
+  color: #faecc1;
+  text-shadow: 0 0 10px rgba(250, 236, 193, 0.4);
 }
 
-.plank-crimson .plank-sub {
-  color: #ffd2dc;
+.plank-purple .plank-arrow {
+  color: #dfb85b;
 }
 
-/* Directional Arrow Tips & Tilts */
+.plank-purple .plank-sub {
+  color: #e5c9f5;
+}
+
+/* 3. Champagne Gold Pearl (Under 2499) */
+.plank-gold-pearl {
+  background: linear-gradient(135deg, #fffdf8 0%, #fdf4e4 50%, #f7e6c7 100%);
+  color: #24152d;
+  border: 1.5px solid #d8b24e;
+  box-shadow: 0 10px 25px rgba(184, 134, 40, 0.15), inset 0 1px 0 #fff;
+}
+
+.plank-gold-pearl .plank-title em {
+  color: #52166e;
+}
+
+.plank-gold-pearl .plank-arrow {
+  color: #8a3aad;
+}
+
+.plank-gold-pearl .plank-sub {
+  color: #7e6952;
+}
+
+/* 4. Midnight Obsidian & Radiant Gold (Premium Gifts) */
+.plank-midnight {
+  background: linear-gradient(135deg, #2c083d 0%, #1a0425 55%, #0d0113 100%);
+  color: #faecc1;
+  border: 2px solid #dfb85b;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35), 0 0 18px rgba(223, 184, 91, 0.22);
+}
+
+.plank-midnight .plank-title {
+  color: #fff;
+}
+
+.plank-midnight .plank-title em {
+  color: #dfb85b;
+  text-shadow: 0 0 12px rgba(223, 184, 91, 0.5);
+}
+
+.plank-midnight .plank-arrow {
+  color: #dfb85b;
+  text-shadow: 0 0 8px rgba(223, 184, 91, 0.6);
+}
+
+.plank-midnight .plank-sub {
+  color: #dfb85b;
+}
+
+/* Directional Arrow Slopes */
 .plank-right {
-  transform: rotate(-1.5deg) translateZ(0);
-  margin-left: 20px;
-  clip-path: polygon(0% 0%, 92% 0%, 100% 50%, 92% 100%, 0% 100%);
-  padding-right: 44px;
+  transform: rotate(-1.2deg) translateZ(0);
+  margin-left: 14px;
+  clip-path: polygon(0% 0%, 91% 0%, 100% 50%, 91% 100%, 0% 100%);
+  padding-right: 48px;
 }
 
 .plank-left {
-  transform: rotate(1.8deg) translateZ(0);
-  margin-right: 20px;
-  clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 8% 100%, 0% 50%);
-  padding-left: 44px;
-}
-
-/* Plank Metal Clamp / Bracket */
-.plank-clamp {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 32px;
-  height: 28px;
-  background: linear-gradient(180deg, #f0f0f0 0%, #b8b8b8 48%, #787878 100%);
-  border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35), inset 0 1px 1px #fff;
-  z-index: 5;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 0 3px;
-  border: 1px solid #707070;
-}
-
-.plank-clamp::before,
-.plank-clamp::after {
-  content: '';
-  width: 5px;
-  height: 5px;
-  background: #333;
-  border-radius: 50%;
-  box-shadow: inset 0 1px 1px #000, 0 1px 0 rgba(255, 255, 255, 0.5);
+  transform: rotate(1.2deg) translateZ(0);
+  margin-right: 14px;
+  clip-path: polygon(9% 0%, 100% 0%, 100% 100%, 9% 100%, 0% 50%);
+  padding-left: 48px;
 }
 
 /* Plank Text Content */
@@ -203,14 +233,6 @@
   z-index: 3;
 }
 
-.plank-left .plank-content {
-  flex-direction: row;
-}
-
-.plank-right .plank-content {
-  flex-direction: row;
-}
-
 .plank-main-title {
   display: flex;
   flex-direction: column;
@@ -218,7 +240,7 @@
 
 .plank-title {
   font-family: 'DM Sans', sans-serif;
-  font-size: clamp(19px, 2.2vw, 24px);
+  font-size: clamp(20px, 2.3vw, 25px);
   font-weight: 800;
   letter-spacing: -0.01em;
   line-height: 1.1;
@@ -231,18 +253,19 @@
   font-family: 'Playfair Display', serif;
   font-style: normal;
   font-size: 1.1em;
+  font-weight: 700;
 }
 
 .plank-sub {
   font-size: 10.5px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   margin-top: 3px;
   font-weight: 600;
 }
 
 .plank-arrow {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 900;
   transition: transform 0.3s ease;
 }
@@ -252,57 +275,57 @@
   position: absolute;
   pointer-events: none;
   z-index: 6;
-  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.22));
-  animation: floatSway 3.2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.25));
+  animation: floatSway 3.4s ease-in-out infinite alternate;
 }
 
 .badge-gift {
-  top: -24px;
-  right: -12px;
-  font-size: 34px;
+  top: -22px;
+  right: -10px;
+  font-size: 32px;
   animation-delay: 0s;
 }
 
 .badge-heart {
   top: 50%;
-  left: -20px;
+  left: -16px;
   transform: translateY(-50%);
-  font-size: 30px;
+  font-size: 28px;
   animation-delay: 0.6s;
 }
 
 .badge-ribbon {
-  top: -18px;
-  left: -14px;
-  font-size: 30px;
+  top: -16px;
+  left: -12px;
+  font-size: 28px;
   animation-delay: 1.2s;
 }
 
 .badge-bag {
-  bottom: -18px;
-  right: -14px;
-  font-size: 32px;
+  bottom: -16px;
+  right: -12px;
+  font-size: 30px;
   animation-delay: 0.9s;
 }
 
 .badge-sparkle {
   position: absolute;
   color: #dfb85b;
-  font-size: 14px;
+  font-size: 13px;
   animation: sparkleTwinkle 1.8s ease-in-out infinite alternate;
 }
 
-.sparkle-1 { top: -8px; left: 30%; }
-.sparkle-2 { bottom: -6px; right: 25%; animation-delay: 0.9s; }
+.sparkle-1 { top: -6px; left: 32%; }
+.sparkle-2 { bottom: -6px; right: 28%; animation-delay: 0.9s; }
 
 @keyframes floatSway {
   0% { transform: translateY(0) rotate(0deg) scale(1); }
-  100% { transform: translateY(-7px) rotate(6deg) scale(1.06); }
+  100% { transform: translateY(-6px) rotate(5deg) scale(1.05); }
 }
 
 @keyframes sparkleTwinkle {
   0% { opacity: 0.3; transform: scale(0.8) rotate(0deg); }
-  100% { opacity: 1; transform: scale(1.25) rotate(45deg); filter: drop-shadow(0 0 6px #dfb85b); }
+  100% { opacity: 1; transform: scale(1.2) rotate(45deg); filter: drop-shadow(0 0 6px #dfb85b); }
 }
 
 /* Plank Hover & Active Animations */
@@ -312,38 +335,34 @@
 }
 
 .plank-right:hover {
-  transform: rotate(-0.5deg) scale(1.05) translateZ(25px);
+  transform: rotate(-0.3deg) scale(1.045) translateZ(22px);
 }
 
 .plank-left:hover {
-  transform: rotate(0.5deg) scale(1.05) translateZ(25px);
-}
-
-.sign-plank:hover .plank-arrow {
-  transform: scale(1.2);
+  transform: rotate(0.3deg) scale(1.045) translateZ(22px);
 }
 
 .plank-right:hover .plank-arrow {
-  transform: translateX(4px) scale(1.2);
+  transform: translateX(5px) scale(1.15);
 }
 
 .plank-left:hover .plank-arrow {
-  transform: translateX(-4px) scale(1.2);
+  transform: translateX(-5px) scale(1.15);
 }
 
 /* Active Selected Plank */
 .sign-plank.active {
   border-color: #dfb85b;
-  box-shadow: 0 0 0 3px #dfb85b, 0 16px 36px rgba(47, 14, 62, 0.28);
+  box-shadow: 0 0 0 3px #dfb85b, 0 16px 36px rgba(67, 17, 95, 0.25);
   z-index: 10;
 }
 
 .plank-right.active {
-  transform: rotate(0deg) scale(1.05) translateZ(30px);
+  transform: rotate(0deg) scale(1.04) translateZ(25px);
 }
 
 .plank-left.active {
-  transform: rotate(0deg) scale(1.05) translateZ(30px);
+  transform: rotate(0deg) scale(1.04) translateZ(25px);
 }
 
 /* --- Right Column: Interactive Budget Showcase --- */
@@ -364,7 +383,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #7c3a9c, #dfb85b, #e14b64);
+  background: linear-gradient(90deg, #7c3a9c 0%, #dfb85b 50%, #43115f 100%);
 }
 
 .showcase-header {
@@ -392,7 +411,7 @@
 /* Tab Panels */
 .budget-card-panel {
   display: none;
-  animation: panelSlideFade 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation: panelSlideFade 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .budget-card-panel.active {
@@ -402,7 +421,7 @@
 @keyframes panelSlideFade {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -418,7 +437,7 @@
 }
 
 .budget-hamper-item {
-  background: #fcf9fd;
+  background: #fcf8fd;
   border: 1px solid #ebdfee;
   border-radius: 14px;
   padding: 16px 18px;
@@ -438,7 +457,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #e14b64;
+  color: #7c3a9c;
   margin-bottom: 6px;
 }
 
@@ -489,7 +508,7 @@
 }
 
 .button-budget-wa {
-  background: linear-gradient(135deg, #287b51, #1e6943);
+  background: linear-gradient(135deg, #25d366, #128c7e);
   color: #fff;
   border: 0;
   padding: 13px 22px;
@@ -506,7 +525,7 @@
 }
 
 .button-budget-wa:hover {
-  background: linear-gradient(135deg, #1fba59, #178a46);
+  background: linear-gradient(135deg, #1fba59, #0f7a6e);
   transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(37, 211, 102, 0.35);
 }
@@ -550,17 +569,17 @@
   }
 
   .plank-right {
-    margin-left: 6px;
-    padding-right: 32px;
+    margin-left: 4px;
+    padding-right: 36px;
   }
 
   .plank-left {
-    margin-right: 6px;
-    padding-left: 32px;
+    margin-right: 4px;
+    padding-left: 36px;
   }
 
   .plank-title {
-    font-size: 17px;
+    font-size: 18px;
   }
 
   .budget-hampers-grid {
