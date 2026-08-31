@@ -316,9 +316,10 @@ input:focus, select:focus, textarea:focus {
   color: #f1ddff;
 }
 
-/* Hide 3D Hero Art Installation on Mobile */
+/* Hide 3D Hero Art Installation & Trust Strip on Mobile */
 @media (max-width: 899px) {
-  .hero-art {
+  .hero-art,
+  .trust-strip {
     display: none !important;
   }
   .hero {
