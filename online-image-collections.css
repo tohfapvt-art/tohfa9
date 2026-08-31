@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TOHFA CELEBRATIONS & OCCASIONS IMAGES (HIGH-RELIABILITY 100% UPTIME CDN)
+   TOHFA CELEBRATIONS & OCCASIONS IMAGES (LOCAL ASSETS — 100% RELIABLE)
    ========================================================================== */
 
 .celebrations {
@@ -53,7 +53,7 @@
 }
 
 .celebration-card:hover::before {
-  background: linear-gradient(180deg, rgba(35, 14, 48, 0.02) 20%, rgba(30, 10, 42, 0.75) 100%);
+  background: linear-gradient(180deg, rgba(35, 14, 48, 0.02) 20%, rgba(30, 10, 42, 0.72) 100%);
 }
 
 .celebration-card > div {
@@ -103,26 +103,21 @@
   font-size: 14px;
 }
 
-/* --- High-Quality Unsplash Occasion Imagery --- */
-
-/* 1. Birthdays: Pastel lavender celebration cake & candles */
+/* --- Local Image Backgrounds --- */
 .birthday {
-  background-image: url('https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&w=800&q=80');
+  background-image: url('birthday-gift.jpg');
 }
 
-/* 2. Weddings: Luxury wedding gift packaging with flowers & ribbon */
 .wedding {
-  background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80');
+  background-image: url('wedding-gift.jpg');
 }
 
-/* 3. Anniversaries: Lavender gift box with ribbon & ambient sparkle */
 .anniversary {
-  background-image: url('https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=800&q=80');
+  background-image: url('anniversary-gift.jpg');
 }
 
-/* 4. Corporate / Office & teams: Luxury stationery, notebook & gourmet gift set */
 .corporate {
-  background-image: url('https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=800&q=80');
+  background-image: url('corporate-gift.jpg');
 }
 
 /* Responsive adjustments */
