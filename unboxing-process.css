@@ -1,10 +1,10 @@
 /* ==========================================================================
-   TOHFA TRUE 3D ISOMETRIC LEVITATING & REVOLVING GIFT BOXES
+   TOHFA LUXURY 3D GIFT BOXES UNBOXING PROCESS (STEADY TEXT + FLOATING BOXES)
    ========================================================================== */
 
 .process {
   background: linear-gradient(135deg, #fffdfa 0%, #faf3fc 50%, #f4e8f9 100%);
-  padding: 100px max(20px, 6vw) 130px;
+  padding: 90px max(20px, 6vw) 120px;
   position: relative;
   overflow: hidden;
   border-top: 1px solid #ebdff2;
@@ -13,7 +13,7 @@
 .process-header {
   text-align: center;
   max-width: 760px;
-  margin: 0 auto 60px;
+  margin: 0 auto 50px;
   position: relative;
   z-index: 2;
 }
@@ -50,354 +50,62 @@
   font-weight: 500;
 }
 
-/* --- 3D Unboxing Stage --- */
+/* --- Unboxing Grid Layout --- */
 .unboxing-stage {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(24px, 3.5vw, 50px);
+  gap: clamp(24px, 3vw, 40px);
   max-width: 1200px;
-  margin: 150px auto 40px; /* Ample top room for message cards popping up */
+  margin: 40px auto 0;
   position: relative;
   z-index: 3;
+  align-items: start;
 }
 
-/* Individual Box Wrapper */
+/* Individual Unboxing Step Column */
 .unbox-box-wrap {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 25px;
   outline: none;
   cursor: pointer;
-  perspective: 1200px;
   user-select: none;
 }
 
-/* 3D Levitation & Revolving Motion Container */
-.unbox-box-container {
-  position: relative;
-  width: 100%;
-  max-width: 280px;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  transform-style: preserve-3d;
-  animation: cubeLevitate 7s ease-in-out infinite;
-  transition: filter 0.35s ease;
-}
-
-.unbox-box-1 .unbox-box-container { animation-delay: 0s; }
-.unbox-box-2 .unbox-box-container { animation-delay: -2.3s; }
-.unbox-box-3 .unbox-box-container { animation-delay: -4.6s; }
-
-.unbox-box-wrap:hover .unbox-box-container {
-  filter: drop-shadow(0 22px 35px rgba(158, 124, 184, 0.4));
-}
-
-/* Ground Shadow */
-.box-shadow-ground {
-  width: 220px;
-  height: 24px;
-  background: radial-gradient(ellipse, rgba(48, 18, 66, 0.3) 0%, transparent 72%);
-  border-radius: 50%;
-  margin-top: 25px;
-  animation: cubeShadow 7s ease-in-out infinite;
-  transition: all 0.4s ease;
-}
-
-.unbox-box-1 .box-shadow-ground { animation-delay: 0s; }
-.unbox-box-2 .box-shadow-ground { animation-delay: -2.3s; }
-.unbox-box-3 .box-shadow-ground { animation-delay: -4.6s; }
-
-.unbox-box-wrap.is-open .box-shadow-ground {
-  transform: scale(1.25);
-  background: radial-gradient(ellipse, rgba(48, 18, 66, 0.45) 0%, transparent 72%);
-}
-
 /* ==========================================================================
-   TRUE 3D ISOMETRIC CUBE STRUCTURE
-   ========================================================================== */
-
-.cube-3d-box {
-  position: relative;
-  width: 180px;
-  height: 180px;
-  transform-style: preserve-3d;
-  transform: rotateX(15deg) rotateY(-22deg) rotateZ(3deg);
-  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.cube-body-3d {
-  position: absolute;
-  inset: 0;
-  transform-style: preserve-3d;
-}
-
-/* Front Face */
-.cube-face-front {
-  position: absolute;
-  width: 180px;
-  height: 160px;
-  bottom: 0;
-  left: 0;
-  border-radius: 16px 4px 16px 16px;
-  box-shadow: 0 18px 36px rgba(51, 14, 73, 0.25), inset 0 2px 4px rgba(255, 255, 255, 0.5);
-  overflow: hidden;
-  z-index: 5;
-}
-
-/* Right Side Depth Face */
-.cube-face-side {
-  position: absolute;
-  width: 58px;
-  height: 160px;
-  bottom: 0;
-  left: 180px;
-  transform-origin: left bottom;
-  transform: skewY(-36deg);
-  border-radius: 0 16px 16px 0;
-  overflow: hidden;
-  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.2);
-  z-index: 4;
-}
-
-/* Gold Ribbons across Front Face */
-.ribbon-body-v {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 24px;
-  background: linear-gradient(90deg, #faecc1 0%, #dfb85b 50%, #b68732 100%);
-  box-shadow: inset 0 1px 2px #fff, 0 2px 6px rgba(0, 0, 0, 0.2);
-  z-index: 6;
-}
-
-.ribbon-body-h {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 22px;
-  background: linear-gradient(180deg, #faecc1 0%, #dfb85b 50%, #b68732 100%);
-  box-shadow: inset 0 1px 2px #fff, 0 2px 6px rgba(0, 0, 0, 0.2);
-  z-index: 6;
-}
-
-/* Gold Ribbon on Right Side Face */
-.ribbon-side-h {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 22px;
-  background: linear-gradient(180deg, #dfb85b 0%, #b68732 50%, #875e1d 100%);
-  z-index: 6;
-}
-
-/* Center Interactive Tag */
-.box-tag {
-  position: absolute;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.95);
-  border: 1.5px solid #dfb85b;
-  border-radius: 99px;
-  padding: 6px 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  z-index: 8;
-  white-space: nowrap;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-}
-
-.box-tag .tag-num {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 11px;
-  font-weight: 900;
-  color: #9e7cb8;
-}
-
-.box-tag .tag-label {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 11.5px;
-  font-weight: 700;
-  color: #331a44;
-}
-
-.unbox-box-wrap.is-open .box-tag {
-  background: #faecc1;
-  border-color: #b68732;
-  transform: translateX(-50%) scale(0.95);
-}
-
-/* ==========================================================================
-   3D SEPARABLE LID (ISOMETRIC TOP CAP & BOW)
-   ========================================================================== */
-
-.cube-lid-3d {
-  position: absolute;
-  top: -42px;
-  left: -6px;
-  width: 192px;
-  height: 65px;
-  transform-style: preserve-3d;
-  z-index: 8;
-  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
-}
-
-/* Isometric Top Face of Lid */
-.lid-top-face {
-  position: absolute;
-  width: 192px;
-  height: 52px;
-  top: 0;
-  left: 0;
-  transform-origin: bottom center;
-  transform: skewX(-54deg);
-  border-radius: 14px 14px 0 0;
-  overflow: hidden;
-  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.75), 0 8px 18px rgba(0, 0, 0, 0.2);
-}
-
-/* Front Lip of Lid */
-.lid-front-lip {
-  position: absolute;
-  top: 52px;
-  left: 0;
-  width: 192px;
-  height: 20px;
-  border-radius: 0 0 10px 10px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
-}
-
-/* Ribbons on Lid */
-.lid-ribbon-v {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 24px;
-  background: linear-gradient(90deg, #faecc1 0%, #dfb85b 50%, #b68732 100%);
-  z-index: 9;
-}
-
-.lid-ribbon-h {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 20px;
-  background: linear-gradient(180deg, #faecc1 0%, #dfb85b 50%, #b68732 100%);
-  z-index: 9;
-}
-
-/* 3D Bow sitting on top of Lid */
-.lid-bow-3d {
-  position: absolute;
-  top: -16px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 38px;
-  height: 24px;
-  border: 6px solid #dfb85b;
-  border-radius: 100% 100% 0 100%;
-  transform: translateX(-50%) rotate(45deg);
-  background: linear-gradient(135deg, #fff5d2, #faecc1);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-  z-index: 12;
-}
-
-/* ==========================================================================
-   COLOR SCHEMES PER BOX
-   ========================================================================== */
-
-/* Box 1: Signature Pearl Lavender */
-.unbox-box-1 .cube-face-front,
-.unbox-box-1 .lid-top-face,
-.unbox-box-1 .lid-front-lip {
-  background: linear-gradient(135deg, #caa3e6 0%, #a785c4 50%, #8c63ab 100%);
-  border: 1.5px solid rgba(223, 184, 91, 0.7);
-}
-.unbox-box-1 .cube-face-side {
-  background: linear-gradient(135deg, #7e559e 0%, #5d357d 100%);
-  border: 1.5px solid rgba(223, 184, 91, 0.5);
-}
-
-/* Box 2: Royal Purple Velvet */
-.unbox-box-2 .cube-face-front,
-.unbox-box-2 .lid-top-face,
-.unbox-box-2 .lid-front-lip {
-  background: linear-gradient(135deg, #7c2998 0%, #52176c 50%, #300940 100%);
-  border: 1.5px solid rgba(223, 184, 91, 0.7);
-}
-.unbox-box-2 .cube-face-side {
-  background: linear-gradient(135deg, #3f0e54 0%, #20042d 100%);
-  border: 1.5px solid rgba(223, 184, 91, 0.5);
-}
-
-/* Box 3: Midnight Obsidian Plum */
-.unbox-box-3 .cube-face-front,
-.unbox-box-3 .lid-top-face,
-.unbox-box-3 .lid-front-lip {
-  background: linear-gradient(135deg, #3d1052 0%, #20062e 50%, #11011a 100%);
-  border: 2px solid #dfb85b;
-}
-.unbox-box-3 .cube-face-side {
-  background: linear-gradient(135deg, #170422 0%, #09000e 100%);
-  border: 1.5px solid rgba(223, 184, 91, 0.5);
-}
-
-/* ==========================================================================
-   CRITICAL FIX: OPEN STATE LID FLIES OFF TO SIDE / BACK (NEVER OVERLAPS TEXT!)
-   ========================================================================== */
-
-.unbox-box-wrap.is-open .cube-lid-3d {
-  transform: translateY(-90px) translateX(65px) rotateX(45deg) rotateY(-45deg) scale(0.8);
-  opacity: 0.5;
-  z-index: 2 !important; /* Strictly below card */
-  pointer-events: none;
-}
-
-/* ==========================================================================
-   SURPRISE MESSAGE SCROLL CARD (ALWAYS PROMINENT & ON TOP)
+   1. STEADY MESSAGE CARD (DOES NOT MOVE OR WOBBLE — COMPLETELY ROCK-SOLID)
    ========================================================================== */
 
 .box-scroll-card {
-  position: absolute;
-  left: 50%;
-  bottom: 80px;
-  transform: translate(-50%, 20px) scale(0.6);
-  width: 95%;
-  min-width: 270px;
-  background: linear-gradient(145deg, #ffffff 0%, #fefaff 55%, #f7ebfc 100%);
+  width: 100%;
+  max-width: 320px;
+  min-height: 220px;
+  background: linear-gradient(145deg, #ffffff 0%, #fdf8ff 60%, #f7ebfc 100%);
   border: 2px solid #dfb85b;
   border-radius: 22px;
   padding: 24px 20px;
   text-align: center;
-  box-shadow: 0 26px 52px rgba(51, 14, 73, 0.35), 0 0 30px rgba(223, 184, 91, 0.3);
-  z-index: 100 !important; /* STRICTLY ON TOP OF EVERYTHING */
+  box-shadow: 0 18px 40px rgba(51, 14, 73, 0.12), 0 0 20px rgba(223, 184, 91, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.96);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), visibility 0.5s ease;
   pointer-events: none;
-  transition: all 0.75s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 10;
 }
 
+/* Once Open: Card Appears Steadily in Place */
 .unbox-box-wrap.is-open .box-scroll-card {
-  transform: translate(-50%, -150px) scale(1);
   opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
   pointer-events: auto;
-  z-index: 100 !important;
+  box-shadow: 0 22px 48px rgba(51, 14, 73, 0.22), 0 0 25px rgba(223, 184, 91, 0.25);
 }
 
 .scroll-tag {
@@ -415,7 +123,6 @@
   font-size: 34px;
   margin-bottom: 6px;
   display: inline-block;
-  animation: iconPulse 2s ease-in-out infinite;
 }
 
 .box-scroll-card h3 {
@@ -446,8 +153,224 @@
   letter-spacing: 0.04em;
 }
 
-/* --- BURSTING SPARKLES & PARTICLES --- */
-.box-sparkles {
+/* ==========================================================================
+   2. CONTINUOUSLY FLOATING & REVOLVING 3D GIFT BOX (MOVES FOREVER)
+   ========================================================================== */
+
+.floating-box-stage {
+  position: relative;
+  width: 100%;
+  max-width: 260px;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.luxury-gift-box {
+  position: relative;
+  width: 190px;
+  height: 180px;
+  transform-style: preserve-3d;
+  animation: boxLevitateForever 6s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.unbox-box-1 .luxury-gift-box { animation-delay: 0s; }
+.unbox-box-2 .luxury-gift-box { animation-delay: -2s; }
+.unbox-box-3 .luxury-gift-box { animation-delay: -4s; }
+
+.unbox-box-wrap:hover .luxury-gift-box {
+  filter: drop-shadow(0 15px 25px rgba(158, 124, 184, 0.45));
+}
+
+/* Ground Shadow Synchronized with Levitation */
+.box-shadow-ground {
+  position: absolute;
+  bottom: 0;
+  width: 190px;
+  height: 22px;
+  background: radial-gradient(ellipse, rgba(48, 18, 66, 0.35) 0%, transparent 72%);
+  border-radius: 50%;
+  animation: shadowPulseForever 6s ease-in-out infinite;
+}
+
+.unbox-box-1 .box-shadow-ground { animation-delay: 0s; }
+.unbox-box-2 .box-shadow-ground { animation-delay: -2s; }
+.unbox-box-3 .box-shadow-ground { animation-delay: -4s; }
+
+/* ==========================================================================
+   3. LUXURY 3D SQUARE GIFT BOX BASE
+   ========================================================================== */
+
+.box-cube-base {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(51, 14, 73, 0.28), inset 0 2px 4px rgba(255, 255, 255, 0.6), inset 0 -6px 12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+/* Ribbon Straps across the Box */
+.ribbon-v {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 26px;
+  background: linear-gradient(90deg, #faecc1 0%, #dfb85b 50%, #b68732 100%);
+  box-shadow: inset 0 1px 2px #fff, 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 6;
+}
+
+.ribbon-h {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 24px;
+  background: linear-gradient(180deg, #faecc1 0%, #dfb85b 50%, #b68732 100%);
+  box-shadow: inset 0 1px 2px #fff, 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 6;
+}
+
+/* Interactive Open Tag on Box */
+.interactive-tag {
+  position: absolute;
+  bottom: 18px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid #dfb85b;
+  border-radius: 99px;
+  padding: 6px 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  z-index: 8;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.interactive-tag .tag-num {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  color: #9e7cb8;
+}
+
+.interactive-tag .tag-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #331a44;
+}
+
+.unbox-box-wrap.is-open .interactive-tag {
+  background: #faecc1;
+  border-color: #b68732;
+}
+
+/* Interior Glow Inside Box when Opened */
+.box-interior-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: radial-gradient(circle at 50% 20%, rgba(250, 236, 193, 0.95) 0%, rgba(223, 184, 91, 0.5) 50%, transparent 80%);
+  opacity: 0;
+  z-index: 7;
+  transition: opacity 0.4s ease;
+}
+
+.unbox-box-wrap.is-open .box-interior-glow {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   4. LID ELEMENT (COMPLETELY REMOVED / VANISHES ON OPEN)
+   ========================================================================== */
+
+.box-lid-element {
+  position: absolute;
+  top: -12px;
+  left: -8px;
+  width: 206px;
+  height: 48px;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+  overflow: visible;
+  z-index: 9;
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s ease;
+}
+
+.box-lid-element .ribbon-v {
+  width: 26px;
+}
+
+.box-lid-element .ribbon-h {
+  height: 22px;
+}
+
+/* Gold Satin Bow on Lid */
+.gold-bow {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 22px;
+  border: 6px solid #dfb85b;
+  border-radius: 100% 100% 0 100%;
+  transform: translateX(-50%) rotate(45deg);
+  background: linear-gradient(135deg, #fff5d2, #faecc1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+/* CRITICAL FIX: ONCE OPEN, REMOVE LID ENTIRELY */
+.unbox-box-wrap.is-open .box-lid-element {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(-50px) scale(0.6) !important;
+  pointer-events: none !important;
+}
+
+/* ==========================================================================
+   5. BOX THEME COLOR GRADIENTS
+   ========================================================================== */
+
+/* Box 1: Signature Pearl Lavender */
+.unbox-box-1 .box-cube-base,
+.unbox-box-1 .box-lid-element {
+  background: linear-gradient(145deg, #c7a1e4 0%, #a482c1 50%, #825b9f 100%);
+  border: 2px solid rgba(223, 184, 91, 0.7);
+}
+
+/* Box 2: Royal Velvet Purple */
+.unbox-box-2 .box-cube-base,
+.unbox-box-2 .box-lid-element {
+  background: linear-gradient(145deg, #742590 0%, #4c1464 50%, #290638 100%);
+  border: 2px solid rgba(223, 184, 91, 0.7);
+}
+
+/* Box 3: Midnight Obsidian Plum */
+.unbox-box-3 .box-cube-base,
+.unbox-box-3 .box-lid-element {
+  background: linear-gradient(145deg, #380e4c 0%, #1e042a 50%, #0e0015 100%);
+  border: 2px solid #dfb85b;
+}
+
+/* ==========================================================================
+   6. SPARKLES ON OPEN
+   ========================================================================== */
+
+.magic-sparkles {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -455,91 +378,74 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 50;
+  z-index: 12;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.unbox-box-wrap.is-open .box-sparkles {
+.unbox-box-wrap.is-open .magic-sparkles {
   opacity: 1;
 }
 
-.p-star {
+.m-star {
   position: absolute;
   font-size: 22px;
-  transition: all 0.6s ease;
 }
 
-.unbox-box-wrap.is-open .p-1 {
-  top: -95px;
-  left: 5px;
-  animation: floatBurst1 3s ease-in-out infinite;
+.unbox-box-wrap.is-open .s1 {
+  top: -20px;
+  left: 10px;
+  animation: sparkleBurst 2.5s ease-in-out infinite;
 }
 
-.unbox-box-wrap.is-open .p-2 {
-  top: -120px;
-  right: 10px;
-  animation: floatBurst2 2.7s ease-in-out infinite;
+.unbox-box-wrap.is-open .s2 {
+  top: -30px;
+  right: 15px;
+  animation: sparkleBurst 2.2s ease-in-out infinite 0.3s;
 }
 
-.unbox-box-wrap.is-open .p-3 {
-  top: -65px;
-  right: -18px;
-  animation: floatBurst1 3.3s ease-in-out infinite;
+.unbox-box-wrap.is-open .s3 {
+  top: 10px;
+  right: -10px;
+  animation: sparkleBurst 2.8s ease-in-out infinite 0.6s;
 }
 
-.unbox-box-wrap.is-open .p-4 {
-  top: -75px;
-  left: -18px;
-  animation: floatBurst2 2.5s ease-in-out infinite;
+@keyframes sparkleBurst {
+  0%, 100% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0.7; }
+  50% { transform: translateY(-12px) scale(1.25) rotate(15deg); opacity: 1; }
 }
 
-/* --- KEYFRAME ANIMATIONS --- */
-@keyframes cubeLevitate {
+/* ==========================================================================
+   7. LEVITATION & REVOLVING KEYFRAMES (BOX MOVES FOREVER)
+   ========================================================================== */
+
+@keyframes boxLevitateForever {
   0% {
-    transform: translateY(0px) rotateX(12deg) rotateY(-18deg) rotateZ(-1deg);
+    transform: translateY(0px) rotateX(10deg) rotateY(-14deg) rotateZ(-1deg);
   }
   25% {
-    transform: translateY(-18px) rotateX(16deg) rotateY(15deg) rotateZ(2deg);
+    transform: translateY(-14px) rotateX(14deg) rotateY(12deg) rotateZ(2deg);
   }
   50% {
-    transform: translateY(-4px) rotateX(10deg) rotateY(22deg) rotateZ(3deg);
+    transform: translateY(-4px) rotateX(8deg) rotateY(18deg) rotateZ(1deg);
   }
   75% {
-    transform: translateY(-22px) rotateX(14deg) rotateY(-12deg) rotateZ(-2deg);
+    transform: translateY(-18px) rotateX(12deg) rotateY(-10deg) rotateZ(-2deg);
   }
   100% {
-    transform: translateY(0px) rotateX(12deg) rotateY(-18deg) rotateZ(-1deg);
+    transform: translateY(0px) rotateX(10deg) rotateY(-14deg) rotateZ(-1deg);
   }
 }
 
-@keyframes cubeShadow {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(0.8);
-    opacity: 0.45;
-  }
+@keyframes shadowPulseForever {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(0.82); opacity: 0.45; }
 }
 
-@keyframes floatBurst1 {
-  0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
-  50% { transform: translateY(-14px) rotate(18deg) scale(1.25); }
-}
+/* ==========================================================================
+   8. DARK MODE SUPPORT
+   ========================================================================== */
 
-@keyframes floatBurst2 {
-  0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
-  50% { transform: translateY(-16px) rotate(-18deg) scale(1.3); }
-}
-
-@keyframes iconPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.14); }
-}
-
-/* --- Dark Mode Support --- */
 [data-theme="dark"] .process {
   background: linear-gradient(135deg, #0c0211 0%, #170520 50%, #100216 100%);
   border-top-color: rgba(224, 192, 107, 0.18);
@@ -547,29 +453,33 @@
 
 [data-theme="dark"] .process-header h2 { color: #ffffff; }
 [data-theme="dark"] .process-subhead { color: #dcd0e5; }
+
 [data-theme="dark"] .box-scroll-card {
   background: linear-gradient(145deg, #1e092b 0%, #170422 100%);
   border-color: #dfb85b;
-  box-shadow: 0 26px 52px rgba(0, 0, 0, 0.8), 0 0 30px rgba(223, 184, 91, 0.35);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.8), 0 0 25px rgba(223, 184, 91, 0.3);
 }
+
 [data-theme="dark"] .box-scroll-card h3 { color: #ffffff; }
 [data-theme="dark"] .box-scroll-card p { color: #dcd0e5; }
-[data-theme="dark"] .box-tag {
+[data-theme="dark"] .interactive-tag {
   background: #1e092b;
   border-color: #dfb85b;
 }
-[data-theme="dark"] .box-tag .tag-label { color: #faecc1; }
+[data-theme="dark"] .interactive-tag .tag-label { color: #faecc1; }
 [data-theme="dark"] .scroll-status {
   background: #0f3d35;
   color: #57d87b;
 }
 
-/* --- Responsive Layout --- */
+/* ==========================================================================
+   9. RESPONSIVE LAYOUT
+   ========================================================================== */
+
 @media (max-width: 900px) {
   .unboxing-stage {
     grid-template-columns: 1fr;
-    gap: 170px; /* Room for card above each 3D box */
-    max-width: 330px;
-    margin-top: 150px;
+    gap: 50px;
+    max-width: 340px;
   }
 }
