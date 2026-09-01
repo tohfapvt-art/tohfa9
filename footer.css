@@ -84,11 +84,11 @@
 }
 
 .footer-brand .brand-title {
-  font-family: 'Caveat', 'Playfair Display', cursive;
-  font-size: 38px;
-  font-weight: 700;
-  line-height: 0.85;
-  letter-spacing: 0.02em;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.01em;
   background: linear-gradient(135deg, #faecc1 0%, #ffd978 50%, #dfb85b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

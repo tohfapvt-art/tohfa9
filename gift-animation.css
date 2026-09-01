@@ -1,11 +1,11 @@
 /* ==========================================================================
-   TOHFA LUXURY HERO 3D FLOATING BACKGROUND CLUSTER (DESKTOP & MOBILE)
+   TOHFA LUXURY HERO AMBIENT LIGHTING & SUBTLE STARDUST
+   (CLEAN, PROFESSIONAL & MINIMALIST LUXURY)
    ========================================================================== */
 
 .hero-copy {
   position: relative;
   overflow: visible;
-  perspective: 1000px;
 }
 
 .hero-copy > *:not(.hero-ambient-magic) {
@@ -13,197 +13,51 @@
   z-index: 2;
 }
 
-/* Ambient Magic 3D Container (Background Layer) */
+/* Ambient Magic Container */
 .hero-ambient-magic {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  overflow: visible;
-  transform-style: preserve-3d;
+  overflow: hidden;
 }
 
 /* Soft Radiant Light Aura behind hero copy */
 .hero-ambient-aura {
   position: absolute;
-  width: 500px;
-  height: 500px;
-  top: 5%;
-  left: -40px;
+  width: 480px;
+  height: 480px;
+  top: 10%;
+  left: -50px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(235, 204, 250, 0.45) 0%, rgba(250, 236, 193, 0.25) 45%, transparent 70%);
+  background: radial-gradient(circle, rgba(235, 204, 250, 0.4) 0%, rgba(250, 236, 193, 0.2) 45%, transparent 70%);
   filter: blur(45px);
   animation: auraFloat 8s ease-in-out infinite alternate;
 }
 
-/* --- 3D FLOATING BACKGROUND OBJECTS (SEAMLESS, TRANSPARENT AMBIENT LAYER) --- */
-
-.hero-3d-bg-item {
-  position: absolute;
-  pointer-events: none;
-  transform-style: preserve-3d;
-  opacity: 0.38;
-  filter: drop-shadow(0 10px 18px rgba(51, 14, 73, 0.08));
-  transition: opacity 0.4s ease;
-}
-
-.hero-3d-bg-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  mix-blend-mode: multiply;
-  -webkit-mask-image: radial-gradient(circle at center, black 60%, transparent 88%);
-  mask-image: radial-gradient(circle at center, black 60%, transparent 88%);
-  display: block;
-}
-
-/* 1. Top-Right: 3D Pastel Lilac Box */
-.item-box-lilac {
-  top: 15px;
-  right: 28px;
-  width: 115px;
-  height: 115px;
-  animation: floatLilacBox 6s ease-in-out infinite alternate;
-}
-
-/* 2. Top-Left: 3D Deep Royal Purple Box */
-.item-box-purple {
-  top: 5px;
-  left: -10px;
-  width: 95px;
-  height: 95px;
-  animation: floatPurpleBox 5.5s ease-in-out infinite alternate-reverse;
-}
-
-/* 3. Mid-Right: 3D Wax Seal Calligraphy Tag */
-.item-tag-wax {
-  top: 45%;
-  right: 5px;
-  width: 85px;
-  height: 85px;
-  animation: floatWaxTag 5s ease-in-out infinite alternate;
-}
-
-/* 4. Bottom-Left: 3D Open Pink Peony Blossom */
-.item-peony {
-  bottom: 20px;
-  left: 5px;
-  width: 85px;
-  height: 85px;
-  animation: floatPeony 6.2s ease-in-out infinite alternate;
-}
-
-/* 5. Bottom-Right: 3D Gold Ribbon Bow */
-.item-gold-bow {
-  bottom: 50px;
-  right: 35px;
-  width: 90px;
-  height: 90px;
-  animation: floatGoldBow 5.8s ease-in-out infinite alternate-reverse;
-}
-
-/* 6. Floating 3D Gradient Spheres */
-.hero-3d-sphere {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  filter: drop-shadow(0 8px 16px rgba(51, 14, 73, 0.18));
-}
-
-.sphere-lilac {
-  width: 20px;
-  height: 20px;
-  top: 25%;
-  left: 78%;
-  background: radial-gradient(circle at 35% 35%, #f4e3fc, #9b5de5);
-  animation: sphereFloat 4.2s ease-in-out infinite alternate;
-}
-
-.sphere-gold {
-  width: 16px;
-  height: 16px;
-  bottom: 25%;
-  left: 45%;
-  background: radial-gradient(circle at 35% 35%, #fff5d6, #d4a340);
-  animation: sphereFloat 5s ease-in-out infinite alternate-reverse;
-}
-
-/* Floating Stardust & Shimmer Glitters */
+/* Floating Stardust & Subtle Shimmer Glitters */
 .hero-stardust {
   position: absolute;
   color: #dfb85b;
-  font-size: 20px;
-  filter: drop-shadow(0 0 6px rgba(223, 184, 91, 0.6));
+  font-size: 18px;
+  filter: drop-shadow(0 0 6px rgba(223, 184, 91, 0.5));
   animation: stardustTwinkle 3.6s ease-in-out infinite;
+  opacity: 0.4;
 }
 
-.dust-1 { top: 6%; left: 75%; font-size: 22px; animation-delay: 0s; }
-.dust-2 { top: 52%; right: 12%; font-size: 15px; animation-delay: 1.2s; color: #a785c4; }
-.dust-3 { bottom: 18%; left: 38%; font-size: 18px; animation-delay: 2.4s; }
-.dust-4 { top: 22%; left: 52%; font-size: 14px; animation-delay: 1.8s; color: #dfb85b; }
-.dust-5 { bottom: 8%; right: 22%; font-size: 20px; animation-delay: 0.6s; color: #c47b99; }
-
-/* Keyframe Animations for 3D Background Elements */
-@keyframes floatLilacBox {
-  0% { transform: translateY(0px) rotateX(10deg) rotateY(-16deg) rotateZ(3deg) scale(1); }
-  100% { transform: translateY(-14px) rotateX(-6deg) rotateY(10deg) rotateZ(-2deg) scale(1.04); }
-}
-
-@keyframes floatPurpleBox {
-  0% { transform: translateY(0px) rotateX(-12deg) rotateY(14deg) rotateZ(-4deg) scale(1); }
-  100% { transform: translateY(-12px) rotateX(8deg) rotateY(-10deg) rotateZ(3deg) scale(1.04); }
-}
-
-@keyframes floatWaxTag {
-  0% { transform: translateY(0px) rotate(-6deg) scale(1); }
-  100% { transform: translateY(-10px) rotate(8deg) scale(1.05); }
-}
-
-@keyframes floatPeony {
-  0% { transform: translateY(0px) rotate(0deg) scale(1); }
-  100% { transform: translateY(-12px) rotate(16deg) scale(1.06); }
-}
-
-@keyframes floatGoldBow {
-  0% { transform: translateY(0px) rotate(5deg) scale(1); }
-  100% { transform: translateY(-10px) rotate(-7deg) scale(1.05); }
-}
-
-@keyframes sphereFloat {
-  0% { transform: translateY(0px) scale(1); }
-  100% { transform: translateY(-10px) scale(1.12); }
-}
+.dust-1 { top: 8%; left: 80%; font-size: 20px; animation-delay: 0s; }
+.dust-2 { top: 48%; right: 6%; font-size: 14px; animation-delay: 1.2s; color: #a785c4; }
+.dust-3 { bottom: 18%; left: 42%; font-size: 16px; animation-delay: 2.4s; }
 
 @keyframes auraFloat {
   0% { transform: translate(0, 0) scale(1); opacity: 0.6; }
-  50% { transform: translate(25px, -15px) scale(1.1); opacity: 0.9; }
-  100% { transform: translate(-15px, 20px) scale(0.95); opacity: 0.7; }
+  50% { transform: translate(20px, -12px) scale(1.08); opacity: 0.85; }
+  100% { transform: translate(-12px, 15px) scale(0.96); opacity: 0.65; }
 }
 
 @keyframes stardustTwinkle {
-  0%, 100% { opacity: 0.25; transform: scale(0.7) rotate(0deg); }
-  50% { opacity: 1; transform: scale(1.2) rotate(15deg); }
-}
-
-/* Floating Heart & Script Doodle Animation */
-.hero-heart {
-  display: inline-block;
-  animation: heartFloat 3s ease-in-out infinite;
-}
-
-.heart-doodle {
-  display: inline-block;
-  animation: heartPulse 2.4s ease-in-out infinite;
-}
-
-@keyframes heartFloat {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-5px) scale(1.08); }
-}
-
-@keyframes heartPulse {
-  0%, 100% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(1.2); opacity: 1; color: #c93b54; }
+  0%, 100% { opacity: 0.2; transform: scale(0.7) rotate(0deg); }
+  50% { opacity: 0.8; transform: scale(1.15) rotate(15deg); }
 }
 
 /* Luxury Button Shimmer Sweep on Hover */
@@ -234,91 +88,15 @@
   transition: all 0.75s ease-in-out;
 }
 
-/* Dark Mode Support (Clean & Obsidian Black with Glowing Stardust, No Hazy Boxes) */
+/* Dark Mode Support */
 [data-theme="dark"] .hero-ambient-aura {
-  background: radial-gradient(circle, rgba(167, 133, 196, 0.35) 0%, rgba(223, 184, 91, 0.2) 45%, transparent 70%);
-  filter: blur(55px);
-}
-
-[data-theme="dark"] .hero-3d-bg-item {
-  display: none !important;
-}
-
-[data-theme="dark"] .hero-3d-sphere {
-  opacity: 0.75;
-  filter: drop-shadow(0 0 14px rgba(223, 184, 91, 0.6));
-}
-
-/* ==========================================================================
-   MOBILE RESPONSIVENESS (VISIBLE & BEAUTIFULLY SCALED)
-   ========================================================================== */
-@media (max-width: 900px) {
-  .hero-ambient-magic {
-    overflow: hidden;
-  }
-  
-  .item-box-lilac {
-    top: 10px;
-    right: 5px;
-    width: 75px;
-    height: 75px;
-    opacity: 0.35;
-  }
-
-  .item-box-purple {
-    top: -5px;
-    left: -5px;
-    width: 65px;
-    height: 65px;
-    opacity: 0.32;
-  }
-
-  .item-tag-wax {
-    top: 38%;
-    right: -10px;
-    width: 60px;
-    height: 60px;
-    opacity: 0.35;
-  }
-
-  .item-peony {
-    bottom: 10px;
-    left: 0px;
-    width: 58px;
-    height: 58px;
-    opacity: 0.35;
-  }
-
-  .item-gold-bow {
-    bottom: 40px;
-    right: 15px;
-    width: 65px;
-    height: 65px;
-    opacity: 0.35;
-  }
-
-  .sphere-lilac {
-    top: 20%;
-    left: 80%;
-    width: 16px;
-    height: 16px;
-  }
-
-  .sphere-gold {
-    bottom: 30%;
-    left: 55%;
-    width: 14px;
-    height: 14px;
-  }
+  background: radial-gradient(circle, rgba(167, 133, 196, 0.25) 0%, rgba(223, 184, 91, 0.15) 45%, transparent 70%);
+  filter: blur(50px);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-3d-bg-item,
-  .hero-3d-sphere,
   .hero-ambient-aura,
-  .hero-stardust,
-  .hero-heart,
-  .heart-doodle {
+  .hero-stardust {
     animation: none;
   }
 }

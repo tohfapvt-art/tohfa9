@@ -85,27 +85,27 @@ footer a {
 }
 
 .brand-title {
-  font-family: 'Caveat', 'Playfair Display', cursive;
-  font-size: 34px;
-  font-weight: 700;
-  line-height: 0.85;
-  letter-spacing: 0.02em;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.01em;
   background: linear-gradient(135deg, #caa050 0%, #faecc1 45%, #b68732 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
 }
 
 .brand-tagline {
   font-family: 'DM Sans', sans-serif;
-  font-size: 8.5px;
+  font-size: 8px;
   font-weight: 800;
   letter-spacing: 0.26em;
   text-transform: uppercase;
   background: linear-gradient(90deg, #b68732 0%, #caa050 50%, #85612c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-top: 4px;
+  margin-top: 3px;
 }
 
 /* Dark Mode Brand Text */
@@ -128,36 +128,31 @@ footer a {
 }
 
 .eyebrow {
-  color: #9e7cb8;
-  letter-spacing: 0.16em;
-  font-weight: 700;
-}
-
-.hero-script {
-  font-family: 'Caveat', 'Playfair Display', cursive;
-  font-size: 26px;
-  color: #9e7cb8;
-  text-transform: none;
-  letter-spacing: 0;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: #8e58b3;
+  text-transform: uppercase;
+  margin-bottom: 16px;
 }
 
 h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(44px, 4.6vw, 68px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
   color: #331a44;
-  letter-spacing: -0.03em;
+  margin-bottom: 20px;
 }
 
 h1 em {
-  font-family: 'Caveat', 'Playfair Display', cursive;
-  color: #9e7cb8;
-  font-weight: 600;
+  font-family: 'Playfair Display', Georgia, serif;
   font-style: italic;
-  display: inline-block;
-  font-size: 1.15em;
-  letter-spacing: 0;
+  font-weight: 400;
+  color: #8e58b3;
+  display: inline;
 }
 
 .hero-heart {
