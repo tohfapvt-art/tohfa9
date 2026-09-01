@@ -120,6 +120,25 @@
   background-image: url('corporate-gift.jpg');
 }
 
+/* --- Curated Collection Cards (Gifts that say it beautifully) --- */
+.card-one {
+  background-image: linear-gradient(180deg, rgba(21, 26, 25, 0.05) 0%, rgba(30, 10, 42, 0.82) 100%), url('for-her-gift.jpg'), url('tohfa-hero.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.card-two {
+  background-image: linear-gradient(180deg, rgba(21, 26, 25, 0.05) 0%, rgba(30, 10, 42, 0.82) 100%), url('for-him-gift.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.card-three {
+  background-image: linear-gradient(180deg, rgba(65, 24, 40, 0.05) 0%, rgba(30, 10, 42, 0.82) 100%), url('celebrate-gift.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
 /* Responsive adjustments */
 @media (max-width: 900px) {
   .celebration-grid {
