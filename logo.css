@@ -56,17 +56,69 @@ footer a {
   color: #9e7cb8;
 }
 
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
 .brand img.gold-logo {
-  width: 76px;
-  height: 76px;
+  width: 62px;
+  height: 62px;
   border-radius: 50%;
   object-fit: cover;
-  filter: drop-shadow(0 4px 10px rgba(82, 45, 106, 0.15));
+  filter: drop-shadow(0 4px 10px rgba(82, 45, 106, 0.2));
   transition: transform 0.25s ease;
+  flex-shrink: 0;
 }
 
 .brand:hover img.gold-logo {
-  transform: translateY(-2px) scale(1.04);
+  transform: translateY(-2px) scale(1.05);
+}
+
+.brand-text-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+}
+
+.brand-title {
+  font-family: 'Caveat', 'Playfair Display', cursive;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: 0.02em;
+  background: linear-gradient(135deg, #caa050 0%, #faecc1 45%, #b68732 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
+}
+
+.brand-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #b68732 0%, #caa050 50%, #85612c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 4px;
+}
+
+/* Dark Mode Brand Text */
+[data-theme="dark"] .brand-title {
+  background: linear-gradient(135deg, #faecc1 0%, #ffd978 50%, #dfb85b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="dark"] .brand-tagline {
+  background: linear-gradient(90deg, #faecc1 0%, #dfb85b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* --- Hero Section --- */

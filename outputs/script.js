@@ -160,5 +160,72 @@ if (unboxCards.length > 0) {
   observer.observe(processSection);
 }
 
+// ==========================================================================
+// 3D HERO INTERACTIVE PARALLAX & TILT PHYSICS
+// ==========================================================================
+const heroArt = document.querySelector('#hero3DArt');
+const heroStage = document.querySelector('#hero3DStage');
+const heroCard = document.querySelector('#hero3DCard');
+const glareEffect = document.querySelector('.hero-glare-effect');
+
+if (heroArt && heroStage) {
+  let bounds = heroArt.getBoundingClientRect();
+  let targetRotateX = 0;
+  let targetRotateY = 0;
+  let currentRotateX = 0;
+  let currentRotateY = 0;
+  let isHovered = false;
+
+  window.addEventListener('resize', () => {
+    bounds = heroArt.getBoundingClientRect();
+  });
+
+  heroArt.addEventListener('mouseenter', () => {
+    isHovered = true;
+    heroStage.style.animation = 'none';
+  });
+
+  heroArt.addEventListener('mousemove', (e) => {
+    bounds = heroArt.getBoundingClientRect();
+    const x = e.clientX - bounds.left;
+    const y = e.clientY - bounds.top;
+    
+    // Normalize coordinates (-1 to 1)
+    const normX = (x / bounds.width) * 2 - 1;
+    const normY = (y / bounds.height) * 2 - 1;
+
+    targetRotateY = normX * 16; // Max 16 deg yaw
+    targetRotateX = -normY * 16; // Max 16 deg pitch
+
+    if (glareEffect) {
+      const glareX = (x / bounds.width) * 100;
+      const glareY = (y / bounds.height) * 100;
+      glareEffect.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.05) 50%, transparent 75%)`;
+    }
+  });
+
+  heroArt.addEventListener('mouseleave', () => {
+    isHovered = false;
+    targetRotateX = 0;
+    targetRotateY = 0;
+    setTimeout(() => {
+      if (!isHovered) {
+        heroStage.style.animation = 'heroStageFloat 6s ease-in-out infinite alternate';
+      }
+    }, 400);
+  });
+
+  // Smooth Lerp loop
+  function update3D() {
+    if (isHovered) {
+      currentRotateX += (targetRotateX - currentRotateX) * 0.12;
+      currentRotateY += (targetRotateY - currentRotateY) * 0.12;
+      heroStage.style.transform = `rotateX(${currentRotateX.toFixed(2)}deg) rotateY(${currentRotateY.toFixed(2)}deg)`;
+    }
+    requestAnimationFrame(update3D);
+  }
+  requestAnimationFrame(update3D);
+}
+
 
 

@@ -76,21 +76,37 @@
   box-shadow: 0 6px 20px rgba(224, 192, 107, 0.25);
 }
 
-.footer-brand .brand-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px;
-  color: #fff;
-  letter-spacing: -0.02em;
-  display: block;
-  line-height: 1.1;
+.footer-brand .brand-text-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
 }
 
-.footer-brand .brand-subtitle {
-  font-size: 10px;
+.footer-brand .brand-title {
+  font-family: 'Caveat', 'Playfair Display', cursive;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: 0.02em;
+  background: linear-gradient(135deg, #faecc1 0%, #ffd978 50%, #dfb85b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+  display: block;
+}
+
+.footer-brand .brand-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: #dfb85b;
-  font-weight: 600;
+  background: linear-gradient(90deg, #faecc1 0%, #dfb85b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 5px;
+  display: block;
 }
 
 .footer-tagline {
