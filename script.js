@@ -60,14 +60,18 @@ form.addEventListener('submit', async (event) => {
 const whatsappButton = document.querySelector('#whatsapp-link');
 const whatsappUrl = 'https://wa.me/916296750660?text=Hello%20Tohfa!%20I%20would%20love%20some%20help%20with%20a%20gift.';
 document.querySelectorAll('a[href^="https://wa.me/"]').forEach((link) => {
-  link.href = whatsappUrl;
+  if (!link.search || link.search.trim() === '') {
+    link.href = whatsappUrl;
+  }
 });
 
-whatsappButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  whatsappButton.classList.add('is-opening');
-  setTimeout(() => window.open(whatsappButton.href, '_blank', 'noopener'), 360);
-});
+if (whatsappButton) {
+  whatsappButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    whatsappButton.classList.add('is-opening');
+    setTimeout(() => window.open(whatsappButton.href, '_blank', 'noopener'), 360);
+  });
+}
 
 // --- Day & Night (Light / Dark) Theme Management ---
 const themeToggleBtn = document.querySelector('#theme-toggle');
@@ -103,6 +107,42 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
     applyTheme(e.matches ? 'dark' : 'light');
   }
 });
+
+// --- Interactive 3D Gift Box Unboxing Process ---
+const unboxCards = document.querySelectorAll('.unbox-box-wrap');
+unboxCards.forEach((card) => {
+  card.addEventListener('click', () => {
+    const isOpen = card.classList.toggle('is-open');
+    card.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  card.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      card.click();
+    }
+  });
+});
+
+// Auto-open first box initially when scrolled into view so user discovers the interaction immediately
+if (unboxCards.length > 0) {
+  let hasInteracted = false;
+  const processSection = document.querySelector('#how-it-works') || unboxCards[0];
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !hasInteracted) {
+        hasInteracted = true;
+        setTimeout(() => {
+          if (!unboxCards[0].classList.contains('is-open')) {
+            unboxCards[0].classList.add('is-open');
+            unboxCards[0].setAttribute('aria-expanded', 'true');
+          }
+        }, 600);
+      }
+    });
+  }, { threshold: 0.25 });
+  observer.observe(processSection);
+}
 
 
 

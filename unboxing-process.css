@@ -1,0 +1,440 @@
+/* ==========================================================================
+   TOHFA INTERACTIVE 3D UNBOXING PROCESS SECTION
+   ========================================================================== */
+
+.process {
+  background: linear-gradient(135deg, #fffdfa 0%, #faf3fc 50%, #f4e8f9 100%);
+  padding: 90px max(20px, 6vw) 110px;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid #ebdff2;
+}
+
+.process-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.process-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 3.6vw, 46px);
+  font-weight: 600;
+  color: #331a44;
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+}
+
+.process-header h2 em {
+  font-family: 'Caveat', 'Playfair Display', cursive;
+  color: #9e7cb8;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 1.15em;
+}
+
+.process-subhead {
+  font-size: 15px;
+  color: #6a5378;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* --- 3D Unboxing Stage --- */
+.unboxing-stage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+  max-width: 1140px;
+  margin: 110px auto 30px; /* Extra top room for cards popping out */
+  position: relative;
+  z-index: 3;
+}
+
+/* Individual Box Wrapper */
+.unbox-box-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+  perspective: 1000px;
+  user-select: none;
+}
+
+.unbox-box-container {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.unbox-box-wrap:hover .unbox-box-container {
+  transform: translateY(-6px) scale(1.02);
+}
+
+/* Ground Shadow */
+.box-shadow-ground {
+  width: 220px;
+  height: 22px;
+  background: radial-gradient(ellipse, rgba(48, 18, 66, 0.28) 0%, transparent 72%);
+  border-radius: 50%;
+  margin-top: 15px;
+  transition: all 0.4s ease;
+}
+
+.unbox-box-wrap.is-open .box-shadow-ground {
+  transform: scale(1.15);
+  background: radial-gradient(ellipse, rgba(48, 18, 66, 0.4) 0%, transparent 72%);
+}
+
+/* --- Box Base & Body --- */
+.box-base {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  border-radius: 20px;
+  z-index: 5;
+  box-shadow: 0 16px 32px rgba(67, 17, 95, 0.18), inset 0 2px 4px rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+/* Ribbons on Base */
+.base-ribbon-v {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  background: linear-gradient(90deg, #faecc1 0%, #dfb85b 50%, #b68732 100%);
+  box-shadow: inset 0 1px 2px #fff, 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 6;
+}
+
+.base-ribbon-h {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 48%;
+  transform: translateY(-50%);
+  height: 20px;
+  background: linear-gradient(180deg, #faecc1 0%, #dfb85b 50%, #b68732 100%);
+  box-shadow: inset 0 1px 2px #fff, 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 6;
+}
+
+/* Gift Tag on Box */
+.box-tag {
+  position: absolute;
+  bottom: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #dfb85b;
+  border-radius: 99px;
+  padding: 6px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.box-tag .tag-num {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  color: #9e7cb8;
+}
+
+.box-tag .tag-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #331a44;
+}
+
+.unbox-box-wrap.is-open .box-tag {
+  background: #faecc1;
+}
+
+/* --- Box Lid (Top Cover with 3D Physics) --- */
+.box-lid {
+  position: absolute;
+  top: 36px;
+  width: 104%;
+  height: 38px;
+  border-radius: 16px;
+  z-index: 10;
+  transform-origin: top center;
+  transition: transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22), inset 0 2px 3px rgba(255, 255, 255, 0.7);
+}
+
+.lid-ribbon-v {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  background: linear-gradient(90deg, #faecc1 0%, #dfb85b 50%, #b68732 100%);
+  z-index: 11;
+}
+
+.lid-ribbon-h {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 18px;
+  background: linear-gradient(180deg, #faecc1 0%, #dfb85b 50%, #b68732 100%);
+  z-index: 11;
+}
+
+/* Ribbon Bow on Lid */
+.lid-bow {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 20px;
+  border: 6px solid #dfb85b;
+  border-radius: 100% 100% 0 100%;
+  transform: translateX(-50%) rotate(45deg);
+  background: #faecc1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  z-index: 12;
+}
+
+/* --- Theme Box Colors --- */
+
+/* Box 1: Signature Lavender Box */
+.unbox-box-1 .box-base,
+.unbox-box-1 .box-lid {
+  background: linear-gradient(135deg, #b993d6 0%, #9e7cb8 55%, #7a5496 100%);
+  border: 1.5px solid rgba(223, 184, 91, 0.6);
+}
+
+/* Box 2: Royal Purple Velvet Box */
+.unbox-box-2 .box-base,
+.unbox-box-2 .box-lid {
+  background: linear-gradient(135deg, #6c2386 0%, #4a1364 55%, #2a073c 100%);
+  border: 1.5px solid rgba(223, 184, 91, 0.6);
+}
+
+/* Box 3: Midnight Obsidian Plum Box */
+.unbox-box-3 .box-base,
+.unbox-box-3 .box-lid {
+  background: linear-gradient(135deg, #300c42 0%, #1c0428 55%, #0f0116 100%);
+  border: 2px solid #dfb85b;
+}
+
+/* --- OPEN STATE ANIMATION: LID LIFTS & CARD POPS OUT --- */
+.unbox-box-wrap.is-open .box-lid {
+  transform: translateY(-90px) rotateX(32deg) rotateZ(-18deg) scale(1.08);
+  opacity: 0.92;
+}
+
+/* Surprise Scroll Card that pops up from the box */
+.box-scroll-card {
+  position: absolute;
+  left: 50%;
+  bottom: 60px;
+  transform: translate(-50%, 20px) scale(0.65);
+  width: 92%;
+  min-width: 250px;
+  background: linear-gradient(145deg, #ffffff 0%, #fdf8ff 60%, #f8edfc 100%);
+  border: 2px solid #dfb85b;
+  border-radius: 20px;
+  padding: 22px 18px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(67, 17, 95, 0.28), 0 0 20px rgba(223, 184, 91, 0.2);
+  z-index: 4;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.unbox-box-wrap.is-open .box-scroll-card {
+  transform: translate(-50%, -115px) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 15;
+}
+
+.scroll-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10.5px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  color: #9e7cb8;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.scroll-icon {
+  font-size: 32px;
+  margin-bottom: 6px;
+  display: inline-block;
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+.box-scroll-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: #331a44;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+.box-scroll-card p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #6a5378;
+  margin: 0 0 12px;
+}
+
+.scroll-status {
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #128c7e;
+  background: #e6f9f5;
+  border-radius: 99px;
+  padding: 3px 10px;
+  display: inline-block;
+  letter-spacing: 0.04em;
+}
+
+/* --- Bursting Sparkles Animation --- */
+.box-sparkles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 12;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.unbox-box-wrap.is-open .box-sparkles {
+  opacity: 1;
+}
+
+.p-star {
+  position: absolute;
+  font-size: 20px;
+  transition: all 0.6s ease;
+}
+
+.unbox-box-wrap.is-open .p-1 {
+  top: -65px;
+  left: 10px;
+  animation: floatBurst1 3s ease-in-out infinite;
+}
+
+.unbox-box-wrap.is-open .p-2 {
+  top: -85px;
+  right: 15px;
+  animation: floatBurst2 2.7s ease-in-out infinite;
+}
+
+.unbox-box-wrap.is-open .p-3 {
+  top: -40px;
+  right: -10px;
+  animation: floatBurst1 3.3s ease-in-out infinite;
+}
+
+.unbox-box-wrap.is-open .p-4 {
+  top: -50px;
+  left: -12px;
+  animation: floatBurst2 2.5s ease-in-out infinite;
+}
+
+@keyframes floatBurst1 {
+  0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(-10px) rotate(18deg) scale(1.2); }
+}
+
+@keyframes floatBurst2 {
+  0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(-12px) rotate(-18deg) scale(1.25); }
+}
+
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+/* --- Dark Mode Support --- */
+[data-theme="dark"] .process {
+  background: linear-gradient(135deg, #0c0211 0%, #170520 50%, #100216 100%);
+  border-top-color: rgba(224, 192, 107, 0.18);
+}
+
+[data-theme="dark"] .process-header h2 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .process-subhead {
+  color: #dcd0e5;
+}
+
+[data-theme="dark"] .box-scroll-card {
+  background: linear-gradient(145deg, #1e092b 0%, #170422 100%);
+  border-color: #dfb85b;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.75), 0 0 25px rgba(223, 184, 91, 0.25);
+}
+
+[data-theme="dark"] .box-scroll-card h3 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .box-scroll-card p {
+  color: #dcd0e5;
+}
+
+[data-theme="dark"] .box-tag {
+  background: #1e092b;
+  border-color: #dfb85b;
+}
+
+[data-theme="dark"] .box-tag .tag-label {
+  color: #faecc1;
+}
+
+[data-theme="dark"] .scroll-status {
+  background: #0f3d35;
+  color: #57d87b;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 900px) {
+  .unboxing-stage {
+    grid-template-columns: 1fr;
+    gap: 130px; /* Room for card above each box */
+    max-width: 330px;
+    margin-top: 120px;
+  }
+}
