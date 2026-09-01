@@ -374,7 +374,7 @@
   bottom: -6px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.95);
+  background: #ffffff;
   border: 1.5px solid #dfb85b;
   border-radius: 99px;
   padding: 6px 16px;
@@ -383,24 +383,35 @@
   gap: 7px;
   z-index: 10;
   white-space: nowrap;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 14px rgba(51, 14, 73, 0.14);
   transition: all 0.3s ease;
 }
 
-.unbox-box-1 .box-action-pill .tag-num { color: #9e7cb8; }
-.unbox-box-2 .box-action-pill .tag-num { color: #7b2cbf; }
-.unbox-box-3 .box-action-pill .tag-num { color: #4a126d; }
+.box-action-pill .tag-num {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  color: #6b3594;
+}
 
 .box-action-pill .tag-label {
   font-family: 'DM Sans', sans-serif;
   font-size: 12px;
   font-weight: 700;
-  color: #331a44;
+  color: #240e33;
 }
 
+/* Open State: Luminous Gold Badge with Deep Violet High-Contrast Text */
 .unbox-box-wrap.is-open .box-action-pill {
-  background: #faecc1;
-  border-color: #b68732;
+  background: linear-gradient(135deg, #faecc1 0%, #dfb85b 100%) !important;
+  border-color: #8c6218 !important;
+  box-shadow: 0 6px 20px rgba(223, 184, 91, 0.45) !important;
+}
+
+.unbox-box-wrap.is-open .box-action-pill .tag-num,
+.unbox-box-wrap.is-open .box-action-pill .tag-label {
+  color: #240e33 !important;
+  font-weight: 800 !important;
 }
 
 /* Ambient Dust Sparkles */
@@ -433,7 +444,7 @@
 }
 
 /* ==========================================================================
-   4. DARK MODE SUPPORT
+   4. DARK MODE SUPPORT (CRYSTAL CLEAR CONTRAST)
    ========================================================================== */
 
 [data-theme="dark"] .process {
@@ -457,11 +468,36 @@
 
 [data-theme="dark"] .box-scroll-card h3 { color: #ffffff; }
 [data-theme="dark"] .box-scroll-card p { color: #dcd0e5; }
+
+/* Dark Mode Closed Pill */
 [data-theme="dark"] .box-action-pill {
-  background: #1e092b;
+  background: #230b35;
   border-color: #dfb85b;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 12px rgba(223, 184, 91, 0.2);
 }
-[data-theme="dark"] .box-action-pill .tag-label { color: #faecc1; }
+
+[data-theme="dark"] .box-action-pill .tag-num {
+  color: #faecc1 !important;
+  font-weight: 800;
+}
+
+[data-theme="dark"] .box-action-pill .tag-label {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+/* Dark Mode Open Pill */
+[data-theme="dark"] .unbox-box-wrap.is-open .box-action-pill {
+  background: linear-gradient(135deg, #faecc1 0%, #dfb85b 100%) !important;
+  border-color: #8c6218 !important;
+}
+
+[data-theme="dark"] .unbox-box-wrap.is-open .box-action-pill .tag-num,
+[data-theme="dark"] .unbox-box-wrap.is-open .box-action-pill .tag-label {
+  color: #240e33 !important;
+  font-weight: 900 !important;
+}
+
 [data-theme="dark"] .scroll-status {
   background: #0f3d35;
   color: #57d87b;
