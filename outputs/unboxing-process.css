@@ -62,6 +62,46 @@
   align-items: start;
 }
 
+/* Flowing Golden Ribbon Arrow Connectors (Guides User Step 01 -> 02 -> 03) */
+.flow-ribbon-connector {
+  position: absolute;
+  top: 100px;
+  width: 115px;
+  height: 48px;
+  pointer-events: none;
+  z-index: 8;
+  filter: drop-shadow(0 3px 8px rgba(223, 184, 91, 0.35));
+}
+
+.flow-arrow-1-2 {
+  left: 31.5%;
+  transform: translateX(-50%);
+}
+
+.flow-arrow-2-3 {
+  left: 68.5%;
+  transform: translateX(-50%);
+}
+
+.ribbon-flow-trail {
+  stroke-dasharray: 6 4;
+  animation: ribbonFlowDash 2.8s linear infinite;
+}
+
+.ribbon-flow-head {
+  animation: ribbonHeadNudge 2.8s ease-in-out infinite;
+}
+
+@keyframes ribbonFlowDash {
+  0% { stroke-dashoffset: 20; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes ribbonHeadNudge {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(3px); }
+}
+
 /* Individual Unboxing Step Column */
 .unbox-box-wrap {
   display: flex;
