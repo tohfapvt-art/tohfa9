@@ -71,17 +71,23 @@
   cursor: pointer;
   user-select: none;
   position: relative;
+  z-index: 10;
+  transition: z-index 0.2s ease;
+}
+
+.unbox-box-wrap.is-open {
+  z-index: 40;
 }
 
 /* ==========================================================================
-   1. STEADY REVEALED STEP CARD (ABSOLUTELY POSITIONED — ZERO BLANK GAP)
+   1. STEADY REVEALED STEP CARD (EMERGES ON TOP OF GIFT BOX)
    ========================================================================== */
 
 .box-scroll-card {
   position: absolute;
-  bottom: 250px;
+  bottom: 230px;
   left: 50%;
-  transform: translateX(-50%) translateY(20px) scale(0.92);
+  transform: translateX(-50%) translateY(35px) scale(0.82);
   width: 95%;
   max-width: 310px;
   background: linear-gradient(145deg, #ffffff 0%, #fdf8ff 60%, #f8ecfc 100%);
@@ -96,7 +102,7 @@
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.45s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), visibility 0.45s ease;
+  transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), visibility 0.4s ease;
   pointer-events: none;
   z-index: 30;
 }

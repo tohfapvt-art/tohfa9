@@ -112,8 +112,24 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
 const unboxCards = document.querySelectorAll('.unbox-box-wrap');
 unboxCards.forEach((card) => {
   card.addEventListener('click', () => {
-    const isOpen = card.classList.toggle('is-open');
-    card.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    const isCurrentlyOpen = card.classList.contains('is-open');
+
+    // Collapse any other open box
+    unboxCards.forEach((otherCard) => {
+      if (otherCard !== card) {
+        otherCard.classList.remove('is-open');
+        otherCard.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Toggle current box
+    if (isCurrentlyOpen) {
+      card.classList.remove('is-open');
+      card.setAttribute('aria-expanded', 'false');
+    } else {
+      card.classList.add('is-open');
+      card.setAttribute('aria-expanded', 'true');
+    }
   });
 
   card.addEventListener('keydown', (e) => {
