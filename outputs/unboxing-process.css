@@ -1,10 +1,10 @@
 /* ==========================================================================
-   TOHFA 3D SQUARE LEVITATING & REVOLVING GIFT BOXES UNBOXING PROCESS
+   TOHFA TRUE 3D ISOMETRIC LEVITATING & REVOLVING GIFT BOXES
    ========================================================================== */
 
 .process {
   background: linear-gradient(135deg, #fffdfa 0%, #faf3fc 50%, #f4e8f9 100%);
-  padding: 95px max(20px, 6vw) 120px;
+  padding: 100px max(20px, 6vw) 130px;
   position: relative;
   overflow: hidden;
   border-top: 1px solid #ebdff2;
@@ -13,7 +13,7 @@
 .process-header {
   text-align: center;
   max-width: 760px;
-  margin: 0 auto 55px;
+  margin: 0 auto 60px;
   position: relative;
   z-index: 2;
 }
@@ -54,9 +54,9 @@
 .unboxing-stage {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(24px, 3.5vw, 45px);
-  max-width: 1180px;
-  margin: 140px auto 40px; /* Generous top clearance for floating popping cards */
+  gap: clamp(24px, 3.5vw, 50px);
+  max-width: 1200px;
+  margin: 150px auto 40px; /* Ample top room for message cards popping up */
   position: relative;
   z-index: 3;
 }
@@ -77,42 +77,33 @@
 .unbox-box-container {
   position: relative;
   width: 100%;
-  max-width: 260px;
-  height: 230px;
+  max-width: 280px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   transform-style: preserve-3d;
-  animation: levitateAndRevolve 7s ease-in-out infinite;
-  transition: filter 0.3s ease;
+  animation: cubeLevitate 7s ease-in-out infinite;
+  transition: filter 0.35s ease;
 }
 
-.unbox-box-1 .unbox-box-container {
-  animation-delay: 0s;
-}
+.unbox-box-1 .unbox-box-container { animation-delay: 0s; }
+.unbox-box-2 .unbox-box-container { animation-delay: -2.3s; }
+.unbox-box-3 .unbox-box-container { animation-delay: -4.6s; }
 
-.unbox-box-2 .unbox-box-container {
-  animation-delay: -2.3s;
-}
-
-.unbox-box-3 .unbox-box-container {
-  animation-delay: -4.6s;
-}
-
-/* Hover pauses drastic revolving to make clicking easier */
 .unbox-box-wrap:hover .unbox-box-container {
-  filter: drop-shadow(0 20px 30px rgba(158, 124, 184, 0.35));
+  filter: drop-shadow(0 22px 35px rgba(158, 124, 184, 0.4));
 }
 
-/* Ground Shadow with Synchronized Scale */
+/* Ground Shadow */
 .box-shadow-ground {
-  width: 200px;
+  width: 220px;
   height: 24px;
-  background: radial-gradient(ellipse, rgba(48, 18, 66, 0.28) 0%, transparent 72%);
+  background: radial-gradient(ellipse, rgba(48, 18, 66, 0.3) 0%, transparent 72%);
   border-radius: 50%;
-  margin-top: 20px;
-  animation: shadowPulse 7s ease-in-out infinite;
+  margin-top: 25px;
+  animation: cubeShadow 7s ease-in-out infinite;
   transition: all 0.4s ease;
 }
 
@@ -121,39 +112,71 @@
 .unbox-box-3 .box-shadow-ground { animation-delay: -4.6s; }
 
 .unbox-box-wrap.is-open .box-shadow-ground {
-  transform: scale(1.2);
+  transform: scale(1.25);
   background: radial-gradient(ellipse, rgba(48, 18, 66, 0.45) 0%, transparent 72%);
 }
 
-/* --- Square 3D Cube Base --- */
-.box-base {
+/* ==========================================================================
+   TRUE 3D ISOMETRIC CUBE STRUCTURE
+   ========================================================================== */
+
+.cube-3d-box {
   position: relative;
-  width: 190px;
-  height: 175px;
-  border-radius: 22px;
-  z-index: 5;
-  box-shadow: 0 18px 36px rgba(51, 14, 73, 0.22), inset 0 2px 5px rgba(255, 255, 255, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition: all 0.4s ease;
+  width: 180px;
+  height: 180px;
+  transform-style: preserve-3d;
+  transform: rotateX(15deg) rotateY(-22deg) rotateZ(3deg);
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Golden Cross Ribbons on Square Base */
-.base-ribbon-v {
+.cube-body-3d {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+/* Front Face */
+.cube-face-front {
+  position: absolute;
+  width: 180px;
+  height: 160px;
+  bottom: 0;
+  left: 0;
+  border-radius: 16px 4px 16px 16px;
+  box-shadow: 0 18px 36px rgba(51, 14, 73, 0.25), inset 0 2px 4px rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  z-index: 5;
+}
+
+/* Right Side Depth Face */
+.cube-face-side {
+  position: absolute;
+  width: 58px;
+  height: 160px;
+  bottom: 0;
+  left: 180px;
+  transform-origin: left bottom;
+  transform: skewY(-36deg);
+  border-radius: 0 16px 16px 0;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.2);
+  z-index: 4;
+}
+
+/* Gold Ribbons across Front Face */
+.ribbon-body-v {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 26px;
+  width: 24px;
   background: linear-gradient(90deg, #faecc1 0%, #dfb85b 50%, #b68732 100%);
-  box-shadow: inset 0 1px 2px #fff, 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 2px #fff, 0 2px 6px rgba(0, 0, 0, 0.2);
   z-index: 6;
 }
 
-.base-ribbon-h {
+.ribbon-body-h {
   position: absolute;
   left: 0;
   right: 0;
@@ -161,22 +184,37 @@
   transform: translateY(-50%);
   height: 22px;
   background: linear-gradient(180deg, #faecc1 0%, #dfb85b 50%, #b68732 100%);
-  box-shadow: inset 0 1px 2px #fff, 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 2px #fff, 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 6;
+}
+
+/* Gold Ribbon on Right Side Face */
+.ribbon-side-h {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 22px;
+  background: linear-gradient(180deg, #dfb85b 0%, #b68732 50%, #875e1d 100%);
   z-index: 6;
 }
 
 /* Center Interactive Tag */
 .box-tag {
   position: absolute;
-  bottom: 18px;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
   background: rgba(255, 255, 255, 0.95);
   border: 1.5px solid #dfb85b;
   border-radius: 99px;
-  padding: 6px 15px;
+  padding: 6px 14px;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
   z-index: 8;
+  white-space: nowrap;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
 }
@@ -190,7 +228,7 @@
 
 .box-tag .tag-label {
   font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 700;
   color: #331a44;
 }
@@ -198,46 +236,60 @@
 .unbox-box-wrap.is-open .box-tag {
   background: #faecc1;
   border-color: #b68732;
-  transform: scale(0.95);
+  transform: translateX(-50%) scale(0.95);
 }
 
-/* Interior Glow when Opened */
-.box-base::after {
-  content: '';
+/* ==========================================================================
+   3D SEPARABLE LID (ISOMETRIC TOP CAP & BOW)
+   ========================================================================== */
+
+.cube-lid-3d {
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 10%, rgba(250, 236, 193, 0.9) 0%, rgba(223, 184, 91, 0.4) 45%, transparent 70%);
-  opacity: 0;
-  z-index: 7;
-  transition: opacity 0.5s ease;
+  top: -42px;
+  left: -6px;
+  width: 192px;
+  height: 65px;
+  transform-style: preserve-3d;
+  z-index: 8;
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
 }
 
-.unbox-box-wrap.is-open .box-base::after {
-  opacity: 1;
-}
-
-/* --- 3D Square Box Lid --- */
-.box-lid {
+/* Isometric Top Face of Lid */
+.lid-top-face {
   position: absolute;
-  top: 38px;
-  width: 204px;
-  height: 44px;
-  border-radius: 18px;
-  z-index: 10;
-  transform-origin: top center;
-  transition: transform 0.75s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease, filter 0.4s ease;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28), inset 0 2px 4px rgba(255, 255, 255, 0.75);
+  width: 192px;
+  height: 52px;
+  top: 0;
+  left: 0;
+  transform-origin: bottom center;
+  transform: skewX(-54deg);
+  border-radius: 14px 14px 0 0;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.75), 0 8px 18px rgba(0, 0, 0, 0.2);
 }
 
+/* Front Lip of Lid */
+.lid-front-lip {
+  position: absolute;
+  top: 52px;
+  left: 0;
+  width: 192px;
+  height: 20px;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+/* Ribbons on Lid */
 .lid-ribbon-v {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 26px;
+  width: 24px;
   background: linear-gradient(90deg, #faecc1 0%, #dfb85b 50%, #b68732 100%);
-  z-index: 11;
+  z-index: 9;
 }
 
 .lid-ribbon-h {
@@ -248,18 +300,18 @@
   transform: translateY(-50%);
   height: 20px;
   background: linear-gradient(180deg, #faecc1 0%, #dfb85b 50%, #b68732 100%);
-  z-index: 11;
+  z-index: 9;
 }
 
-/* 3D Ribbon Bow on Lid */
-.lid-bow {
+/* 3D Bow sitting on top of Lid */
+.lid-bow-3d {
   position: absolute;
-  top: -20px;
+  top: -16px;
   left: 50%;
   transform: translateX(-50%);
   width: 38px;
   height: 24px;
-  border: 7px solid #dfb85b;
+  border: 6px solid #dfb85b;
   border-radius: 100% 100% 0 100%;
   transform: translateX(-50%) rotate(45deg);
   background: linear-gradient(135deg, #fff5d2, #faecc1);
@@ -267,66 +319,90 @@
   z-index: 12;
 }
 
-/* --- Theme Box Colors --- */
+/* ==========================================================================
+   COLOR SCHEMES PER BOX
+   ========================================================================== */
 
-/* Box 1: Signature Pearl Lavender Square Box */
-.unbox-box-1 .box-base,
-.unbox-box-1 .box-lid {
-  background: linear-gradient(135deg, #caa3e6 0%, #a785c4 50%, #875ea6 100%);
-  border: 2px solid rgba(223, 184, 91, 0.7);
+/* Box 1: Signature Pearl Lavender */
+.unbox-box-1 .cube-face-front,
+.unbox-box-1 .lid-top-face,
+.unbox-box-1 .lid-front-lip {
+  background: linear-gradient(135deg, #caa3e6 0%, #a785c4 50%, #8c63ab 100%);
+  border: 1.5px solid rgba(223, 184, 91, 0.7);
+}
+.unbox-box-1 .cube-face-side {
+  background: linear-gradient(135deg, #7e559e 0%, #5d357d 100%);
+  border: 1.5px solid rgba(223, 184, 91, 0.5);
 }
 
-/* Box 2: Royal Purple Velvet Square Box */
-.unbox-box-2 .box-base,
-.unbox-box-2 .box-lid {
-  background: linear-gradient(135deg, #7a2b96 0%, #50166a 50%, #2e083e 100%);
-  border: 2px solid rgba(223, 184, 91, 0.7);
+/* Box 2: Royal Purple Velvet */
+.unbox-box-2 .cube-face-front,
+.unbox-box-2 .lid-top-face,
+.unbox-box-2 .lid-front-lip {
+  background: linear-gradient(135deg, #7c2998 0%, #52176c 50%, #300940 100%);
+  border: 1.5px solid rgba(223, 184, 91, 0.7);
+}
+.unbox-box-2 .cube-face-side {
+  background: linear-gradient(135deg, #3f0e54 0%, #20042d 100%);
+  border: 1.5px solid rgba(223, 184, 91, 0.5);
 }
 
-/* Box 3: Midnight Obsidian Plum Square Box */
-.unbox-box-3 .box-base,
-.unbox-box-3 .box-lid {
-  background: linear-gradient(135deg, #38104c 0%, #1e052c 50%, #100118 100%);
+/* Box 3: Midnight Obsidian Plum */
+.unbox-box-3 .cube-face-front,
+.unbox-box-3 .lid-top-face,
+.unbox-box-3 .lid-front-lip {
+  background: linear-gradient(135deg, #3d1052 0%, #20062e 50%, #11011a 100%);
   border: 2px solid #dfb85b;
 }
-
-/* --- ANIMATION: OPEN STATE LID LIFTS & FLIES UP --- */
-.unbox-box-wrap.is-open .box-lid {
-  transform: translateY(-115px) rotateX(42deg) rotateZ(-24deg) scale(1.1);
-  opacity: 0.95;
-  filter: drop-shadow(0 15px 25px rgba(223, 184, 91, 0.4));
+.unbox-box-3 .cube-face-side {
+  background: linear-gradient(135deg, #170422 0%, #09000e 100%);
+  border: 1.5px solid rgba(223, 184, 91, 0.5);
 }
 
-/* --- POPPING SURPRISE MESSAGE SCROLL CARD --- */
+/* ==========================================================================
+   CRITICAL FIX: OPEN STATE LID FLIES OFF TO SIDE / BACK (NEVER OVERLAPS TEXT!)
+   ========================================================================== */
+
+.unbox-box-wrap.is-open .cube-lid-3d {
+  transform: translateY(-90px) translateX(65px) rotateX(45deg) rotateY(-45deg) scale(0.8);
+  opacity: 0.5;
+  z-index: 2 !important; /* Strictly below card */
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   SURPRISE MESSAGE SCROLL CARD (ALWAYS PROMINENT & ON TOP)
+   ========================================================================== */
+
 .box-scroll-card {
   position: absolute;
   left: 50%;
-  bottom: 70px;
+  bottom: 80px;
   transform: translate(-50%, 20px) scale(0.6);
   width: 95%;
-  min-width: 260px;
+  min-width: 270px;
   background: linear-gradient(145deg, #ffffff 0%, #fefaff 55%, #f7ebfc 100%);
   border: 2px solid #dfb85b;
   border-radius: 22px;
   padding: 24px 20px;
   text-align: center;
-  box-shadow: 0 24px 48px rgba(51, 14, 73, 0.32), 0 0 25px rgba(223, 184, 91, 0.28);
-  z-index: 4;
+  box-shadow: 0 26px 52px rgba(51, 14, 73, 0.35), 0 0 30px rgba(223, 184, 91, 0.3);
+  z-index: 100 !important; /* STRICTLY ON TOP OF EVERYTHING */
   opacity: 0;
   pointer-events: none;
   transition: all 0.75s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .unbox-box-wrap.is-open .box-scroll-card {
-  transform: translate(-50%, -130px) scale(1);
+  transform: translate(-50%, -150px) scale(1);
   opacity: 1;
   pointer-events: auto;
-  z-index: 15;
+  z-index: 100 !important;
 }
 
 .scroll-tag {
   font-family: 'DM Sans', sans-serif;
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 900;
   letter-spacing: 0.16em;
   color: #9e7cb8;
@@ -379,7 +455,7 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 12;
+  z-index: 50;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -395,67 +471,67 @@
 }
 
 .unbox-box-wrap.is-open .p-1 {
-  top: -85px;
+  top: -95px;
   left: 5px;
   animation: floatBurst1 3s ease-in-out infinite;
 }
 
 .unbox-box-wrap.is-open .p-2 {
-  top: -105px;
+  top: -120px;
   right: 10px;
   animation: floatBurst2 2.7s ease-in-out infinite;
 }
 
 .unbox-box-wrap.is-open .p-3 {
-  top: -55px;
+  top: -65px;
   right: -18px;
   animation: floatBurst1 3.3s ease-in-out infinite;
 }
 
 .unbox-box-wrap.is-open .p-4 {
-  top: -65px;
+  top: -75px;
   left: -18px;
   animation: floatBurst2 2.5s ease-in-out infinite;
 }
 
-/* --- KEYFRAME ANIMATIONS: LEVITATING & REVOLVING IN 3D CIRCLES --- */
-@keyframes levitateAndRevolve {
+/* --- KEYFRAME ANIMATIONS --- */
+@keyframes cubeLevitate {
   0% {
     transform: translateY(0px) rotateX(12deg) rotateY(-18deg) rotateZ(-1deg);
   }
   25% {
-    transform: translateY(-16px) rotateX(16deg) rotateY(15deg) rotateZ(2deg);
+    transform: translateY(-18px) rotateX(16deg) rotateY(15deg) rotateZ(2deg);
   }
   50% {
     transform: translateY(-4px) rotateX(10deg) rotateY(22deg) rotateZ(3deg);
   }
   75% {
-    transform: translateY(-20px) rotateX(14deg) rotateY(-12deg) rotateZ(-2deg);
+    transform: translateY(-22px) rotateX(14deg) rotateY(-12deg) rotateZ(-2deg);
   }
   100% {
     transform: translateY(0px) rotateX(12deg) rotateY(-18deg) rotateZ(-1deg);
   }
 }
 
-@keyframes shadowPulse {
+@keyframes cubeShadow {
   0%, 100% {
     transform: scale(1);
     opacity: 0.8;
   }
   50% {
-    transform: scale(0.82);
-    opacity: 0.5;
+    transform: scale(0.8);
+    opacity: 0.45;
   }
 }
 
 @keyframes floatBurst1 {
   0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
-  50% { transform: translateY(-12px) rotate(18deg) scale(1.25); }
+  50% { transform: translateY(-14px) rotate(18deg) scale(1.25); }
 }
 
 @keyframes floatBurst2 {
   0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
-  50% { transform: translateY(-15px) rotate(-18deg) scale(1.3); }
+  50% { transform: translateY(-16px) rotate(-18deg) scale(1.3); }
 }
 
 @keyframes iconPulse {
@@ -469,37 +545,20 @@
   border-top-color: rgba(224, 192, 107, 0.18);
 }
 
-[data-theme="dark"] .process-header h2 {
-  color: #ffffff;
-}
-
-[data-theme="dark"] .process-subhead {
-  color: #dcd0e5;
-}
-
+[data-theme="dark"] .process-header h2 { color: #ffffff; }
+[data-theme="dark"] .process-subhead { color: #dcd0e5; }
 [data-theme="dark"] .box-scroll-card {
   background: linear-gradient(145deg, #1e092b 0%, #170422 100%);
   border-color: #dfb85b;
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.75), 0 0 25px rgba(223, 184, 91, 0.3);
+  box-shadow: 0 26px 52px rgba(0, 0, 0, 0.8), 0 0 30px rgba(223, 184, 91, 0.35);
 }
-
-[data-theme="dark"] .box-scroll-card h3 {
-  color: #ffffff;
-}
-
-[data-theme="dark"] .box-scroll-card p {
-  color: #dcd0e5;
-}
-
+[data-theme="dark"] .box-scroll-card h3 { color: #ffffff; }
+[data-theme="dark"] .box-scroll-card p { color: #dcd0e5; }
 [data-theme="dark"] .box-tag {
   background: #1e092b;
   border-color: #dfb85b;
 }
-
-[data-theme="dark"] .box-tag .tag-label {
-  color: #faecc1;
-}
-
+[data-theme="dark"] .box-tag .tag-label { color: #faecc1; }
 [data-theme="dark"] .scroll-status {
   background: #0f3d35;
   color: #57d87b;
@@ -509,8 +568,8 @@
 @media (max-width: 900px) {
   .unboxing-stage {
     grid-template-columns: 1fr;
-    gap: 150px; /* Room for card popping above each square box */
+    gap: 170px; /* Room for card above each 3D box */
     max-width: 330px;
-    margin-top: 130px;
+    margin-top: 150px;
   }
 }
