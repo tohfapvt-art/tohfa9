@@ -98,7 +98,7 @@
 
 /* --- Theme Variants applied to ::before --- */
 
-/* Card 1: Pearl Cream & Gold Accent (Under 999) */
+/* Card 1: Pearl Cream & Gold Accent (Under 499) */
 .card-pearl {
   color: #24152d;
 }
@@ -111,7 +111,7 @@
 .card-pearl .sign-arrow-right,
 .card-pearl .sign-arrow-left { color: #c93b54; }
 
-/* Card 2: Signature Pastel Lavender (Under 1499) */
+/* Card 2: Signature Pastel Lavender (Under 999) */
 .card-purple {
   color: #ffffff;
 }
@@ -124,7 +124,20 @@
 .card-purple .sign-arrow-right,
 .card-purple .sign-arrow-left { color: #faecc1; }
 
-/* Card 3: Champagne Gold Pearl (Under 2499) */
+/* Card 3: Rose Champagne & Gold (Under 1499) */
+.card-rose {
+  color: #ffffff;
+}
+.card-rose::before {
+  background: linear-gradient(135deg, #c47b99 0%, #9e4b6c 100%);
+  border: 1.5px solid rgba(250, 236, 193, 0.7);
+  box-shadow: 0 12px 28px rgba(158, 75, 108, 0.3);
+}
+.card-rose .sign-amount { color: #ffffff; }
+.card-rose .sign-arrow-right,
+.card-rose .sign-arrow-left { color: #faecc1; }
+
+/* Card 4: Champagne Gold Pearl (Under 1999) */
 .card-gold {
   color: #24152d;
 }
@@ -137,7 +150,7 @@
 .card-gold .sign-arrow-right,
 .card-gold .sign-arrow-left { color: #c93b54; }
 
-/* Card 4: Midnight Velvet Plum & Radiant Gold (Premium Gifts) */
+/* Card 5: Midnight Velvet Plum & Radiant Gold (Premium Gifts) */
 .card-midnight {
   color: #faecc1;
 }
@@ -293,15 +306,15 @@
 
   .budget-cards-track {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: clamp(14px, 1.8vw, 24px);
+    grid-template-columns: repeat(5, 1fr);
+    gap: clamp(10px, 1.2vw, 18px);
     position: relative;
     z-index: 2;
   }
 
   .budget-sign-card {
-    min-height: 120px;
-    padding: 20px 22px;
+    min-height: 110px;
+    padding: 16px 12px;
   }
 
   .rail-joint {
