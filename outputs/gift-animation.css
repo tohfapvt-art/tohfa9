@@ -234,19 +234,19 @@
   transition: all 0.75s ease-in-out;
 }
 
-/* Dark Mode Support */
+/* Dark Mode Support (Clean & Obsidian Black with Glowing Stardust, No Hazy Boxes) */
 [data-theme="dark"] .hero-ambient-aura {
-  background: radial-gradient(circle, rgba(167, 133, 196, 0.25) 0%, rgba(223, 184, 91, 0.15) 45%, transparent 70%);
-  filter: blur(50px);
+  background: radial-gradient(circle, rgba(167, 133, 196, 0.35) 0%, rgba(223, 184, 91, 0.2) 45%, transparent 70%);
+  filter: blur(55px);
 }
 
 [data-theme="dark"] .hero-3d-bg-item {
-  opacity: 0.30;
+  display: none !important;
 }
 
-[data-theme="dark"] .hero-3d-bg-item img {
-  mix-blend-mode: screen;
-  filter: brightness(0.85) contrast(1.15);
+[data-theme="dark"] .hero-3d-sphere {
+  opacity: 0.75;
+  filter: drop-shadow(0 0 14px rgba(223, 184, 91, 0.6));
 }
 
 /* ==========================================================================
