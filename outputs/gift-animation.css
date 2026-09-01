@@ -1,1 +1,126 @@
-.hero-copy{overflow:hidden}.hero-copy>*:not(.gift-scene){position:relative;z-index:2}.gift-scene{position:absolute;right:-38px;bottom:26px;width:260px;height:240px;z-index:1;pointer-events:none;opacity:.42;perspective:700px}.gift-box{position:absolute;transform-style:preserve-3d;animation:giftFloat 6s ease-in-out infinite}.gift-box:before,.gift-box:after{content:"";position:absolute;display:block}.gift-box-large{right:15px;bottom:9px;width:138px;height:108px;background:linear-gradient(135deg,#b77682,#773a51);transform:rotateX(14deg) rotateY(-27deg) rotateZ(-3deg);box-shadow:22px 28px 20px rgba(80,38,46,.2)}.gift-box-large:before{width:138px;height:34px;background:#d8a7ad;left:0;top:-22px;transform:skewX(-45deg);transform-origin:bottom left}.gift-box-large:after{height:108px;width:35px;right:-22px;top:-11px;background:#703344;transform:skewY(-45deg);transform-origin:top left}.gift-box-small{left:22px;bottom:65px;width:94px;height:74px;background:linear-gradient(135deg,#dac4a6,#a08064);transform:rotateX(18deg) rotateY(-28deg) rotateZ(9deg);animation-delay:-2.2s;box-shadow:17px 22px 16px rgba(80,38,46,.17)}.gift-box-small:before{width:94px;height:23px;background:#f1dfc3;left:0;top:-15px;transform:skewX(-45deg);transform-origin:bottom left}.gift-box-small:after{height:74px;width:24px;right:-15px;top:-8px;background:#91745d;transform:skewY(-45deg);transform-origin:top left}.gift-box .lid{position:absolute;inset:-4px -6px auto;width:calc(100% + 12px);height:10px;background:rgba(255,248,236,.37);z-index:4}.ribbon-vertical,.ribbon-horizontal{position:absolute;background:rgba(255,246,227,.77);z-index:5}.ribbon-vertical{top:0;bottom:0;width:15px;left:calc(50% - 7px)}.ribbon-horizontal{height:13px;left:0;right:0;top:41%}.gift-box i{position:absolute;z-index:7;left:50%;top:-16px;width:28px;height:17px;border:6px solid rgba(255,246,227,.85);border-radius:100% 100% 0 100%;transform:translateX(-50%) rotate(42deg)}.sparkle{position:absolute;color:#a45a69;font-size:24px;animation:sparklePulse 3s ease-in-out infinite}.sparkle-one{left:21px;top:33px}.sparkle-two{right:6px;top:16px;animation-delay:-1.3s}@keyframes giftFloat{0%,100%{translate:0 0;rotate:0deg}50%{translate:-5px -13px;rotate:1.5deg}}@keyframes sparklePulse{0%,100%{opacity:.25;transform:scale(.7) rotate(0deg)}50%{opacity:1;transform:scale(1.12) rotate(20deg)}}@media(max-width:800px){.gift-scene{right:-53px;bottom:15px;opacity:.28;transform:scale(.85);transform-origin:bottom right}.hero-proof{position:relative;z-index:3}}@media(prefers-reduced-motion:reduce){.gift-box,.sparkle{animation:none}}
+/* ==========================================================================
+   TOHFA LUXURY HERO AMBIENT ANIMATIONS (CLEAN, MODERN & ELEGANT)
+   ========================================================================== */
+
+.hero-copy {
+  position: relative;
+  overflow: visible;
+}
+
+.hero-copy > *:not(.hero-ambient-magic) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Ambient Magic Light & Floating Stardust Particles */
+.hero-ambient-magic {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Soft Radiant Light Aura behind hero copy */
+.hero-ambient-aura {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  top: 15%;
+  left: -60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(235, 204, 250, 0.45) 0%, rgba(250, 236, 193, 0.25) 45%, transparent 70%);
+  filter: blur(40px);
+  animation: auraFloat 8s ease-in-out infinite alternate;
+}
+
+/* Floating Stardust & Shimmer Glitters */
+.hero-stardust {
+  position: absolute;
+  color: #dfb85b;
+  font-size: 20px;
+  filter: drop-shadow(0 0 6px rgba(223, 184, 91, 0.6));
+  animation: stardustTwinkle 3.6s ease-in-out infinite;
+}
+
+.dust-1 { top: 8%; left: 85%; font-size: 22px; animation-delay: 0s; }
+.dust-2 { top: 48%; right: 8%; font-size: 16px; animation-delay: 1.2s; color: #a785c4; }
+.dust-3 { bottom: 22%; left: 45%; font-size: 18px; animation-delay: 2.4s; }
+.dust-4 { top: 25%; left: 60%; font-size: 14px; animation-delay: 1.8s; color: #dfb85b; }
+.dust-5 { bottom: 12%; right: 15%; font-size: 20px; animation-delay: 0.6s; color: #c47b99; }
+
+/* Gentle Floating Animations */
+@keyframes auraFloat {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+  50% { transform: translate(25px, -15px) scale(1.1); opacity: 0.9; }
+  100% { transform: translate(-15px, 20px) scale(0.95); opacity: 0.7; }
+}
+
+@keyframes stardustTwinkle {
+  0%, 100% { opacity: 0.25; transform: scale(0.7) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.2) rotate(15deg); }
+}
+
+/* Floating Heart & Script Doodle Animation */
+.hero-heart {
+  display: inline-block;
+  animation: heartFloat 3s ease-in-out infinite;
+}
+
+.heart-doodle {
+  display: inline-block;
+  animation: heartPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes heartFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-5px) scale(1.08); }
+}
+
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; color: #c93b54; }
+}
+
+/* Luxury Button Shimmer Sweep on Hover */
+.button-dark {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-dark::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  transition: none;
+}
+
+.button-dark:hover::after {
+  left: 140%;
+  transition: all 0.75s ease-in-out;
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] .hero-ambient-aura {
+  background: radial-gradient(circle, rgba(167, 133, 196, 0.25) 0%, rgba(223, 184, 91, 0.15) 45%, transparent 70%);
+  filter: blur(50px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-ambient-aura,
+  .hero-stardust,
+  .hero-heart,
+  .heart-doodle {
+    animation: none;
+  }
+}
