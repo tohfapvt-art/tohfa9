@@ -6,16 +6,36 @@
   min-height: 640px;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
-  align-items: center;
+  align-items: stretch;
   overflow: hidden;
   background: linear-gradient(135deg, #fffaf7 0%, #faf3fc 50%, #f4e8f9 100%);
   border-bottom: 1px solid #ebdff2;
 }
 
 .hero-copy {
-  padding: 65px 4vw 65px max(25px, 7vw);
+  padding: 80px 4vw 70px max(25px, 7vw);
   position: relative;
   z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  isolation: isolate;
+  margin: 0;
+}
+
+.hero-copy::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('hero-left-botanical-bg.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  opacity: 0.38;
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
 /* 3D Container & Perspective Stage */
@@ -261,6 +281,11 @@
 [data-theme="dark"] .hero {
   background: linear-gradient(135deg, #12021a 0%, #1e052a 50%, #14021d 100%);
   border-bottom-color: rgba(224, 192, 107, 0.15);
+}
+
+[data-theme="dark"] .hero-copy::before {
+  opacity: 0.20;
+  mix-blend-mode: screen;
 }
 
 [data-theme="dark"] .particle-badge {
