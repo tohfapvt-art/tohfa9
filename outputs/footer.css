@@ -62,51 +62,33 @@
 }
 
 .footer-brand .brand-logo-img {
-  width: 58px;
-  height: 58px;
+  width: 76px;
+  height: 76px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1.5px solid rgba(224, 192, 107, 0.45);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(224, 192, 107, 0.55);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
 }
 
 .footer-brand .brand-logo-wrap:hover .brand-logo-img {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 20px rgba(224, 192, 107, 0.25);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 22px rgba(224, 192, 107, 0.35);
 }
 
-.footer-brand .brand-text-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  line-height: 1;
-}
-
-.footer-brand .brand-title {
-  font-family: 'Alex Brush', cursive;
-  font-size: 46px;
-  font-weight: 400;
-  line-height: 0.8;
-  letter-spacing: 0.03em;
-  background: linear-gradient(135deg, #faecc1 0%, #ffd978 50%, #dfb85b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+.footer-brand .footer-brand-text-img {
+  height: 54px;
+  width: auto;
+  max-width: 195px;
+  object-fit: contain;
   display: block;
-  margin-bottom: 2px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 12px rgba(224, 192, 107, 0.35));
+  transition: transform 0.3s ease;
 }
 
-.footer-brand .brand-tagline {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 8.5px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: lowercase;
-  background: linear-gradient(90deg, #faecc1 0%, #dfb85b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: block;
+.footer-brand .brand-logo-wrap:hover .footer-brand-text-img {
+  transform: translateY(-2px) scale(1.03);
 }
 
 .footer-tagline {
