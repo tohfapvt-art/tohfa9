@@ -85,27 +85,27 @@ footer a {
 }
 
 .brand-title {
-  font-family: 'Caveat', 'Playfair Display', cursive;
-  font-size: 34px;
-  font-weight: 700;
-  line-height: 0.85;
-  letter-spacing: 0.02em;
-  background: linear-gradient(135deg, #caa050 0%, #faecc1 45%, #b68732 100%);
+  font-family: 'Alex Brush', cursive;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 0.8;
+  letter-spacing: 0.03em;
+  background: linear-gradient(135deg, #d8ad44 0%, #faecc1 45%, #b68732 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0 1px 2px rgba(182, 135, 50, 0.25));
+  margin-bottom: 3px;
 }
 
 .brand-tagline {
   font-family: 'DM Sans', sans-serif;
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  background: linear-gradient(90deg, #b68732 0%, #caa050 50%, #85612c 100%);
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: lowercase;
+  background: linear-gradient(90deg, #b68732 0%, #d8ad44 50%, #9e7529 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-top: 3px;
 }
 
 /* Dark Mode Brand Text */
@@ -113,6 +113,7 @@ footer a {
   background: linear-gradient(135deg, #faecc1 0%, #ffd978 50%, #dfb85b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 3px rgba(223, 184, 91, 0.3));
 }
 
 [data-theme="dark"] .brand-tagline {
