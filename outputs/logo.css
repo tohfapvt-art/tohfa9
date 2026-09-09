@@ -39,6 +39,7 @@ body {
 
 /* --- Header --- */
 .site-header {
+  height: 122px;
   background: rgba(255, 253, 251, 0.96);
   border-bottom: 1px solid #ebdff2;
   backdrop-filter: blur(10px);
@@ -59,16 +60,16 @@ footer a {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 15px;
+  gap: 16px;
   text-decoration: none;
 }
 
 .brand img.gold-logo {
-  width: 76px;
-  height: 76px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   object-fit: cover;
-  filter: drop-shadow(0 4px 12px rgba(82, 45, 106, 0.22));
+  filter: drop-shadow(0 4px 14px rgba(82, 45, 106, 0.28));
   transition: transform 0.25s ease;
   flex-shrink: 0;
 }
@@ -78,9 +79,9 @@ footer a {
 }
 
 .brand-text-img {
-  height: 52px;
+  height: 58px;
   width: auto;
-  max-width: 185px;
+  max-width: 220px;
   object-fit: contain;
   display: block;
   filter: drop-shadow(0 1px 2px rgba(182, 135, 50, 0.25));
@@ -338,7 +339,7 @@ input:focus, select:focus, textarea:focus {
   color: #f1ddff;
 }
 
-/* Hide 3D Hero Art Installation & Trust Strip on Mobile */
+/* Responsive Mobile Branding */
 @media (max-width: 899px) {
   .hero-art,
   .trust-strip {
@@ -359,19 +360,134 @@ input:focus, select:focus, textarea:focus {
     margin-top: 35px;
   }
 
-  /* Hide the inserted text image on mobile and keep prominent logo */
-  .brand-text-img,
-  .footer-brand-text-img {
-    display: none !important;
+  .site-header {
+    height: 104px;
+    padding: 0 clamp(12px, 3vw, 24px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Side brand text visible and framed cleanly on mobile */
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 1;
+    min-width: 0;
   }
 
   .brand img.gold-logo {
-    width: 66px;
-    height: 66px;
+    width: 74px;
+    height: 74px;
+    flex-shrink: 0;
+  }
+
+  .brand-text-img {
+    display: block !important;
+    height: 42px;
+    max-width: 150px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .header-right-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .footer-brand .brand-logo-wrap {
+    gap: 12px;
   }
 
   .footer-brand .brand-logo-img {
+    width: 76px;
+    height: 76px;
+    flex-shrink: 0;
+  }
+
+  .footer-brand-text-img {
+    display: block !important;
+    height: 44px;
+    max-width: 160px;
+    width: auto;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    height: 98px;
+    padding: 0 12px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand img.gold-logo {
     width: 68px;
     height: 68px;
+  }
+
+  .brand-text-img {
+    height: 38px;
+    max-width: 135px;
+  }
+
+  .header-right-group {
+    gap: 8px;
+  }
+
+  .theme-toggle-btn {
+    padding: 6px 9px;
+  }
+
+  .theme-toggle-text {
+    display: none;
+  }
+
+  .header-link {
+    font-size: 11px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 360px) {
+  .site-header {
+    height: 92px;
+    padding: 0 8px;
+  }
+
+  .brand {
+    gap: 6px;
+  }
+
+  .brand img.gold-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .brand-text-img {
+    height: 34px;
+    max-width: 115px;
+  }
+
+  .header-right-group {
+    gap: 6px;
+  }
+
+  .theme-toggle-btn {
+    padding: 5px 7px;
+  }
+
+  .header-link {
+    font-size: 10.5px;
   }
 }
